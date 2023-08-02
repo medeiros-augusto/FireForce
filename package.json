@@ -1,0 +1,26 @@
+{
+  "name": "fireforce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medeiros-augusto/FireForce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/medeiros-augusto/FireForce/issues"
+  },
+  "homepage": "https://github.com/medeiros-augusto/FireForce#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mysql2": "^3.5.2",
+    "path": "^0.12.7"
+  }
+}
