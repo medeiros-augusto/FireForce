@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/dados.paciente.css">
+</head>
+<body>
+    <div class="navbar"></div>
+    <h1>Dados do paciente</h1>
+    <div class="sex_date">
+        <label for="date">Data
+            <input type="text">
+        </label>
+        <div class="radio-input">
+            <input value="value-1" name="value-radio" id="value-1" type="radio" class="input i_female">
+            <input value="value-2" name="value-radio" id="value-2" type="radio" class="input i_no-gender">
+            <input value="value-3" name="value-radio" id="value-3" type="radio" class="input i_male">
+            <div class="card female">
+              <svg class="logo" width="48" height="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="M12 15.75A7.125 7.125 0 1 0 12 1.5a7.125 7.125 0 0 0 0 14.25Z"></path>
+               <path d="M12 15.75v6.75"></path>
+               <path d="M14.719 19.5H9.28"></path>
+              </svg>
+              <div class="title">Female</div>
+            </div>
+            <div class="card no-gender">
+              <svg class="logo" width="48" height="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="M10.125 15.75a6.375 6.375 0 1 0 0-12.75 6.375 6.375 0 0 0 0 12.75Z"></path>
+               <path d="M10.125 16.5v6"></path>
+               <path d="M12.75 19.5H7.5"></path>
+               <path d="M20.25 5.25V1.5H16.5"></path>
+               <path d="M15.717 6.034 20.25 1.5"></path>
+              </svg>
+              <div class="title">Male</div>
+            </div>
+          
+          </div>
+    </div>
+</body>
+</html>

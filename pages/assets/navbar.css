@@ -10,13 +10,12 @@ body {
     width: 100%;
     height: 50px;
     background: rgb(40,132,150);
-background: linear-gradient(90deg, rgba(40,132,150,1) 0%, rgba(28,28,128,1) 50%, rgba(40,132,150,1) 100%);
+    background: linear-gradient(90deg, rgba(40,132,150,1) 0%, rgba(28,28,128,1) 50%, rgba(40,132,150,1) 100%);
 }
 
 .div-img {
-   max-width: 100%; 
-   height: auto;
-   margin-top: 150%;
+   text-align: center;
+   margin-top: 1%;
 }
 
 .inputs {
@@ -24,23 +23,42 @@ background: linear-gradient(90deg, rgba(40,132,150,1) 0%, rgba(28,28,128,1) 50%,
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 10%;
+    margin-top: 2%;
 }
 
 .input-group {
-    margin-bottom: 15px;
+    margin-bottom: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .input-group label {
-    margin-bottom: 5px;
+    text-align: center;
+    font-weight: 900;
+    font-size: x-large;
+    color: rgb(106, 70, 204);
   }
 
   .input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 90%;
+    height: 2rem;
+    border: 1px solid rgb(30, 79, 187);
+    border-radius: 0.5rem;
+    outline: none;
   }
+
+  .div-button {
+      text-align: center;
+  }
+
+  .div-button input {
+    width: 15%;
+    border-radius: 10rem;
+    border: none;
+    background-color: rgb(95, 95, 236);
+    color: #fff;
+    height: 3rem;
+    cursor: pointer;
+}
