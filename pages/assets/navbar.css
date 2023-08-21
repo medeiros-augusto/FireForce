@@ -13,7 +13,7 @@ body {
 background: linear-gradient(90deg, rgba(40,132,150,1) 0%, rgba(28,28,128,1) 50%, rgba(40,132,150,1) 100%);
 }
 
-.navbar img {
+.div-img {
    max-width: 100%; 
    height: auto;
    margin-top: 150%;
