@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    background-color: rgba(185, 213, 237, 0.63);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    height: 50px;
+    background: rgb(40,132,150);
+    background: linear-gradient(90deg, rgba(40,132,150,1) 0%, rgba(28,28,128,1) 50%, rgba(40,132,150,1) 100%);
+}
+
+h1{
+    text-align: center;
+}
+
+/* ------------------ DATA E SEXO --------------- */
+
+.date_sexo {
+    display: flex;
+    justify-content: center;
+}
+
+.date input{
+    width: 60%;
+  height: 1.5rem;
+  margin-left: 5%;
+  border: none;
+  outline: none;
+  background-color: rgb(162, 158, 158);
+  border-radius: 1rem;
+}
+
+.sexo {
+    text-align: center;
+}
+
+/* --------------------- INPUTS---------------------- */
+
+.inputs {
+    text-align: center;
+    margin-top: 1%;
+}
+
+.fundo_inputs {
+    margin-top: 1.5%;
+}
+
+.fundo_inputs input {
+    height: 2rem;
+    width: 20%;
+    margin-left: 2%;
+    outline: none;
+    border: none;
+    background-color: rgb(162, 158, 158);
+    border-radius: 1rem;
+}
+
+/* ---------------- ARROW ----------- */
+
+.arrow {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    font-size: 2.5rem;
+}
+
+.voltar {
+    margin-right: 30%;
+}
+
+.arrow i {
+    color: black;
+}

@@ -3,86 +3,62 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="assets/dados.paciente.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Slab&display=swap"
-    rel="stylesheet">
+  <link rel="stylesheet" href="assets/dados_paciente.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
 <body>
   <div class="navbar"></div>
-  <h1>Dados do paciente</h1>
-  <div class="sex_date">
-    <div class="div_date">
-      <label for="date">Data de Nascimento
-        <input type="text" id="date" placeholder="00/00/0000">
-      </label>
+  <h1>DADOS DO PACIENTE</h1>
+  <div class="date_sexo">
+    <div class="date">
+      DATA <input type="text">
     </div>
-    <div class="div_sex">Sexo
-      <form action="#">
-        <label for="feminimo">Feminimo
-          <input type="radio" name="option" value="fem">
-        </label>
 
-        <label for="masculino">Masculino
-          <input type="radio" name="option" value="masc">
-        </label>
-      </form>
+    <div class="sexo">
+      SEXO <input type="radio" name="sexo" value="masculino"> Masculino
+      <input type="radio" name="sexo" value="feminino"> Feminino
     </div>
   </div>
 
-  <form action="#">
-    <div class="inputs">
+  <div class="inputs">
+    <div class="fundo_inputs">
+      NOME DO HOSPITAL <input type="text">
+    </div>
+    <div class="fundo_inputs">
+      NOME DO PACIENTE <input type="text">
+    </div>
+    <div class="fundo_inputs">
+      RG OU CPF DO PACIENTE <input type="text">
+    </div>
+    <div class="fundo_inputs">
+      FONE PACIENTE <input type="text">
+    </div>
+    <div class="fundo_inputs">
+      IDADE PACIENTE <input type="text">
+    </div>
+    <div class="fundo_inputs">
+      ACOMPANHANTE <input type="text">
+    </div>
+    <div class="fundo_inputs">
+      IDADE ACOMPANHANTE <input type="text">
+    </div>
+    <div class="fundo_inputs">
+      LOCAL DA OCORRÊNCIA <input type="text">
+    </div>
+  </div>
 
-      <label for="nome_hospital">Nome do Hospital
-        <input type="text">
-      </label>
-
-      <label for="nome_paciente">Nome do Paciente
-        <input type="text">
-      </label>
-
-      <label for="RG_CPF">RG/CPF do Paciente
-        <input type="text">
-      </label>
-
+  <div class="arrow">
+    <div class="voltar">
+      <a href="#"><i class="bi bi-chevron-left"></i></a>
     </div>
 
-    <div class="tel_id">
-
-      <label for="telefone">Telefone
-        <input type="text">
-      </label>
-
-      <label for="idade">Idade
-        <input type="text">
-      </label>
-
+    <div class="proximo">
+      <a href="#"><i class="bi bi-chevron-right"></i></a>
     </div>
-
-    <div class="inputs">
-
-      <label for="acompanhate">Acompanhante
-        <input type="text">
-      </label>
-
-      <label for="idade_acomp">Idade Acompanhante
-        <input type="text">
-      </label>
-
-      <label for="local_ocorrencia">Local da Ocorrência
-        <input type="text">
-      </label>
-
-    </div>
-</form> 
-
-    <input type="submit" value="Proximo">
+  </div>
 </body>
 
 </html>
