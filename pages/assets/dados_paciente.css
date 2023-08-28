@@ -43,12 +43,17 @@ h1{
 /* --------------------- INPUTS---------------------- */
 
 .inputs {
-    text-align: center;
     margin-top: 1%;
 }
 
 .fundo_inputs {
-    margin-top: 1.5%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.fundo_inputs p{
+    margin-top: 0.5%;
 }
 
 .fundo_inputs input {
