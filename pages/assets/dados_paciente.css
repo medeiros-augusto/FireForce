@@ -19,30 +19,6 @@ h1 {
     text-align: center;
 }
 
-/* ------------------ DATA E SEXO --------------- */
-
-.date_sexo {
-    display: flex;
-    justify-content: center;
-}
-
-.date input {
-    width: 60%;
-    height: 1.5rem;
-    margin-left: 5%;
-    border: none;
-    outline: none;
-    background-color: rgb(162, 158, 158);
-    border-radius: 1rem;
-}
-
-.sexo {
-    text-align: center;
-}
-
-.sexo input {
-    padding: 1rem;
-}
 
 /* --------------------- INPUTS E LABEL ---------------------- */
 
@@ -82,8 +58,12 @@ label {
     background-color: rgb(162, 158, 158);
     border-radius: 1rem;
     width: 100%;
-    padding: 8px;
+    padding: 1.5%;
 }
+
+input[type="radio"]:checked {
+    border-color: #bbbbbb; /* Cor diferente para radio selecionado */
+  }
 
 /* ---------------- ARROW ----------- */
 
