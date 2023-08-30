@@ -61,10 +61,6 @@ label {
     padding: 1.5%;
 }
 
-input[type="radio"]:checked {
-    border-color: #bbbbbb; /* Cor diferente para radio selecionado */
-  }
-
 /* ---------------- ARROW ----------- */
 
 .arrow {

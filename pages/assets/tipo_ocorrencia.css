@@ -19,7 +19,7 @@ h1 {
     text-align: center;
 }
 
-/* ----------------------RADIO-------------------- */
+/* ----------------------RADIO--------------------*/
 
 .container_radios {
     display: flex;
@@ -41,6 +41,15 @@ label {
   font-size: 1.5rem;
 }
 
-input{
-  height: 2rem;
+.div_radios input {
+    
+}
+
+/* ----------------LETRAS------------*/
+
+.div_letras {
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 2rem;
 }
