@@ -41,15 +41,14 @@ label {
   font-size: 1.5rem;
 }
 
-.div_radios input {
-    
-}
-
-/* ----------------LETRAS------------*/
-
-.div_letras {
-    width: 100%;
+.check {
+    width: 4.5%;
+    height: 45%;
+    margin-left: 2%;
+    border-radius: 100%;
+    background-color: transparent;
     border: 1px solid black;
-    text-align: center;
-    font-size: 2rem;
 }
+
+/* ---------------------OUTRO---------------- */
+
