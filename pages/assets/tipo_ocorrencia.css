@@ -23,28 +23,31 @@ h1 {
 
 .container_radios {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-  
+    margin-top: 0.5%;
 }
 
 .div_radios {
     display: flex;
     align-items: center;
     justify-content: center;
-     border: 1px solid black;
-    height: 5rem;
-    width: 60%;
+    border: 1px solid black;
+    height: 5rem;    
+    width: 90%;
+    background-color: rgba(125, 127, 130, 0.555);
 }
 
 label {
   font-size: 1.5rem;
+  width: 20rem;
+  margin-right: 1rem;
 }
 
 .check {
     width: 4.5%;
     height: 45%;
-    margin-left: 2%;
     border-radius: 100%;
     background-color: transparent;
     border: 1px solid black;
@@ -52,3 +55,41 @@ label {
 
 /* ---------------------OUTRO---------------- */
 
+.container_outro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.div_outro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 5rem;    width: 100%;
+    background-color: rgba(169, 170, 171, 0.726);
+}
+
+.div_outro input {
+    width: 15%;
+    padding: 0.5rem;
+}
+
+/* ---------------- ARROW ----------- */
+
+.arrow {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin-top: 1%;
+}
+
+.voltar {
+    margin-right: 70%;
+}
+
+.arrow i {
+    color: #000;
+}
