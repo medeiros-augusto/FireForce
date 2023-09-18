@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Problemas Encontrados Suspeitos</title>
     <link rel="stylesheet" href="assets/problemas_suspeitos.css">
+
+    <script>
+      
+      const oculta = document.getElementsByClassName('sub_problemas');
+      const mostrar = document.getElementsByClassName('check');
+
+    function mostrarOcultarDiv() {
+    if(oculta) {
+        mostrar.style.display= 'block';
+
+    } else { 
+        mostrar.style.display = 'none';
+    }
+}
+    </script>
 </head>
 <body>
     <div class="navbar"></div>
@@ -13,6 +28,20 @@
     <div class="container">
         <div class="div_problemas">
             <label for="PSIQUIÁTRICO">PSIQUIÁTRICO</label>
+            <input type="checkbox" class="check" onchange="mostrarOcultarDiv()">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="div_problemas">
+            <label for="RESPIRATÓRIO">RESPIRATÓRIO</label>
+            <input type="checkbox" class="check">
+        </div>
+
+        <div class="sub_problemas">
+            <label for="DPOC">DPOC</label>
+            <input type="checkbox" class="check" style="margin-left: -6%;">
+            <label for="INALAÇÃO_POR_FUMAÇA">INALAÇÃO POR FUMAÇA</label>
             <input type="checkbox" class="check">
         </div>
     </div>
