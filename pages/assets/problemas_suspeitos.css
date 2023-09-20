@@ -61,7 +61,9 @@ label {
     height: 5rem;    
     width: 100%;
     background-color: rgba(169, 170, 171, 0.726);
-    overflow: hidden;
-    height: 0;
+    display: none;
   }
 
+.mostraresp {
+    display: block;
+}
