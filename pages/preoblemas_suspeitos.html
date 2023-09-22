@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/preoblemas_suspeitos.css">
+</head>
+
+<body>
+    <div class="navbar"></div>
+    <h1>PROBLEMAS ENCONTRADOS SUSPEITOS</h1>
+
+    <div class="container">
+        <div class="problemas">
+            <label for="PSQUIÁTRICO" class="labelproblemas">PSQUIÁTRICO</label>
+            <input type="checkbox" class="checkproblemas">
+        </div>
+
+        <div class="problemas">
+            <label for="RESPIRATÓRIO" class="labelproblemas">RESPIRATÓRIO</label>
+            <input type="checkbox" class="checkproblemas" id="respm">
+        </div>
+
+        <div class="sub_resp">
+            <label for="DPOC">DPOC</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="sub_resp">
+            <label for="INALAÇÃO_FUMAÇA">INALAÇÃO FUMAÇA</label>
+            <input type="checkbox">
+        </div>
+
+
+        <div class="problemas">
+            <label for="DIABETES" class="labelproblemas">DIABETES</label>
+            <input type="checkbox" class="checkproblemas" id="diabm">
+        </div>
+
+        <div class="sub_dia">
+            <label for="HIPERGLICEMIA">HIPERGLICEMIA</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="sub_dia">
+            <label for="HIPOGLICEMIA">HIPOGLICEMIA</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="problemas">
+            <label for="OBSTÉTRICO" class="labelproblemas">OBSTÉTRICO</label>
+            <input type="checkbox" class="checkproblemas" id="obsm">
+        </div>
+
+        <div class="sub_obs">
+            <label for="PARTO_EMERGENCIAL">PARTO EMERGENCIAL</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="sub_obs">
+            <label for="GESTANTE">GESTANTE</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="sub_obs">
+            <label for="HEMOR.EXCESSIVA">HEMOR. EXCESSIVA</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="problemas">
+            <label for="TRANSPORTE" class="labelproblemas">TRANSPORTE</label>
+            <input type="checkbox" class="checkproblemas" id="transm">
+        </div>
+
+        <div class="sub_trans">
+            <label for="ÁEREO">ÁEREO</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="sub_trans">
+            <label for="CLÍNICO">CLÍNICO</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="sub_trans">
+            <label for="EMERGENCIAL">EMERGENCIAL</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="sub_trans">
+            <label for="PÓS_TRAUMA">PÓS-TRAUMA</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="sub_trans">
+            <label for="SAMU">SAMU</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="sub_trans">
+            <label for="OUTRO">OUTRO</label>
+            <input type="text" class="input_outro">
+        </div>
+
+        <div class="sub_trans">
+            <label for="SEM_REMOÇÃO">SEM REMOÇÃO</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="problemas_outro">
+            <label for="OUTRO" class="label_outro">OUTRO</label>
+            <input type="text" class="input_outro">
+        </div>
+</body>
+
+<script>
+    // ------------------------------RESPIRATÓRIO--------------------------
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var respiratorioCheckbox = document.getElementById('respm');
+        var subProblemasDivs = document.querySelectorAll('.sub_resp');
+
+        respiratorioCheckbox.addEventListener('change', function () {
+            subProblemasDivs.forEach(function (subProblemaDiv) {
+                if (respiratorioCheckbox.checked) {
+                    subProblemaDiv.style.display = 'flex';
+                } else {
+                    subProblemaDiv.style.display = 'none';
+                }
+            });
+        });
+    });
+
+
+// ------------------------------RESPIRATÓRIO--------------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+        var respiratorioCheckbox = document.getElementById('diabm');
+        var subProblemasDivs = document.querySelectorAll('.sub_dia');
+
+        respiratorioCheckbox.addEventListener('change', function () {
+            subProblemasDivs.forEach(function (subProblemaDiv) {
+                if (respiratorioCheckbox.checked) {
+                    subProblemaDiv.style.display = 'flex';
+                } else {
+                    subProblemaDiv.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // ------------------------------OBSTÉTRICO--------------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+        var respiratorioCheckbox = document.getElementById('obsm');
+        var subProblemasDivs = document.querySelectorAll('.sub_obs');
+
+        respiratorioCheckbox.addEventListener('change', function () {
+            subProblemasDivs.forEach(function (subProblemaDiv) {
+                if (respiratorioCheckbox.checked) {
+                    subProblemaDiv.style.display = 'flex';
+                } else {
+                    subProblemaDiv.style.display = 'none';
+                }
+            });
+        });
+    });
+
+
+// ------------------------------TRANSPORTE--------------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+        var respiratorioCheckbox = document.getElementById('transm');
+        var subProblemasDivs = document.querySelectorAll('.sub_trans');
+
+        respiratorioCheckbox.addEventListener('change', function () {
+            subProblemasDivs.forEach(function (subProblemaDiv) {
+                if (respiratorioCheckbox.checked) {
+                    subProblemaDiv.style.display = 'flex';
+                } else {
+                    subProblemaDiv.style.display = 'none';
+                }
+            });
+        });
+    });
+
+</script>
+
+</html>

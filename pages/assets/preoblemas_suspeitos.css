@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    background-color: rgba(185, 213, 237, 0.63);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    height: 50px;
+    background: rgb(40, 132, 150);
+    background: linear-gradient(90deg, rgba(40, 132, 150, 1) 0%, rgba(28, 28, 128, 1) 50%, rgba(40, 132, 150, 1) 100%);
+}
+
+h1 {
+    text-align: center;
+}
+
+/* -------------------------------PROBLEMAS------------------------ */
+
+.problemas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(115, 132, 134);
+}
+
+.labelproblemas {
+    font-size: xx-large;
+    width: 65%;
+}
+
+.checkproblemas {
+    width: 5rem;
+    height: 2rem;
+}
+
+/* -------------------------------RESPIRATÓRIO------------------------ */
+
+.sub_resp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(115, 132, 134);
+    border: 1px solid #fff;
+    display: none;
+}
+
+.sub_resp label {
+    font-size: x-large;
+    width: 65%;
+}
+
+.sub_resp input {
+    width: 5rem;
+    height: 1.5rem;
+}
+
+
+/* -------------------------------DIABETES------------------------ */
+
+.sub_dia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(115, 132, 134);
+    border: 1px solid #fff;
+    display: none;
+}
+
+.sub_dia label {
+    font-size: x-large;
+    width: 65%;
+}
+
+.sub_dia input {
+    width: 5rem;
+    height: 1.5rem;
+}
+
+/* -------------------------------OBSTÉTRICO------------------------ */
+
+.sub_obs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(115, 132, 134);
+    border: 1px solid #fff;
+    display: none;
+}
+
+.sub_obs label {
+    font-size: x-large;
+    width: 65%;
+}
+
+.sub_obs input {
+    width: 5rem;
+    height: 1.5rem;
+}
+
+/* -------------------------------TRANSPORTE------------------------ */
+
+.sub_trans {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(115, 132, 134);
+    border: 1px solid #fff;
+    display: none;
+}
+
+.sub_trans label {
+    font-size: x-large;
+    width: 65%;
+}
+
+.sub_trans input {
+    width: 5rem;
+    height: 1.5rem;
+}
+
+/* ---------------------------PROBLEMAS_OUTRO------------------------ */
+
+.problemas_outro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(115, 132, 134);
+}
+
+.label_outro {
+    font-size: xx-large;
+    width: 60%;
+}
+
+
+.input_outro {
+    background-color: #eee;
+    border: none;
+    font-size: 1rem;
+    border-radius: 1rem;
+    color: black;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+    width: 10%;
+    padding: 0.5rem;
+  }
+  
+  .input_outro:focus {
+    outline-color: rgb(130, 127, 222);
+  }
