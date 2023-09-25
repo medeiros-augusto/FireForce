@@ -19,6 +19,9 @@ body {
    margin-top: 4%;
 }
 
+/* ------------------INPUTS----------------- */
+
+
 .inputs {
     display: flex;
     flex-direction: column;

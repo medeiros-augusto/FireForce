@@ -1,25 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    #btn {
-      cursor: pointer;
-      background-color: rgb(227, 225, 225);
-      border: 1px solid black;
-      border-radius: 5rem;
-      width: 50%;
-      height: 5rem;
-    }
-  </style>
-
-  <script>
-    
-  </script>
+    <title>Menu Suspenso com JS</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <input type="button" id="btn">
+
+  <style>
+    /* A classe 'hidden' é usada para ocultar o menu inicialmente */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Esta classe vai ser usada para mostrar o menu */
+.show {
+    display: block;
+}
+
+  </style>
+  <script>
+    function toggleDropdown() {
+    var dropdown = document.getElementById("dropdown");
+    dropdown.classList.toggle("show"); // Adiciona ou remove a classe 'show'
+}
+
+  </script>
+
+<button onclick="toggleDropdown()">Clique aqui</button>
+
+<div id="dropdown" class="dropdown-content">
+    <a href="#">Opção 1</a>
+    <a href="#">Opção 2</a>
+    <a href="#">Opção 3</a>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
