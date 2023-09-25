@@ -14,8 +14,8 @@ app.use('/pages', express.static('pages'))
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'root',
-    database: 'fireforce',
+    password: '',
+    database: 'firecool',
 });
 //Verifica conexão
 connection.connect(function(err) {
@@ -41,16 +41,13 @@ app.post('/login', (req, res) => {
     let username = req.body.nomelogin;
     let password = req.body.senhalogin;
 
-    connection.query("SELECT * FROM usuario where email_usuario = '" + username + "'", function (err, rows, fields) {
+    connection.query("SELECT * FROM usuario where nome_usuario = '" + username + "'", function (err, rows, fields) {
         console.log("Results:", rows);
         if (!err) {
             if (rows.length > 0) {
 
                 if (rows[0].senha_usuario === password) {
-                    connection.query("SELECT saldo_usuario FROM usuario where email_usuario = '" + username + "'", function (error, results, fields) {
-                        if (error) throw error;
-                        res.send('vai se foder')
-                    });
+                    res.send("VAI SE FODER")
                 } else {
                     res.send('Senha incorreta');
                 }
