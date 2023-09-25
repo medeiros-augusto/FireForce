@@ -167,3 +167,20 @@ h1 {
   .input_outro:focus {
     outline-color: rgb(130, 127, 222);
   }
+
+/* ---------------- ARROW ----------- */
+
+.arrow {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin-top: 1%;
+}
+
+.voltar {
+    margin-right: 70%;
+}
+
+.arrow i {
+    color: #000;
+}
