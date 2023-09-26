@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    background-color: rgba(185, 213, 237, 0.63);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -28,12 +27,14 @@ h1 {
     margin-top: 1%;
     width: 100%;
     height: 5rem;
-    background-color: rgb(115, 132, 134);
+    background-color: rgba(29, 48, 101, 0.651) ;
+    border: 0.5px solid grey;
 }
 
 .labelproblemas {
     font-size: xx-large;
     width: 65%;
+    color: #eee;
 }
 
 .checkproblemas {
@@ -49,9 +50,10 @@ h1 {
     align-items: center;
     width: 100%;
     height: 5rem;
-    background-color: rgb(115, 132, 134);
-    border: 1px solid #fff;
+    border: 0.5px solid grey;
+    background-color: rgba(29, 48, 101, 0.479) ;
     display: none;
+    margin-top: 1px;
 }
 
 .sub_resp label {
@@ -73,9 +75,9 @@ h1 {
     align-items: center;
     width: 100%;
     height: 5rem;
-    background-color: rgb(115, 132, 134);
-    border: 1px solid #fff;
+    border: 0.5px solid grey;
     display: none;
+    margin-top: 1px;
 }
 
 .sub_dia label {
@@ -96,9 +98,9 @@ h1 {
     align-items: center;
     width: 100%;
     height: 5rem;
-    background-color: rgb(115, 132, 134);
-    border: 1px solid #fff;
+    border: 0.5px solid grey;
     display: none;
+    margin-top: 1px;
 }
 
 .sub_obs label {
@@ -119,9 +121,9 @@ h1 {
     align-items: center;
     width: 100%;
     height: 5rem;
-    background-color: rgb(115, 132, 134);
-    border: 1px solid #fff;
+    border: 0.5px solid grey;
     display: none;
+    margin-top: 1px;
 }
 
 .sub_trans label {
@@ -143,7 +145,6 @@ h1 {
     margin-top: 1%;
     width: 100%;
     height: 5rem;
-    background-color: rgb(115, 132, 134);
 }
 
 .label_outro {
