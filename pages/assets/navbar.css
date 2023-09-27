@@ -2,7 +2,7 @@ body {
     margin: 0;  
     height: 100%;
 }
-.container-fluid, nav{
+.container-fluid, nav,footer{
     background-color: #0d6efd;
     color: white;
 }
