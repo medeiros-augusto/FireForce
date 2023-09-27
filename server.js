@@ -49,7 +49,7 @@ app.post('/login', (req, res) => {
                 if (rows[0].senha_usuario === password) {
                     res.send("VAI SE FODER")
                 } else {
-                    res.send('Senha incorreta');
+                    res.send('Login Falhou - Senha incorreta');
                 }
 
             } else {
