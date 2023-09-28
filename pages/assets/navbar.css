@@ -1,9 +1,8 @@
 body {
-    margin: 0;  
-    height: 100%;
+    margin: 0;
 }
 .container-fluid, nav,footer{
-    background-color: #0d6efd;
+    background: linear-gradient(90deg, rgba(40,132,150,1) 0%, rgba(28,28,128,1) 50%, rgba(40,132,150,1) 100%);
     color: white;
 }
 
@@ -11,6 +10,13 @@ body {
     text-align: center;
     margin: 5px;
     margin-bottom: 30px;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 /* ------------------INPUTS----------------- */
