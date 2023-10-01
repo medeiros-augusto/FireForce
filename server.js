@@ -31,12 +31,15 @@ connection.connect(function (err) {
 });
 
 app.post('/', (req,res)=>{
-    connection.query("SELECT * FROM usuario where nome_usuario = '" + req.body.nomelogin + "'", function (err, rows, fields) {
+    global.login = req.body.nomelogin
+    let senha = req.body.senhalogin
+
+    connection.query("SELECT * FROM usuario where nome_usuario = '" + global.login + "'", function (err, rows, fields) {
         if (!err) {
             if (rows.length > 0) {
-                if (rows[0].senha_usuario === req.body.senhalogin) {
-                    req.session.login = req.body.nomelogin
-                    res.render('logadoMEC', {login: req.body.nomelogin})
+                if (rows[0].senha_usuario === senha) {
+                    req.session.login = global.login
+                    res.render('logadoMEC', {login: global.login})
                 } else {
                     res.render('indexMEC')
                 }
@@ -51,8 +54,8 @@ app.post('/', (req,res)=>{
 })
 
 app.get('/', (req,res)=>{
-    if (req.session.login){
-        res.render('logadoMEC')
+    if (!!req.session.login){
+        res.render('logadoMEC', {login: global.login})
     }else{
         res.render('indexMEC')
     }
