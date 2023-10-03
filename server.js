@@ -7,7 +7,7 @@ const port = 3010;
 var path = require('path')
 const app = express()
 
-app.use(session({secret:'bf2buy3b2vu22'}))
+app.use(session({secret:'fodase'}))
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.engine('html', require('ejs').renderFile)
@@ -54,7 +54,7 @@ app.post('/', (req,res)=>{
 })
 
 app.get('/', (req,res)=>{
-    if (!!req.session.login){
+    if (req.session.login){
         res.render('logadoMEC', {login: global.login})
     }else{
         res.render('indexMEC')
