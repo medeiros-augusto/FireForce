@@ -3,14 +3,6 @@
 .navbar, footer {
     background: linear-gradient(90deg, rgba(40, 132, 150, 1) 0%, rgba(28, 28, 128, 1) 50%, rgba(40, 132, 150, 1) 100%);
 }
-
-/* ---------------------CONTAINER--------------------- */
-
-.container {
-    border-radius: 10px;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-}
-
 /* ---------------- DADOS PACIENTES ----------- */
 
 .dados{
