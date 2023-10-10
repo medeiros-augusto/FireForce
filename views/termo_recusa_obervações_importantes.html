@@ -56,13 +56,16 @@
         </div>
     </nav>
     <h1 class="mt-3" style="text-align: center;">Termo De Recusa De Atendimento E/OU Transporte</h1>
-    <div class="container text-center">
+    <div class="container text-center mt-3">
         <div class="upload-container" id="uploadContainer">
             <h5>Clique e Selecione o arquivo</h5>
             <input type="file" class="form-control-file mx-auto" id="inputFile" accept="image/*">
         </div>
         <div id="imagemContainer" class="mt-4"></div>
-
+        <h2 style="text-align: center;">Oberservações Importantes</h2>
+        <div class="input-group mb-3 mt-3">
+            <textarea class="form-control" aria-label="Área de texto" style="resize: none;"></textarea>
+        </div>
         <script>
             function exibirImagem(event) {
                 var inputFile = event.target;
