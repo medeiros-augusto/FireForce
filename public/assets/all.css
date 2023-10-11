@@ -29,3 +29,29 @@
     color: black;
     font-size: large;
 } */
+
+
+/* ------------INSERIR IMG----------------- */
+
+.upload-container {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    transition: border 0.3s;
+}
+
+.upload-container:hover {
+    border: 2px dashed #007bff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.btn-upload {
+    display: block;
+    margin: 0 auto;
+}
