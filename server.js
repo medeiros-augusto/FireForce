@@ -19,7 +19,7 @@ const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
     password: 'root',
-    database: 'firecool',
+    database: 'fireforce',
 });
 
 connection.connect(function (err) {
@@ -31,17 +31,17 @@ connection.connect(function (err) {
 });
 
 app.post('/', (req,res)=>{
-    global.login = req.body.nomelogin
+    global.nomelogin = req.body.nomelogin
     let senha = req.body.senhalogin
 
     connection.query("SELECT * FROM usuario where nome_usuario = '" + global.login + "'", function (err, rows, fields) {
         if (!err) {
             if (rows.length > 0) {
                 if (rows[0].senha_usuario === senha) {
-                    req.session.login = global.login
-                    res.render('logadoMEC', {login: global.login})
+                    req.session.nomelogin = global.nomelogin
+                    res.render('home', {login: global.nomelogin})
                 } else {
-                    res.render('indexMEC')
+                    res.render('login')
                 }
             } else {
                 res.send('Login Falhou - Usuário não cadastrado')
@@ -54,10 +54,10 @@ app.post('/', (req,res)=>{
 })
 
 app.get('/', (req,res)=>{
-    if (req.session.login){
-        res.render('logadoMEC', {login: global.login})
+    if (req.session.nomelogin){
+        res.render('home', {login: global.nomelogin})
     }else{
-        res.render('indexMEC')
+        res.render('login')
     }
 })
 
