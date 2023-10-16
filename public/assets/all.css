@@ -55,3 +55,10 @@ img {
     display: block;
     margin: 0 auto;
 }
+
+
+/* ----------------ARROW------------------ */
+
+i:hover {
+    color: rgb(47, 54, 119)';
+}
