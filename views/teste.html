@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de Seleções</title>
+</head>
+
+<body>
+    <h1>Selecione os Números</h1>
+
+    <label for="numero1">Número 1:</label>
+    <input type="radio" name="numeros" id="numero1" value="5"><br>
+
+    <label for="numero2">Número 2:</label>
+    <input type="radio" name="numeros" id="numero2" value="10"><br>
+
+    <label for="numero3">Número 3:</label>
+    <input type="radio" name="numeros" id="numero3" value="15"><br>
+
+    <label for="resultado">Total:</label>
+    <input type="text" id="resultado" readonly><br>
+
+    <script>
+        // Função para calcular o total
+        function calcularTotal() {
+            var radios = document.querySelectorAll('input[type="radio"]');
+            var total = 0;
+
+            radios.forEach(function(radio) {
+                if (radio.checked) {
+                    total += parseInt(radio.value);
+                }
+            });
+
+            document.getElementById('resultado').value = total;
+        }
+
+        // Adiciona um event listener para cada radio button
+        document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+            radio.addEventListener('change', calcularTotal);
+        });
+    </script>
+</body>
+
+</html>
