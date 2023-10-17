@@ -22,14 +22,6 @@
 }
 
 
-/* ------------------PLACEHODER--------------- */
-
-/* input::placeholder {
-    font-weight: 500;
-    color: black;
-    font-size: large;
-} */
-
 
 /* ------------INSERIR IMG----------------- */
 
@@ -54,4 +46,11 @@ img {
 .btn-upload {
     display: block;
     margin: 0 auto;
+}
+
+
+/* ----------------ARROW------------------ */
+
+i:hover {
+    color: rgb(47, 54, 119)';
 }

@@ -232,11 +232,12 @@
             </div>
         </div>
         <!-- ------------------------------------------------------------------------------------>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3" id="divPai">
             <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="checkbox" value=""
                     id="flexCheckDefault" style="padding: 5%;"></span>
             <input type="text" class="form-control" style="text-align: center;" placeholder="Outro Problema"
                 aria-describedby="basic-addon2">
+            <button class="btn btn-primary" onclick="adicionarConjunto()">Adicionar</button>
         </div>
     </div>
     <script>
@@ -276,6 +277,21 @@
                 conteudoRespiratorio.style.display = this.checked ? 'block' : 'none';
             });
         });
+        // -----------------------------------ADC INPUT----------------------------------
+        function adicionarConjunto() {
+            var divPai = document.getElementById('divPai');
+            var novoInput = document.createElement('div');
+            novoInput.classList.add('input-group', 'mt-3', 'conjunto');
+
+            novoInput.innerHTML = `
+                <span class="input-group-text" id="basic-addon2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;">
+                </span>
+                <input type="text" class="form-control" style="text-align: center;" placeholder="Outro Problema" aria-describedby="basic-addon2">
+            `;
+
+            divPai.appendChild(novoInput);
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
