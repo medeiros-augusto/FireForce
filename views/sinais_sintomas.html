@@ -10,7 +10,81 @@
 </head>
 
 <body>
-    <div class="navbar"></div>
+    <nav class="navbar">
+        <div class="container-fluid">
+          <img src="../public/images/logo_medicina.png" width="35px" height="35px">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/criar_ocorrencia_histórico">Criar Ocorrência/Histórico</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/dados_paciente">Dados do Paciente</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/dados_ocorrencia">Dados da Ocorrência</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/tipo_ocorrencia">Tipo de Ocorrência (Pré-Hospitalar)</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/problemas_suspeitos">Problemas Encontrados Suspeitos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/sinais_sintomas">Sinais e Sintomas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/avaliacao_paciente">Avaliação do Paciente(Glasgow)</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/localizacao_traumas">Localização de Traumas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/forma_conducao">Forma Condução/Vítima Era/Objetos Recolhidos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/decisao_transporte">Decisão Transporte</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/sinais_vitais">Sinais Vitais</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/procedimentos_efetuados">Procedimentos Efetuados</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/anamnese_emergencia_medica">Anamnese da Emergência Médica</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/anamnese_gestacional">Anamnese Gestacional</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/avaliacao_cinematica">Avaliação Cinemática</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/materiais_utilizados_descartaveis">Materiais Ultilizados Descartável</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/materiais_utilizados_hospital">Materiais Ultilizados Deixado no Hospital</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="localhost:3010/termo_recusa">Termo de Recusa de Atendimento e/ou Transporte/Observações Importantes</a>
+                </li>
+            </div>
+          </div>
+        </div>
+      </nav>
     <h1 style="text-align: center;">SINAIS E SINTOMAS</h1>
     <div class="container">
         <div class="input-group mb-3 ">
