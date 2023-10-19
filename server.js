@@ -30,6 +30,127 @@ connection.connect(function (err) {
     }
 });
 
+//--------Login--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/login.html')
+})
+
+//--------Dado Paciente--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/dados_paciente.html')
+})
+
+//--------Dado Ocorrência--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/dados_ocorrencia.html')
+})
+
+//--------Tipo Ocorrência--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/tipo_ocorrencia.html')
+}) 
+
+//--------Problemas Encontrados Suspeito--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/problemas_suspeitos.html')
+})
+
+//--------Sinais Sintomas--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/sinais_sintomas.html')
+})
+
+//--------Avaliação Paciente--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/avaliacao_paciente.html')
+})
+
+//--------Avaliação Paciente MAIOR 5--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/avaliacao_pacienteMaior5.html')
+})
+
+//--------Avaliação Paciente MENOR 5--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/avaliacao_pacienteMenor5.html')
+})
+
+//--------Localização Traumas--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/localizacao_traumas.html')
+})
+
+//--------Forma Condução/Vítima Era/Objetos Recolhidos--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/forma_conducao.html')
+})
+
+//--------Sinais Vitais--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/sinais_vitais.html')
+})
+
+//--------Decisão Transporte--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/decisao_transporte.html')
+})
+
+//--------Procedimentos Efetuados--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/procedimentos_efetuados.html')
+})
+
+//--------Anamnese Emergência Médica--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/anamnese_emergencia_medica.html')
+})
+
+//--------Anamnese Gestacional--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/anamnese_gestacional.html')
+})
+
+//--------Avaliação Cinemática--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/avaliacao_cinematica.html')
+})
+
+//--------Materiais Utlizados Descartáveis--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/materiais_utilizados_descartaveis.html')
+})
+
+//--------Materiais Utlizados Deixados No Hospital--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/materiais_utilizados_hospital.html')
+})
+
+//--------Termo de Recusa/Observações Importantes--------
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/termo_recusa.html')
+})
+
+
 app.post('/', (req,res)=>{
     global.nomelogin = req.body.nomelogin
     let senha = req.body.senhalogin
