@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/preoblemas_suspeitos.css">
+    <link rel="stylesheet" href="../public/assets/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
@@ -98,7 +98,6 @@
         </div>
     </nav>
     <h1 style="text-align: center;">Sinais e sintomas</h1>
-
     <div class="container mt-3">
         <div class="input-group mb-3 ">
             <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
@@ -169,14 +168,15 @@
                 style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
 
         </div>
-        
+
         <div class="input-group mb-3 ">
             <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
-                    id="flexCheckDefault" style="padding: 5%;"></span>
+                    id="flexCheckCianose" style="padding: 5%;"></span>
             <input type="text" class="form-control" placeholder="Cianose" style="text-align: center; "
                 style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
         </div>
-        <div style="display: none;">
+        <!-- ------------------------------------------------------------------------------------------------------------- -->
+        <div style="display: none;" class="cianose">
             <div class="row">
                 <div class="col-md-6">
                     <div class="input-group mb-3">
@@ -206,480 +206,332 @@
 
             </div>
         </div>
-            <div class="input-group mb-3 ">
-                <div class="input-group ">
-                    <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox"
-                            value="" id="flexCheckDefault" style="padding: 5%;"></span>
-                    <input type="text" class="form-control" placeholder="Decorticação" style="text-align: center; "
-                        style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        <div class="input-group mb-3 ">
+            <div class="input-group ">
+                <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox"
+                        value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                <input type="text" class="form-control" placeholder="Decorticação" style="text-align: center; "
+                    style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
 
+            </div>
+        </div>
+        <div class="input-group mb-3 ">
+            <div class="input-group ">
+                <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox"
+                        value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                <input type="text" class="form-control" placeholder="Deformidade" style="text-align: center; "
+                    style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+
+            </div>
+        </div>
+        <div class="input-group mb-3 ">
+            <div class="input-group  ">
+                <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox"
+                        value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                <input type="text" class="form-control" placeholder="Descerebração" style="text-align: center; "
+                    style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+
+            </div>
+        </div>
+        <div class="input-group mb-3 ">
+            <div class="input-group  ">
+                <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox"
+                        value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                <input type="text" class="form-control" placeholder="Desmaio" style="text-align: center; "
+                    style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+
+            </div>
+        </div>
+        <div class="input-group mb-3 ">
+            <div class="input-group  ">
+                <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox"
+                        value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                <input type="text" class="form-control" placeholder="Desvio de traquéia" style="text-align: center; "
+                    style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+
+            </div>
+        </div>
+        <div class="input-group mb-3 ">
+            <div class="input-group  ">
+                <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox"
+                        value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                <input type="text" class="form-control" placeholder="Dispneia" style="text-align: center; "
+                    style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+
+            </div>
+        </div>
+
+
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+
+            <input type="text" class="form-control" placeholder="Dor local" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckEdema" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Edema" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <!-- -------------------------------------------------------------------------------------------------------------------- -->
+        <div style="display: none;" class="edema">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckDefault"></span>
+                        <input type="text" class="form-control" placeholder="Generalizado" style="text-align: center;"
+                            disabled>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckDefault"></span>
+                        <input type="text" class="form-control" placeholder="Localizado" style="text-align: center;"
+                            disabled>
+                    </div>
                 </div>
             </div>
-                <div class="input-group mb-3 ">
-                    <div class="input-group ">
-                        <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox"
-                                value="" id="flexCheckDefault" style="padding: 5%;"></span>
-                        <input type="text" class="form-control" placeholder="Deformidade" style="text-align: center; "
-                            style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2"
-                            disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Estase de jugular" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Face pálida" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Hemorragia interna" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Hemorragia externa" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Hipertensão" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
 
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Hipotensão " style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Náuseas e vómitos " style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Nasoragia " style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Isocoria " style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Óbito" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Otorréia" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Otorragia" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="O.V.A.C.E" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Parada respiratória" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Parada cardíaca" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Priaprismo" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Prurido na pele " style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mb-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckPupila" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Pupilas" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <!-- ------------------------------------------------------------------------------------------------------------- -->
+        <div style="display: none;" class="pupila">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group ">
+                        <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckDefault"></span>
+                        <input type="text" class="form-control" placeholder="Anisocoria" style="text-align: center;"
+                            disabled>
                     </div>
                 </div>
-                    <div class="input-group mb-3 ">
-                        <div class="input-group  ">
-                            <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                    type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
-                            <input type="text" class="form-control" placeholder="Descerebração"
-                                style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
-                                aria-describedby="basic-addon2" disabled>
-
-                        </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group ">
+                    <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
+                            id="flexCheckDefault"></span>
+                    <input type="text" class="form-control" placeholder="Miose" style="text-align: center;" disabled>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckDefault"></span>
+                        <input type="text" class="form-control" placeholder="Isocoria" style="text-align: center;"
+                            disabled>
                     </div>
-                        <div class="input-group mb-3 ">
-                            <div class="input-group  ">
-                                <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
-                                <input type="text" class="form-control" placeholder="Desmaio"
-                                    style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
-                                    aria-describedby="basic-addon2" disabled>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckDefault"></span>
+                        <input type="text" class="form-control" placeholder="Midriase" style="text-align: center;"
+                            disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckDefault"></span>
+                        <input type="text" class="form-control" placeholder="Reagente" style="text-align: center;"
+                            disabled>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group mt-3">
+                        <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckDefault"></span>
+                        <input type="text" class="form-control" placeholder="Não reagente" style="text-align: center;"
+                            disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mt-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Sudorese " style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mt-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Taquipneia" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mt-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Taquicardia" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        </div>
+        <div class="input-group mt-3 ">
+            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault" style="padding: 5%;"></span>
+            <input type="text" class="form-control" placeholder="Tontura" style="text-align: center; "
+                style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+            <div class="input-group mt-3" id="inputs-container">
+                <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="checkbox"
+                        value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                <input type="text" class="form-control" placeholder="Outro" style="text-align: center;">
+            </div>
+        </div>
+    </div>
 
-                            </div>
-                        </div>
-                            <div class="input-group mb-3 ">
-                                <div class="input-group  ">
-                                    <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                            type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
-                                    <input type="text" class="form-control" placeholder="Desvio de traquéia"
-                                        style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
-                                        aria-describedby="basic-addon2" disabled>
+        <!-- -------------------ARROW-------------- -->
 
-                                </div>
-                            </div>
-                                <div class="input-group mb-3 ">
-                                    <div class="input-group  ">
-                                        <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                                type="checkbox" value="" id="flexCheckDefault"
-                                                style="padding: 5%;"></span>
-                                        <input type="text" class="form-control" placeholder="Dispneia"
-                                            style="text-align: center; " style="display: none;"
-                                            aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+        <div class="arrow">
+            <div class="voltar">
+                <a href="#"><i class="bi bi-chevron-left"></i></a>
+            </div>
 
-                                    </div>
-                                </div>
-
-
-                                    <div class="input-group mb-3 ">
-                                        <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                                type="checkbox" value="" id="flexCheckDefault"
-                                                style="padding: 5%;"></span>
-
-                                        <input type="text" class="form-control" placeholder="Dor local"
-                                            style="text-align: center; " style="display: none;"
-                                            aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                                    </div>
-                                    <div class="input-group mb-3 ">
-                                        <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                                type="checkbox" value="" id="flexCheckDefault"
-                                                style="padding: 5%;"></span>
-                                        <input type="text" class="form-control" placeholder="Edema"
-                                            style="text-align: center; " style="display: none;"
-                                            aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                                    </div>
-                                    <div style="display: none;">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="input-group mb-3">
-                                                    <span class="input-group-text"><input class="form-check-input"
-                                                            type="checkbox" value="" id="flexCheckDefault"></span>
-                                                    <input type="text" class="form-control" placeholder="Generalizado"
-                                                        style="text-align: center;" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="input-group mb-3">
-                                                    <span class="input-group-text"><input class="form-check-input"
-                                                            type="checkbox" value="" id="flexCheckDefault"></span>
-                                                    <input type="text" class="form-control" placeholder="Localizado"
-                                                        style="text-align: center;" disabled>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="input-group mb-3 ">
-                                        <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                                type="checkbox" value="" id="flexCheckDefault"
-                                                style="padding: 5%;"></span>
-                                        <input type="text" class="form-control" placeholder="Estase de jugular"
-                                            style="text-align: center; " style="display: none;"
-                                            aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-
-                                    </div>
-                                    <div class="input-group mb-3 ">
-                                        <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                                type="checkbox" value="" id="flexCheckDefault"
-                                                style="padding: 5%;"></span>
-                                        <input type="text" class="form-control" placeholder="Face pálida"
-                                            style="text-align: center; " style="display: none;"
-                                            aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-
-                                    </div>
-                                    <div class="input-group mb-3 ">
-                                        <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                                type="checkbox" value="" id="flexCheckDefault"
-                                                style="padding: 5%;"></span>
-                                        <input type="text" class="form-control" placeholder="Hemorragia interna"
-                                            style="text-align: center; " style="display: none;"
-                                            aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-
-                                    </div>
-                                    <div class="input-group mb-3 ">
-                                        <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                                type="checkbox" value="" id="flexCheckDefault"
-                                                style="padding: 5%;"></span>
-                                        <input type="text" class="form-control" placeholder="Hemorragia externa"
-                                            style="text-align: center; " style="display: none;"
-                                            aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-
-                                    </div>
-                                    <div class="input-group mb-3 ">
-                                        <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                                type="checkbox" value="" id="flexCheckDefault"
-                                                style="padding: 5%;"></span>
-                                        <input type="text" class="form-control" placeholder="Hipertensão"
-                                            style="text-align: center; " style="display: none;"
-                                            aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-
-                                    </div>
-
-
-                                    <div class="input-group mb-3 ">
-                                        <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                                type="checkbox" value="" id="flexCheckDefault"
-                                                style="padding: 5%;"></span>
-
-                                        <input type="text" class="form-control" placeholder="Hipotensão "
-                                            style="text-align: center; " style="display: none;"
-                                            aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-
-                                        </div>
-
-
-
-                                        <div class="input-group mb-3 ">
-                                            <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                                    type="checkbox" value="" id="flexCheckDefault"
-                                                    style="padding: 5%;"></span>
+            <div class="proximo">
+                <a href="#"><i class="bi bi-chevron-right"></i></a>
+            </div>
+        </div>
     
-                                            <input type="text" class="form-control" placeholder="Náuseas e vómitos "
-                                                style="text-align: center; " style="display: none;"
-                                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-    
-                                            </div>
-                                            <div class="input-group mb-3 ">
-                                                <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                                        type="checkbox" value="" id="flexCheckDefault"
-                                                        style="padding: 5%;"></span>
-        
-                                                <input type="text" class="form-control" placeholder="Nasoragia "
-                                                    style="text-align: center; " style="display: none;"
-                                                    aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-        
-                                                </div>
-                                                <div class="input-group mb-3 ">
-                                                    <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                                            type="checkbox" value="" id="flexCheckDefault"
-                                                            style="padding: 5%;"></span>
-            
-                                                    <input type="text" class="form-control" placeholder="Isocoria "
-                                                        style="text-align: center; " style="display: none;"
-                                                        aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-            
-                                                    </div>
+    <script>
+         // -----------------------------------Cianose----------------------------------
+         document.addEventListener('DOMContentLoaded', function () {
+            const checkboxTransporte = document.getElementById('flexCheckCianose');
+            const conteudoTransporte = document.querySelector('.cianose');
 
+            checkboxTransporte.addEventListener('change', function () {
+                conteudoTransporte.style.display = this.checked ? 'block' : 'none';
+            });
+        });
+        // -----------------------------------Edema----------------------------------
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkboxTransporte = document.getElementById('flexCheckEdema');
+            const conteudoTransporte = document.querySelector('.edema');
 
-                                        <div class="input-group mb-3 ">
-                                            <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault" style="padding: 5%;"></span>
-                                            <input type="text" class="form-control" placeholder="Óbito"
-                                                style="text-align: center; " style="display: none;"
-                                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
+            checkboxTransporte.addEventListener('change', function () {
+                conteudoTransporte.style.display = this.checked ? 'block' : 'none';
+            });
+        });
+        // -----------------------------------Pupila----------------------------------
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkboxTransporte = document.getElementById('flexCheckPupila');
+            const conteudoTransporte = document.querySelector('.pupila');
 
-                                        </div>
-                                        <div class="input-group mb-3 ">
-                                            <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault" style="padding: 5%;"></span>
-                                            <input type="text" class="form-control" placeholder="Otorréia"
-                                                style="text-align: center; " style="display: none;"
-                                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-
-                                        </div>
-                                        <div class="input-group mb-3 ">
-                                            <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault" style="padding: 5%;"></span>
-                                            <input type="text" class="form-control" placeholder="Otorragia"
-                                                style="text-align: center; " style="display: none;"
-                                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-
-                                        </div>
-                                        <div class="input-group mb-3 ">
-                                            <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault" style="padding: 5%;"></span>
-                                            <input type="text" class="form-control" placeholder="O.V.A.C.E"
-                                                style="text-align: center; " style="display: none;"
-                                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-
-                                        </div>
-                                        <div class="input-group mb-3 ">
-                                            <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault" style="padding: 5%;"></span>
-                                            <input type="text" class="form-control" placeholder="Parada respiratória"
-                                                style="text-align: center; " style="display: none;"
-                                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-
-                                        </div>
-                                        <div class="input-group mb-3 ">
-                                            <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault" style="padding: 5%;"></span>
-                                            <input type="text" class="form-control" placeholder="Parada cardíaca"
-                                                style="text-align: center; " style="display: none;"
-                                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-
-                                        </div>
-                                        <div class="input-group mb-3 ">
-                                            <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault" style="padding: 5%;"></span>
-                                            <input type="text" class="form-control" placeholder="Priaprismo"
-                                                style="text-align: center; " style="display: none;"
-                                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-
-                                        </div>
-                                        <div class="input-group mb-3 ">
-                                            <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault" style="padding: 5%;"></span>
-                                            <input type="text" class="form-control" placeholder="Prurido na pele "
-                                                style="text-align: center; " style="display: none;"
-                                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-
-                                        </div>
-
-                                        <div class="input-group mb-3 ">
-                                            <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault" style="padding: 5%;"></span>
-
-                                            <input type="text" class="form-control" placeholder="Pupilas"
-                                                style="text-align: center; " style="display: none;"
-                                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                                            </div>
-                                            <div style="display: none;">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="input-group ">
-                                                        <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
-                                                                id="flexCheckDefault"></span>
-                                                        <input type="text" class="form-control" placeholder="Anisocoria" style="text-align: center;"
-                                                            disabled>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                <div class="col-md-6">
-                                                    <div class="input-group ">
-                                                        <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
-                                                                id="flexCheckDefault"></span>
-                                                        <input type="text" class="form-control" placeholder="Miose" style="text-align: center;"
-                                                            disabled>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="input-group mt-3">
-                                                        <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
-                                                                id="flexCheckDefault"></span>
-                                                        <input type="text" class="form-control" placeholder="Isocoria" style="text-align: center;"
-                                                            disabled>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="input-group mt-3">
-                                                        <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
-                                                                id="flexCheckDefault"></span>
-                                                        <input type="text" class="form-control" placeholder="Midriase" style="text-align: center;"
-                                                            disabled>
-                                                    </div>
-                                                </div>
-                                              </div>
-                                              <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="input-group mt-3">
-                                                        <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
-                                                                id="flexCheckDefault"></span>
-                                                        <input type="text" class="form-control" placeholder="Reagente" style="text-align: center;"
-                                                            disabled>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="input-group mt-3">
-                                                        <span class="input-group-text"><input class="form-check-input" type="checkbox" value=""
-                                                                id="flexCheckDefault"></span>
-                                                        <input type="text" class="form-control" placeholder="Não reagente" style="text-align: center;"
-                                                            disabled>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                            <div class="input-group mt-3 ">
-                                                <span class="input-group-text" id="basic-addon2"><input
-                                                        class="form-check-input" type="checkbox" value=""
-                                                        id="flexCheckDefault" style="padding: 5%;"></span>
-                                                <input type="text" class="form-control" placeholder="Sudorese "
-                                                    style="text-align: center; " style="display: none;"
-                                                    aria-label="Nome do usuário" aria-describedby="basic-addon2"
-                                                    disabled>
-
-                                            </div>
-                                            <div class="input-group mt-3 ">
-                                                <span class="input-group-text" id="basic-addon2"><input
-                                                        class="form-check-input" type="checkbox" value=""
-                                                        id="flexCheckDefault" style="padding: 5%;"></span>
-                                                <input type="text" class="form-control" placeholder="Taquipneia"
-                                                    style="text-align: center; " style="display: none;"
-                                                    aria-label="Nome do usuário" aria-describedby="basic-addon2"
-                                                    disabled>
-
-                                            </div>
-                                            <div class="input-group mt-3 ">
-                                                <span class="input-group-text" id="basic-addon2"><input
-                                                        class="form-check-input" type="checkbox" value=""
-                                                        id="flexCheckDefault" style="padding: 5%;"></span>
-                                                <input type="text" class="form-control" placeholder="Taquicardia"
-                                                    style="text-align: center; " style="display: none;"
-                                                    aria-label="Nome do usuário" aria-describedby="basic-addon2"
-                                                    disabled>
-
-                                            </div>
-                                            <div class="input-group mt-3 ">
-                                                <span class="input-group-text" id="basic-addon2"><input
-                                                        class="form-check-input" type="checkbox" value=""
-                                                        id="flexCheckDefault" style="padding: 5%;"></span>
-                                                <input type="text" class="form-control" placeholder="Tontura"
-                                                    style="text-align: center; " style="display: none;"
-                                                    aria-label="Nome do usuário" aria-describedby="basic-addon2"
-                                                    disabled>
-
-                                                <div class="input-group mt-3" id="inputs-container">
-                                                    <span class="input-group-text" id="basic-addon2 "><input
-                                                            class="form-check-input" type="checkbox" value=""
-                                                            id="flexCheckDefault" style="padding: 5%;"></span>
-                                                    <input type="text" class="form-control" placeholder="Outro"
-                                                        style="text-align: center;">
-
-                                                    </input>
-                                                </div>
-
-
-
-
-
-
-                                            </div>
-
-
-                                            <!-- -------------------ARROW-------------- -->
-
-                                            <div class="arrow">
-                                                <div class="voltar">
-                                                    <a href="#"><i class="bi bi-chevron-left"></i></a>
-                                                </div>
-
-                                                <div class="proximo">
-                                                    <a href="#"><i class="bi bi-chevron-right"></i></a>
-                                                </div>
-                                            </div>
-
+            checkboxTransporte.addEventListener('change', function () {
+                conteudoTransporte.style.display = this.checked ? 'block' : 'none';
+            });
+        });
+    </script>
 </body>
-
-<script>
-    // ------------------------------RESPIRATÓRIO--------------------------
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var respiratorioCheckbox = document.getElementById('respm');
-        var subProblemasDivs = document.querySelectorAll('.sub_resp');
-
-        respiratorioCheckbox.addEventListener('change', function () {
-            subProblemasDivs.forEach(function (subProblemaDiv) {
-                if (respiratorioCheckbox.checked) {
-                    subProblemaDiv.style.display = 'flex';
-                } else {
-                    subProblemaDiv.style.display = 'none';
-                }
-            });
-        });
-    });
-
-
-    // ------------------------------RESPIRATÓRIO--------------------------
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var respiratorioCheckbox = document.getElementById('diabm');
-        var subProblemasDivs = document.querySelectorAll('.sub_dia');
-
-        respiratorioCheckbox.addEventListener('change', function () {
-            subProblemasDivs.forEach(function (subProblemaDiv) {
-                if (respiratorioCheckbox.checked) {
-                    subProblemaDiv.style.display = 'flex';
-                } else {
-                    subProblemaDiv.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    // ------------------------------OBSTÉTRICO--------------------------
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var respiratorioCheckbox = document.getElementById('obsm');
-        var subProblemasDivs = document.querySelectorAll('.sub_obs');
-
-        respiratorioCheckbox.addEventListener('change', function () {
-            subProblemasDivs.forEach(function (subProblemaDiv) {
-                if (respiratorioCheckbox.checked) {
-                    subProblemaDiv.style.display = 'flex';
-                } else {
-                    subProblemaDiv.style.display = 'none';
-                }
-            });
-        });
-    });
-
-
-    // ------------------------------TRANSPORTE--------------------------
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var respiratorioCheckbox = document.getElementById('transm');
-        var subProblemasDivs = document.querySelectorAll('.sub_trans');
-
-        respiratorioCheckbox.addEventListener('change', function () {
-            subProblemasDivs.forEach(function (subProblemaDiv) {
-                if (respiratorioCheckbox.checked) {
-                    subProblemaDiv.style.display = 'flex';
-                } else {
-                    subProblemaDiv.style.display = 'none';
-                }
-            });
-        });
-    });
-
-</script>
-<!-------------------- CHECKBOX ----------------------->
-
-
 </html>
