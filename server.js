@@ -18,8 +18,8 @@ app.set('views', path.join(__dirname, '/views'))
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: '',
-    database: 'fireforce',
+    password: 'root',
+    database: 'noar',
 });
 
 connection.connect(function (err) {
