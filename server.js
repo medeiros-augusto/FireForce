@@ -18,8 +18,8 @@ app.set('views', path.join(__dirname, '/views'))
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: '',
-    database: 'fireforce',
+    password: 'root',
+    database: 'noar',
 });
 
 
@@ -31,137 +31,135 @@ connection.connect(function (err) {
     }
 });
 
-//--------Login--------
-
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/login.html')
-})
-
 //--------Dado Paciente--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/dados_paciente.html')
+app.get('/dados_paciente', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('dados_paciente')
+    }else{
+        res.render('login')
+    }
 })
 
-//--------Dado Ocorrência--------
+// //--------Dado Ocorrência--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/dados_ocorrencia.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/dados_ocorrencia.html')
+// })
 
-//--------Tipo Ocorrência--------
+// //--------Tipo Ocorrência--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/tipo_ocorrencia.html')
-}) 
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/tipo_ocorrencia.html')
+// }) 
 
-//--------Problemas Encontrados Suspeito--------
+// //--------Problemas Encontrados Suspeito--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/problemas_suspeitos.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/problemas_suspeitos.html')
+// })
 
-//--------Sinais Sintomas--------
+// //--------Sinais Sintomas--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/sinais_sintomas.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/sinais_sintomas.html')
+// })
 
-//--------Avaliação Paciente--------
+// //--------Avaliação Paciente--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/avaliacao_paciente.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/avaliacao_paciente.html')
+// })
 
-//--------Avaliação Paciente MAIOR 5--------
+// //--------Avaliação Paciente MAIOR 5--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/avaliacao_pacienteMaior5.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/avaliacao_pacienteMaior5.html')
+// })
 
-//--------Avaliação Paciente MENOR 5--------
+// //--------Avaliação Paciente MENOR 5--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/avaliacao_pacienteMenor5.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/avaliacao_pacienteMenor5.html')
+// })
 
-//--------Localização Traumas--------
+// //--------Localização Traumas--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/localizacao_traumas.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/localizacao_traumas.html')
+// })
 
-//--------Forma Condução/Vítima Era/Objetos Recolhidos--------
+// //--------Forma Condução/Vítima Era/Objetos Recolhidos--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/forma_conducao.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/forma_conducao.html')
+// })
 
-//--------Sinais Vitais--------
+// //--------Sinais Vitais--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/sinais_vitais.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/sinais_vitais.html')
+// })
 
-//--------Decisão Transporte--------
+// //--------Decisão Transporte--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/decisao_transporte.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/decisao_transporte.html')
+// })
 
-//--------Procedimentos Efetuados--------
+// //--------Procedimentos Efetuados--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/procedimentos_efetuados.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/procedimentos_efetuados.html')
+// })
 
-//--------Anamnese Emergência Médica--------
+// //--------Anamnese Emergência Médica--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/anamnese_emergencia_medica.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/anamnese_emergencia_medica.html')
+// })
 
-//--------Anamnese Gestacional--------
+// //--------Anamnese Gestacional--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/anamnese_gestacional.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/anamnese_gestacional.html')
+// })
 
-//--------Avaliação Cinemática--------
+// //--------Avaliação Cinemática--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/avaliacao_cinematica.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/avaliacao_cinematica.html')
+// })
 
-//--------Materiais Utlizados Descartáveis--------
+// //--------Materiais Utlizados Descartáveis--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/materiais_utilizados_descartaveis.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/materiais_utilizados_descartaveis.html')
+// })
 
-//--------Materiais Utlizados Deixados No Hospital--------
+// //--------Materiais Utlizados Deixados No Hospital--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/materiais_utilizados_hospital.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/materiais_utilizados_hospital.html')
+// })
 
-//--------Termo de Recusa/Observações Importantes--------
+// //--------Termo de Recusa/Observações Importantes--------
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/termo_recusa.html')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/termo_recusa.html')
+// })
 
 
 app.post('/', (req,res)=>{
     global.nomelogin = req.body.nomelogin
     let senha = req.body.senhalogin
 
-    connection.query("SELECT * FROM usuario where nome_usuario = '" + global.login + "'", function (err, rows, fields) {
+    connection.query("SELECT * FROM usuario where nome_usuario = '" + global.nomelogin + "'", function (err, rows, fields) {
         if (!err) {
             if (rows.length > 0) {
                 if (rows[0].senha_usuario === senha) {
                     req.session.nomelogin = global.nomelogin
-                    res.render('home', {login: global.nomelogin})
+                    res.render('criar_ocorrencia_historico', {login: global.nomelogin})
                 } else {
                     res.render('login')
                 }
@@ -177,7 +175,7 @@ app.post('/', (req,res)=>{
 
 app.get('/', (req,res)=>{
     if (req.session.nomelogin){
-        res.render('home', {login: global.nomelogin})
+        res.render('criar_ocorrencia_historico', {login: global.nomelogin})
     }else{
         res.render('login')
     }
