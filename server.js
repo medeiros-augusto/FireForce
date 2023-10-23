@@ -22,6 +22,7 @@ const connection = mysql.createConnection({
     database: 'fireforce',
 });
 
+
 connection.connect(function (err) {
     if (!err) {
         console.log("Conexão como o Banco realizada com sucesso!!!")
