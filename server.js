@@ -41,113 +41,184 @@ app.get('/dados_paciente', (req, res) => {
     }
 })
 
-// //--------Dado Ocorrência--------
+//--------Dado Ocorrência--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/dados_ocorrencia.html')
-// })
+app.get('/dados_ocorrencia', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('dados_ocorrencia')
+    }else{
+        res.render('login')
+    }
+})
 
-// //--------Tipo Ocorrência--------
+//--------Tipo Ocorrência--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/tipo_ocorrencia.html')
-// }) 
+app.get('/tipo_ocorrencia', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('tipo_ocorrencia')
+    }else{
+        res.render('login')
+    }
+})
 
-// //--------Problemas Encontrados Suspeito--------
+//--------Problemas Encontrados Suspeito--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/problemas_suspeitos.html')
-// })
+app.get('/probelmas_suspeitos', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('probelmas_suspeitos')
+    }else{
+        res.render('login')
+    }
+})
 
-// //--------Sinais Sintomas--------
+//--------Sinais Sintomas--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/sinais_sintomas.html')
-// })
+app.get('/sinais_sintomas', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('sinais_sintomas')
+    }else{
+        res.render('login')
+    }
+})
 
-// //--------Avaliação Paciente--------
+//--------Avaliação Paciente--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/avaliacao_paciente.html')
-// })
+app.get('/avaliacao_paciente', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('avaliacao_paciente')
+    }else{
+        res.render('login')
+    }
+})
 
-// //--------Avaliação Paciente MAIOR 5--------
+//--------Avaliação Paciente MAIOR 5--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/avaliacao_pacienteMaior5.html')
-// })
+app.get('/avaliacao_pacienteMaior5', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('avaliacao_pacienteMaior5')
+    }else{
+        res.render('login')
+    }
+})
 
-// //--------Avaliação Paciente MENOR 5--------
+//--------Avaliação Paciente MENOR 5--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/avaliacao_pacienteMenor5.html')
-// })
+app.get('/avaliacao_pacienteMenor5', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('avaliacao_pacienteMenor5')
+    }else{
+        res.render('login')
+    }
+})
 
-// //--------Localização Traumas--------
+//--------Localização Traumas--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/localizacao_traumas.html')
-// })
+app.get('/localizacao_traumas', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('localizacao_traumas')
+    }else{
+        res.render('login')
+    }
+})
 
-// //--------Forma Condução/Vítima Era/Objetos Recolhidos--------
+//--------Forma Condução/Vítima Era/Objetos Recolhidos--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/forma_conducao.html')
-// })
+app.get('/forma_conducao', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('forma_conducao')
+    }else{
+        res.render('login')
+    }
+})
 
-// //--------Sinais Vitais--------
+//--------Sinais Vitais--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/sinais_vitais.html')
-// })
+app.get('/sinais_vistos', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('sinais_vistos')
+    }else{
+        res.render('login')
+    }
+})
 
-// //--------Decisão Transporte--------
+//--------Decisão Transporte--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/decisao_transporte.html')
-// })
+app.get('/decisao_transporte', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('sinais_vistos')
+    }else{
+        res.render('login')
+    }
+})
 
-// //--------Procedimentos Efetuados--------
+//--------Procedimentos Efetuados--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/procedimentos_efetuados.html')
-// })
+app.get('/procedimentos_efetuados', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('procedimentos_efetuados')
+    }else{
+        res.render('login')
+    }
+})
 
-// //--------Anamnese Emergência Médica--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/anamnese_emergencia_medica.html')
-// })
+//--------Anamnese Emergência Médica--------
 
-// //--------Anamnese Gestacional--------
+app.get('/anamnese_emergencia_medica', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('anamnese_emergencia_medica')
+    }else{
+        res.render('login')
+    }
+})
+//--------Anamnese Gestacional--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/anamnese_gestacional.html')
-// })
+app.get('/anamnese_gestacional', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('anamnese_gestacional')
+    }else{
+        res.render('login')
+    }
+})
+//--------Avaliação Cinemática--------
 
-// //--------Avaliação Cinemática--------
+app.get('/avaliacao_cinematica', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('avaliacao_cinematica')
+    }else{
+        res.render('login')
+    }
+})
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/avaliacao_cinematica.html')
-// })
+//--------Materiais Utlizados Descartáveis--------
 
-// //--------Materiais Utlizados Descartáveis--------
+app.get('/materiais_utilizados_descartaveis', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('materiais_utilizados_descartaveis')
+    }else{
+        res.render('login')
+    }
+})
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/materiais_utilizados_descartaveis.html')
-// })
+//--------Materiais Utlizados Deixados No Hospital--------
 
-// //--------Materiais Utlizados Deixados No Hospital--------
-
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/materiais_utilizados_hospital.html')
-// })
+app.get('/materiais_utilizados_hospital', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('materiais_utilizados_hospital')
+    }else{
+        res.render('login')
+    }
+})
 
 // //--------Termo de Recusa/Observações Importantes--------
 
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/termo_recusa.html')
-// })
+app.get('/termo_recusa', (req, res) => {
+    if (req.session.nomelogin){
+        res.render('/termo_recusa')
+    }else{
+        res.render('login')
+    }
+})
 
 
 app.post('/', (req,res)=>{
