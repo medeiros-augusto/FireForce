@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, '/views'))
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'noar',
 });
 
@@ -63,9 +63,9 @@ app.get('/tipo_ocorrencia', (req, res) => {
 
 //--------Problemas Encontrados Suspeito--------
 
-app.get('/probelmas_suspeitos', (req, res) => {
+app.get('/problemas_suspeitos', (req, res) => {
     if (req.session.nomelogin){
-        res.render('probelmas_suspeitos')
+        res.render('problemas_suspeitos')
     }else{
         res.render('login')
     }
@@ -220,8 +220,23 @@ app.get('/termo_recusa', (req, res) => {
     }
 })
 
+app.get('/', (req,res)=>{
+    if (req.session.nomelogin){
+        res.render('criar_ocorrencia_historico', {login: global.nomelogin})
+    }else{
+        res.render('login')
+    }
+})
 
-app.post('/', (req,res)=>{
+app.get('/criar_usuario', (req, res) =>{
+    if (req.session.nomelogin === 'adm'){
+        res.render('criar_usuario')
+    }else{
+        res.send("[ERRO] Usuário logado não é Administrador!")
+    }
+})
+
+app.post('/', (req, res) =>{
     global.nomelogin = req.body.nomelogin
     let senha = req.body.senhalogin
 
@@ -244,13 +259,33 @@ app.post('/', (req,res)=>{
     })
 })
 
-app.get('/', (req,res)=>{
-    if (req.session.nomelogin){
-        res.render('criar_ocorrencia_historico', {login: global.nomelogin})
-    }else{
-        res.render('login')
+app.post('/criar_usuario', (req, res) => {
+    const login = req.body.login;
+    const senha = req.body.senha;
+    const confirmasenha = req.body.confirmasenha;
+
+    if (login.length > 0) {
+        if (senha === confirmasenha) {
+            const sql = "INSERT INTO usuario (nome_usuario, senha_usuario) VALUES (?, ?)";
+            connection.query(sql, [login, senha], function (err, result) {
+                if (!err) {
+                    console.log("Usuário cadastrado com sucesso!");
+                    res.render('criar_usuario');
+                } else {
+                    console.log("Erro ao inserir no banco de dados:", err);
+                    res.status(500).send("Erro ao cadastrar usuário");
+                }
+            });
+        } else {
+            console.log("Erro ao confirmar senha!");
+            res.render('criar_usuario');
+        }
+    } else {
+        console.log("Login não preenchido");
+        res.render('criar_usuario');
     }
-})
+});
+
 
 app.listen(port, ()=>{
     console.log(`Servidor Rodando na porta ${port}`)
