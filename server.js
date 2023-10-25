@@ -220,6 +220,20 @@ app.get('/termo_recusa', (req, res) => {
     }
 })
 
+app.get('/usuarios', (req, res) => {
+    res.render('usuarios.html');
+  });
+  
+  app.get('/getUsers', (req, res) => {
+    connection.query('SELECT id_usuario, nome_usuario, senha_usuario FROM usuario', (error, results) => {
+      if (error) {
+        res.status(500).json({ error: 'Erro ao buscar dados do banco de dados' });
+      } else {
+        res.status(200).json(results);
+      }
+    });
+  });
+
 app.get('/', (req,res)=>{
     if(req.session.nomelogin == 'adm'){
         res.render('painel_adm')
