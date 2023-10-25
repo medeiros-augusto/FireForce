@@ -221,7 +221,9 @@ app.get('/termo_recusa', (req, res) => {
 })
 
 app.get('/', (req,res)=>{
-    if (req.session.nomelogin){
+    if(req.session.nomelogin == 'adm'){
+        res.render('painel_adm')
+    }else if (req.session.nomelogin == true){
         res.render('criar_ocorrencia_historico', {login: global.nomelogin})
     }else{
         res.render('login')
@@ -245,7 +247,11 @@ app.post('/', (req, res) =>{
             if (rows.length > 0) {
                 if (rows[0].senha_usuario === senha) {
                     req.session.nomelogin = global.nomelogin
-                    res.render('criar_ocorrencia_historico', {login: global.nomelogin})
+                    if (req.session.nomelogin == 'adm'){
+                        res.render('painel_adm', {login: global.nomelogin})
+                    }else{
+                        res.render('criar_ocorrencia_historico', {login: global.nomelogin})
+                    }
                 } else {
                     res.render('login')
                 }
