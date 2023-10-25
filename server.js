@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, '/views'))
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: '',
+    password: 'root',
     database: 'noar',
 });
 
@@ -133,9 +133,9 @@ app.get('/forma_conducao', (req, res) => {
 
 //--------Sinais Vitais--------
 
-app.get('/sinais_vistos', (req, res) => {
+app.get('/sinais_vitais', (req, res) => {
     if (req.session.nomelogin){
-        res.render('sinais_vistos')
+        res.render('sinais_vitais')
     }else{
         res.render('login')
     }
@@ -145,7 +145,7 @@ app.get('/sinais_vistos', (req, res) => {
 
 app.get('/decisao_transporte', (req, res) => {
     if (req.session.nomelogin){
-        res.render('sinais_vistos')
+        res.render('decisao_transporte')
     }else{
         res.render('login')
     }
@@ -214,14 +214,18 @@ app.get('/materiais_utilizados_hospital', (req, res) => {
 
 app.get('/termo_recusa', (req, res) => {
     if (req.session.nomelogin){
-        res.render('/termo_recusa')
+        res.render('termo_recusa')
     }else{
         res.render('login')
     }
 })
 
 app.get('/usuarios', (req, res) => {
-    res.render('usuarios.html');
+    if (req.session.nomelogin == 'adm'){
+        res.render('usuarios');
+    }else (
+        res.send("[ERRO] Usuário logado não é Administrador!")
+    )
   });
   
   app.get('/getUsers', (req, res) => {
@@ -290,7 +294,7 @@ app.post('/criar_usuario', (req, res) => {
             connection.query(sql, [login, senha], function (err, result) {
                 if (!err) {
                     console.log("Usuário cadastrado com sucesso!");
-                    res.render('criar_usuario');
+                    res.render('painel_adm');
                 } else {
                     console.log("Erro ao inserir no banco de dados:", err);
                     res.status(500).send("Erro ao cadastrar usuário");
