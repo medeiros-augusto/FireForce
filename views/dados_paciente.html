@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Dados do Paciente</title>
+  <link rel="icon" href="../public/images/logo.png">
   <link rel="stylesheet" href="../public/assets/all.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -75,19 +76,23 @@
               <a class="nav-link" href="localhost:3010/avaliacao_cinematica">Avaliação Cinemática</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="localhost:3010/materiais_utilizados_descartaveis">Materiais Ultilizados Descartável</a>
+              <a class="nav-link" href="localhost:3010/materiais_utilizados_descartaveis">Materiais Ultilizados
+                Descartável</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="localhost:3010/materiais_utilizados_hospital">Materiais Ultilizados Deixado no Hospital</a>
+              <a class="nav-link" href="localhost:3010/materiais_utilizados_hospital">Materiais Ultilizados Deixado no
+                Hospital</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="localhost:3010/termo_recusa">Termo de Recusa de Atendimento e/ou Transporte/Observações Importantes</a>
+              <a class="nav-link" href="localhost:3010/termo_recusa">Termo de Recusa de Atendimento e/ou
+                Transporte/Observações Importantes</a>
             </li>
         </div>
       </div>
     </div>
   </nav>
 
+<<<<<<< HEAD
     <div class="container mt-3">
       <h1 style="text-align: center;">Dados Paciente</h1>
       <div class=" mt-3 ml-2 mr-2">
@@ -130,54 +135,178 @@
                 placeholder="Ex: ... 17 anos">
             </div>
             <label class="visually-hidden" for="specificSizeInputGroupUsername">Nome Acompanhante</label>
+=======
+  <div class="container mt-3">
+    <h1 style="text-align: center;">Dados Paciente</h1>
+    <div class=" mt-3 ml-2 mr-2">
+      <form action="/dadospaciente" method="post">
+        <div class="inputs">
+          <label class="visually-hidden" for="specificSizeInputGroupUsername">Data</label>
+          <div class="input-group">
+            <div class="input-group-text">Data</div>
+            <input type="text" class="form-control" id="date" placeholder="dd/mm/aa">
+          </div>
+          <div class="btn-group mt-3 d-flex justify-content-center" role="group"
+            aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio1">Masculino</label>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio2">Feminino</label>
+          </div>
+          <div class="input-group mt-3">
+            <div class="input-group-text">Nome Hospital</div>
+            <input type="text" class="form-control" id="specificSizeInputGroupUsername"
+              placeholder="Ex: ... Dona Helena">
+          </div>
+          <div class="input-group mt-3">
+            <div class="input-group-text">Nome Paciente</div>
+            <input type="text" class="form-control" id="nomep" placeholder="Ex: ... Augusto Medeiros" id="firstname">
+          </div>
+          <div class="btn-group mt-3" role="group" aria-label="Basic radio toggle button group" style="width: 100%;">
+            <input type="radio" class="btn-check" name="RG_CPF" id="CPF" autocomplete="off">
+            <label class="btn btn-outline-primary" for="CPF">CPF</label>
+            <input type="radio" class="btn-check mb-3" name="RG_CPF" id="RG" autocomplete="off">
+            <label class="btn btn-outline-primary" for="RG">RG</label>
+          </div>
+          <div class="cpf" style="display: none;">
+            <label class="visually-hidden" for="specificSizeInputGroupUsername">CPF</label>
+>>>>>>> aaa70c2812651021ee2329bdc352656a221dbcb0
             <div class="input-group mt-3">
-              <div class="input-group-text">Nome Acompanhante</div>
-              <input type="text" class="form-control" id="specificSizeInputGroupUsername"
-                placeholder="Ex: ... João Michels">
-            </div>
-            <label class="visually-hidden" for="specificSizeInputGroupUsername">Idade Acompanhante</label>
-            <div class="input-group mt-3">
-              <div class="input-group-text">Idade Acompanhante</div>
-              <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Ex: ... 18 anos">
-            </div>
-            <label class="visually-hidden" for="specificSizeInputGroupUsername">Local Ocorrência</label>
-            <div class="input-group mt-3 pb-3">
-              <div class="input-group-text">Local Ocorrência</div>
-              <input type="text" class="form-control" id="specificSizeInputGroupUsername"
-                placeholder="Ex: ... Rua Cidade Sevilha...">
+              <div class="input-group-text">CPF</div>
+              <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
             </div>
           </div>
-        </form>
-      </div>
+          <div class="rg" style="display: none;">
+            <div class="input-group mt-3">
+              <div class="input-group-text">RG</div>
+              <input type="text" class="form-control" id="rg" placeholder="0.000.000">
+            </div>
+          </div>
+          <label class="visually-hidden" for="specificSizeInputGroupUsername">Fone Paciente</label>
+          <div class="input-group mt-3">
+            <div class="input-group-text">Fone Paciente</div>
+            <input type="text" class="form-control" id="number" placeholder="Ex: ... 479982-...">
+          </div>
+          <label class="visually-hidden" for="specificSizeInputGroupUsername">Idade Paciente</label>
+          <div class="input-group mt-3">
+            <div class="input-group-text">Idade Paciente</div>
+            <input type="text" class="form-control" id="idade" placeholder="Ex: ... 17 anos">
+          </div>
+          <div class="input-group mt-3">
+            <div class="input-group-text">Nome Acompanhante</div>
+            <input type="text" class="form-control" id="nomea"
+              placeholder="Ex: ... João Michels">
+          </div>
+          <div class="input-group mt-3">
+            <div class="input-group-text">Idade Acompanhante</div>
+            <input type="text" class="form-control" id="acompidade" placeholder="Ex: ... 18 anos">
+          </div>
+          <div class="input-group mt-3 pb-3">
+            <div class="input-group-text">Local Ocorrência</div>
+            <input type="text" class="form-control" id="specificSizeInputGroupUsername"
+              placeholder="Ex: ... Rua Cidade Sevilha...">
+          </div>
+        </div>
+      </form>
     </div>
+  </div>
   <div class="arrow mb-3">
     <div class="voltar">
-        <a href="login"><i class="bi bi-chevron-left"></i></a>
+      <a href="login"><i class="bi bi-chevron-left"></i></a>
     </div>
 
     <div class="proximo">
-        <a href="dados_ocorrencia"><i class="bi bi-chevron-right"></i></a>
+      <a href="dados_ocorrencia"><i class="bi bi-chevron-right"></i></a>
     </div>
-</div>
+  </div>
 
-<footer class="top-100 start-0 py-3" style="width: 100%; bottom: 0;">
+  <footer class="top-100 start-0 py-3" style="width: 100%; bottom: 0;">
     <div class="container-fluid text-center">
-        <div class="p-1 text-light">&copy; Augusto, JP, Bruski e Guilherme. Todos direitos reservados.</div>
+      <div class="p-1 text-light">&copy; Augusto, JP, Bruski e Guilherme. Todos direitos reservados.</div>
     </div>
-</footer>
-  <!-- Input celular  -->
-
+  </footer>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
   <script>
-      $('#number').mask('(00) 0000-0000');
-  </script>
-  <!-- Input Data  -->
-  <script>
-    $(document).ready(function(){
-    $('#date').mask('00/00/0000')
+    // <!-- Input celular  -->
+
+    $('#number').mask('(00) 0000-0000');
+
+    // <!-- Input Data  -->
+
+    $(document).ready(function () {
+      $('#date').mask('00/00/0000')
+    });
+
+    // <!-- Input cpf  -->
+
+    $(document).ready(function () {
+      $('#cpf').mask('000.000.000-00')
+    });
+
+    // <!-- Input rg  -->
+
+    $(document).ready(function () {
+      $('#rg').mask('0.000.000')
+    });
+
+    // <!-- Input idade paciente  -->
+
+    $(document).ready(function () {
+      $('#idade').mask('00', { reverse: true });
+    });
+
+    // <!-- Input idade acompanhante  -->
+
+    $(document).ready(function () {
+      $('#acompidade').mask('00', { reverse: true });
+    });
+
+    // <!-- Input nome paciente  -->
+
+    $(document).ready(function () {
+      $('#nomep').on('input', function () {
+        $(this).val($(this).val().replace(/[^a-zA-ZÀ-ÿ\u00f1\u00d1\s]/g, ''));
+      });
+    });
+
+    // <!-- Input nome acompanhante  -->
+
+    $(document).ready(function () {
+      $('#nomea').on('input', function () {
+        $(this).val($(this).val().replace(/[^a-zA-ZÀ-ÿ\u00f1\u00d1\s]/g, ''));
+      });
     });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const checkboxCPF = document.getElementById('CPF');
+      const conteudoCPF = document.querySelector('.cpf');
+      const checkboxRG = document.getElementById('RG');
+      const conteudoRG = document.querySelector('.rg');
+
+      checkboxCPF.addEventListener('change', function () {
+        if (this.checked) {
+          conteudoCPF.style.display = 'block';
+          conteudoRG.style.display = 'none';
+          checkboxRG.checked = false;
+        } else {
+          conteudoCPF.style.display = 'none';
+        }
+      });
+
+      checkboxRG.addEventListener('change', function () {
+        if (this.checked) {
+          conteudoRG.style.display = 'block';
+          conteudoCPF.style.display = 'none';
+          checkboxCPF.checked = false;
+        } else {
+          conteudoRG.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
 
   <script src="hhttps://cdnjs.com/libraries/jquery.mask"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
