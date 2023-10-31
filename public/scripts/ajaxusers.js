@@ -24,8 +24,12 @@ fetch('/getUsers')
             <div class="modal-body">
                 <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">ID:</label>
-                    <input class="form-control" name="id" type="number" placeholder="Disabled input" aria-label="Disabled input example" value="${user.id_usuario}" disabled>
-                    </div>
+                    <input type="number" class="form-control" id="recipient-name" value="${user.id_usuario}" disabled>
+                </div>
+                <div class="mb-3" style="display: none;">
+                    <label for="recipient-name" class="col-form-label">ID:</label>
+                    <input type="number" name="id" class="form-control" id="recipient-name" value="${user.id_usuario}">
+                </div>
                 <div class="mb-3">
                   <label for="recipient-name" class="col-form-label">Nome:</label>
                   <input type="text" name="nome" class="form-control" id="recipient-name" value="${user.nome_usuario}">

@@ -320,9 +320,11 @@ app.post('/usuarios', (req, res) => {
     connection.query(sql, [nome, senha, id], (err, result) => {
         if (err) {
             console.error('Erro na atualização: ' + err.message)
-            res.send('Erro na atualização do saldo do usuário.')
+            res.send('Erro na atualização no perfil do usuário.')
+            console.log(id)
         } else {
             console.log('Registro atualizado com sucesso')
+            console.log(id)
             res.render('usuarios')
         }
     });
