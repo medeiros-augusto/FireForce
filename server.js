@@ -7,7 +7,7 @@ const port = 3010;
 var path = require('path')
 const app = express()
 
-app.use(session({secret:'fodase'}))
+app.use(session({secret:'gsdgsdfqfq2f3fd'}))
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.engine('html', require('ejs').renderFile)
@@ -309,6 +309,24 @@ app.post('/criar_usuario', (req, res) => {
         res.render('criar_usuario');
     }
 });
+
+app.post('/usuarios', (req, res) => {
+    const id = req.body.id
+    const nome = req.body.nome
+    const senha = req.body.senha
+
+    const sql = "UPDATE usuario SET nome_usuario = ? , senha_usuario = ? WHERE `usuario`.`id_usuario` = ?;"
+
+    connection.query(sql, [nome, senha, id], (err, result) => {
+        if (err) {
+            console.error('Erro na atualização: ' + err.message)
+            res.send('Erro na atualização do saldo do usuário.')
+        } else {
+            console.log('Registro atualizado com sucesso')
+            res.render('usuarios')
+        }
+    });
+})
 
 
 app.listen(port, ()=>{
