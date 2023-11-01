@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, '/views'))
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'noar',
 });
 
@@ -37,7 +37,7 @@ app.get('/dados_paciente', (req, res) => {
     if (req.session.nomelogin){
         res.render('dados_paciente')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -47,7 +47,7 @@ app.get('/dados_ocorrencia', (req, res) => {
     if (req.session.nomelogin){
         res.render('dados_ocorrencia')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -227,6 +227,15 @@ app.get('/usuarios', (req, res) => {
         res.send("[ERRO] Usuário logado não é Administrador!")
     )
   });
+
+  app.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+      if (err) {
+        console.error('Erro ao fazer logout:', err);
+      }
+      res.redirect('/'); // Redireciona o usuário de volta para a página de login ou outra página inicial.
+    });
+  });
   
   app.get('/getUsers', (req, res) => {
     connection.query('SELECT id_usuario, nome_usuario, senha_usuario FROM usuario', (error, results) => {
@@ -268,7 +277,7 @@ app.post('/', (req, res) =>{
                     if (req.session.nomelogin == 'adm'){
                         res.render('painel_adm', {login: global.nomelogin})
                     }else{
-                        res.render('criar_ocorrencia_historico', {login: global.nomelogin})
+                        res.render('home', {login: global.nomelogin})
                     }
                 } else {
                     res.render('login')
