@@ -250,8 +250,8 @@ app.get('/usuarios', (req, res) => {
 app.get('/', (req,res)=>{
     if(req.session.nomelogin == 'adm'){
         res.render('painel_adm')
-    }else if (req.session.nomelogin == true){
-        res.render('criar_ocorrencia_historico', {login: global.nomelogin})
+    }else if (req.session.nomelogin){
+        res.render('home', {login: global.nomelogin})
     }else{
         res.render('login')
     }
