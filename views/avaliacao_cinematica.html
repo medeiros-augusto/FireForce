@@ -14,79 +14,89 @@
 <body>
     <nav class="navbar">
         <div class="container-fluid">
-          <img src="../public/images/logo_medicina.png" width="35px" height="35px">
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <img src="../public/images/logo_medicina.png" width="35px" height="35px">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/home">Criar Ocorrência/Histórico</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/dados_paciente">Dados do Paciente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/dados_ocorrencia">Dados da Ocorrência</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/tipo_ocorrencia">Tipo de Ocorrência
+                                (Pré-Hospitalar)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/problemas_suspeitos">Problemas Encontrados
+                                Suspeitos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/sinais_sintomas">Sinais e Sintomas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/avaliacao_paciente">Avaliação do
+                                Paciente(Glasgow)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/localizacao_traumas">Localização de Traumas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/forma_conducao">Forma Condução/Vítima Era/Objetos
+                                Recolhidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/decisao_transporte">Decisão Transporte</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/sinais_vitais">Sinais Vitais</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/procedimentos_efetuados">Procedimentos
+                                Efetuados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/anamnese_emergencia_medica">Anamnese da Emergência
+                                Médica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/anamnese_gestacional">Anamnese Gestacional</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/avaliacao_cinematica">Avaliação Cinemática</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/materiais_utilizados_descartaveis">Materiais
+                                Ultilizados Descartável</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/materiais_utilizados_hospital">Materiais
+                                Ultilizados Deixado no Hospital</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="localhost:3010/termo_recusa">Termo de Recusa de Atendimento e/ou
+                                Transporte/Observações Importantes</a>
+                        </li>
+                </div>
             </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/login">Login</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/home">Criar Ocorrência/Histórico</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/dados_paciente">Dados do Paciente</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/dados_ocorrencia">Dados da Ocorrência</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/tipo_ocorrencia">Tipo de Ocorrência (Pré-Hospitalar)</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/problemas_suspeitos">Problemas Encontrados Suspeitos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/sinais_sintomas">Sinais e Sintomas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/avaliacao_paciente">Avaliação do Paciente(Glasgow)</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/localizacao_traumas">Localização de Traumas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/forma_conducao">Forma Condução/Vítima Era/Objetos Recolhidos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/decisao_transporte">Decisão Transporte</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/sinais_vitais">Sinais Vitais</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/procedimentos_efetuados">Procedimentos Efetuados</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/anamnese_emergencia_medica">Anamnese da Emergência Médica</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/anamnese_gestacional">Anamnese Gestacional</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/avaliacao_cinematica">Avaliação Cinemática</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/materiais_utilizados_descartaveis">Materiais Ultilizados Descartável</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/materiais_utilizados_hospital">Materiais Ultilizados Deixado no Hospital</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/termo_recusa">Termo de Recusa de Atendimento e/ou Transporte/Observações Importantes</a>
-                </li>
-            </div>
-          </div>
         </div>
-      </nav>
+    </nav>
     <h1 class="mt-2" style="text-align: center;">Avaliação Cinemática</h1>
     <div class="container mt-4">
         <div class="input-group mb-3 ">
@@ -95,47 +105,57 @@
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
                 <div class="row">
                     <div class="col-md-6">
-                      <div class="input-group mt-3 mb-2">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="Distúrbio de Comportamento"
-                                id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Sim
-                            </label>
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="Distúrbio de Comportamento"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Sim
+                                </label>
+                            </div>
                         </div>
-                      </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="input-group mt-3 mb-2">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="Distúrbio de Comportamento"
-                                id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Não
-                            </label>
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="Distúrbio de Comportamento"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não
+                                </label>
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
-                
-               
+                </div>
             </span>
         </div>
         <div class="input-group mb-3 ">
             <input type="text" class="form-control" placeholder="Encontrado de Capacete" style="text-align: center;"
                 aria-label="Encontrado de Capacete" aria-describedby="basic-addon2" disabled>
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Encontrado de Capacete" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sim
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Encontrado de Capacete" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Não
-                    </label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="Encontrado de Capacete"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Sim
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="Encontrado de Capacete"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </span>
         </div>
@@ -143,17 +163,29 @@
             <input type="text" class="form-control" placeholder="Encontrado de Cinto" style="text-align: center;"
                 aria-label="Encontrado de Cinto" aria-describedby="basic-addon2" disabled>
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Encontrado de Cinto" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sim
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Encontrado de Cinto" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Não
-                    </label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="Encontrado de Cinto"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Sim
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="Encontrado de Cinto"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </span>
         </div>
@@ -161,17 +193,29 @@
             <input type="text" class="form-control" placeholder="Para-Brisas Avariado" style="text-align: center;"
                 aria-label="Para-Brisas Avariado" aria-describedby="basic-addon2" disabled>
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Para-Brisas Avariado" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sim
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Para-Brisas Avariado" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Não
-                    </label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="Para-Brisas Avariado"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Sim
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="Para-Brisas Avariado"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </span>
         </div>
@@ -179,17 +223,27 @@
             <input type="text" class="form-control" placeholder="Caminhando na Cena" style="text-align: center;"
                 aria-label="Caminhando na Cena" aria-describedby="basic-addon2" disabled>
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Caminhando na Cena" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sim
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Caminhando na Cena" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Não
-                    </label>
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Caminhando na Cena"
+                                id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Sim
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="Caminhando na Cena"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </span>
         </div>
@@ -197,17 +251,26 @@
             <input type="text" class="form-control" placeholder="Painel Avariado" style="text-align: center;"
                 aria-label="Painel Avariado" aria-describedby="basic-addon2" disabled>
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Painel Avariado" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sim
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Painel Avariado" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Não
-                    </label>
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Caminhando na Cena" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Sim
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="Caminhando na Cena"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </span>
         </div>
@@ -215,17 +278,25 @@
             <input type="text" class="form-control" placeholder="Volante Retorcido" style="text-align: center;"
                 aria-label="Volante Retorcido" aria-describedby="basic-addon2" disabled>
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Volante Retorcido" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sim
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Volante Retorcido" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Não
-                    </label>
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Volante Retorcido" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Sim
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="Volante Retorcido" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </span>
         </div>
@@ -234,12 +305,12 @@
         <div class="voltar">
             <a href="anamnese_gestacional"><i class="bi bi-chevron-left"></i></a>
         </div>
-    
+
         <div class="proximo">
             <a href="termo_recusa"><i class="bi bi-chevron-right"></i></a>
         </div>
     </div>
-    
+
     <footer class="top-100 start-0 py-3" style="width: 100%; bottom: 0;">
         <div class="container-fluid text-center">
             <div class="p-1 text-light">&copy; Augusto, JP, Bruski e Guilherme. Todos direitos reservados.</div>
