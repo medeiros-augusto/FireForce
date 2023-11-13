@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletor de Lesões</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .corpo {
+            width: 300px;
+            height: 500px;
+            background-color: #f0f0f0;
+            margin: 50px auto;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cabeca, .braco-esquerdo, .braco-direito, .perna-esquerda, .perna-direita {
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .cabeca {
+            width: 80px;
+            height: 80px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            top: 20px;
+            left: 110px;
+        }
+
+        .braco-esquerdo {
+            width: 40px;
+            height: 150px;
+            background-color: #e0e0e0;
+            top: 100px;
+            left: 50px;
+        }
+
+        .braco-direito {
+            width: 40px;
+            height: 150px;
+            background-color: #e0e0e0;
+            top: 100px;
+            right: 50px;
+        }
+
+        .perna-esquerda {
+            width: 40px;
+            height: 150px;
+            background-color: #e0e0e0;
+            bottom: 20px;
+            left: 80px;
+        }
+
+        .perna-direita {
+            width: 40px;
+            height: 150px;
+            background-color: #e0e0e0;
+            bottom: 20px;
+            right: 80px;
+        }
+
+        .fraturas {
+            background-color: #FF0000;
+        }
+
+        .ferimentos {
+            background-color: #00FF00;
+        }
+
+        .hemorragias {
+            background-color: #0000FF;
+        }
+
+        .esviceracao {
+            background-color: #FF00FF;
+        }
+
+        .fab_faf {
+            background-color: #FFFF00;
+        }
+
+        .amputacao {
+            background-color: #FFA500;
+        }
+
+        .queimadura1 {
+            background-color: #FF4500;
+        }
+
+        .queimadura2 {
+            background-color: #FF6347;
+        }
+
+        .queimadura3 {
+            background-color: #FF7F50;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Selecione a Lesão:</h1>
+        <label><input type="radio" name="lesao" class="fraturas"> Fraturas/Luxações/Entorses</label><br>
+        <label><input type="radio" name="lesao" class="ferimentos"> Ferimento Diversos</label><br>
+        <label><input type="radio" name="lesao" class="hemorragias"> Hemorragias</label><br>
+        <label><input type="radio" name="lesao" class="esviceracao"> Esviceração</label><br>
+        <label><input type="radio" name="lesao" class="fab_faf"> F.AB/F.A.F</label><br>
+        <label><input type="radio" name="lesao" class="amputacao"> Amputação</label><br>
+        <label><input type="radio" name="lesao" class="queimadura1"> Queimadura 1º Grau</label><br>
+        <label><input type="radio" name="lesao" class="queimadura2"> Queimadura 2° Grau</label><br>
+        <label><input type="radio" name="lesao" class="queimadura3"> Queimadura 3º Grau</label><br>
+    </div>
+    <div class="corpo">
+        <div class="cabeca"></div>
+        <div class="braco-esquerdo"></div>
+        <div class="braco-direito"></div>
+        <div class="perna-esquerda"></div>
+        <div class="perna-direita"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const partesDoCorpo = document.querySelectorAll('.cabeca, .braco-esquerdo, .braco-direito, .perna-esquerda, .perna-direita');
+
+            const radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(function(radio) {
+                radio.addEventListener('change', function() {
+                    partesDoCorpo.forEach(function(p) {
+                        p.classList.remove('selecionado');
+                    });
+                });
+            });
+
+            partesDoCorpo.forEach(function(parte) {
+                parte.addEventListener('click', function() {
+                    const lesaoSelecionada = document.querySelector('input[type="radio"]:checked');
+                    if (lesaoSelecionada) {
+                        parte.classList.add(lesaoSelecionada.className);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
