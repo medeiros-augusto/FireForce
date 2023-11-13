@@ -22,286 +22,303 @@
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
                         Dados Paciente
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div class="container mt-3">
                             <div class=" mt-3 ml-2 mr-2">
-                                <form action="/dadospaciente" method="post">
-                                    <div class="inputs">
-                                        <label class="visually-hidden" for="specificSizeInputGroupUsername">Data</label>
-                                        <div class="input-group">
-                                            <div class="input-group-text">Data</div>
-                                            <input type="text" class="form-control" id="date" placeholder="dd/mm/aa">
-                                        </div>
-                                        <div class="btn-group mt-3 d-flex justify-content-center" role="group"
-                                            aria-label="Basic radio toggle button group">
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1"
-                                                autocomplete="off">
-                                            <label class="btn btn-outline-primary" for="btnradio1">Masculino</label>
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2"
-                                                autocomplete="off">
-                                            <label class="btn btn-outline-primary" for="btnradio2">Feminino</label>
-                                        </div>
-                                        <div class="input-group mt-3">
-                                            <div class="input-group-text">Nome Hospital</div>
-                                            <input type="text" class="form-control" id="specificSizeInputGroupUsername"
-                                                placeholder="Ex: ... Dona Helena">
-                                        </div>
-                                        <div class="input-group mt-3">
-                                            <div class="input-group-text">Nome Paciente</div>
-                                            <input type="text" class="form-control" id="nomep"
-                                                placeholder="Ex: ... Augusto Medeiros" id="firstname">
-                                        </div>
-                                        <div class="btn-group mt-3" role="group"
-                                            aria-label="Basic radio toggle button group" style="width: 100%;">
-                                            <input type="radio" class="btn-check" name="RG_CPF" id="CPF"
-                                                autocomplete="off">
-                                            <label class="btn btn-outline-primary" for="CPF">CPF</label>
-                                            <input type="radio" class="btn-check mb-3" name="RG_CPF" id="RG"
-                                                autocomplete="off">
-                                            <label class="btn btn-outline-primary" for="RG">RG</label>
-                                        </div>
-                                        <div class="cpf" style="display: none;">
-                                            <label class="visually-hidden"
-                                                for="specificSizeInputGroupUsername">CPF</label>
-                                            <div class="input-group mt-3">
-                                                <div class="input-group-text">CPF</div>
-                                                <input type="text" class="form-control" id="cpf"
-                                                    placeholder="000.000.000-00">
-                                            </div>
-                                        </div>
-                                        <div class="rg" style="display: none;">
-                                            <div class="input-group mt-3">
-                                                <div class="input-group-text">RG</div>
-                                                <input type="text" class="form-control" id="rg" placeholder="0.000.000">
-                                            </div>
-                                        </div>
-                                        <label class="visually-hidden" for="specificSizeInputGroupUsername">Fone
-                                            Paciente</label>
-                                        <div class="input-group mt-3">
-                                            <div class="input-group-text">Fone Paciente</div>
-                                            <input type="text" class="form-control" id="number"
-                                                placeholder="Ex: ... 479982-...">
-                                        </div>
-                                        <label class="visually-hidden" for="specificSizeInputGroupUsername">Idade
-                                            Paciente</label>
-                                        <div class="input-group mt-3">
-                                            <div class="input-group-text">Idade Paciente</div>
-                                            <input type="text" class="form-control" id="idade"
-                                                placeholder="Ex: ... 17 anos">
-                                        </div>
-                                        <div class="input-group mt-3">
-                                            <div class="input-group-text">Nome Acompanhante</div>
-                                            <input type="text" class="form-control" id="nomea"
-                                                placeholder="Ex: ... João Michels">
-                                        </div>
-                                        <div class="input-group mt-3">
-                                            <div class="input-group-text">Idade Acompanhante</div>
-                                            <input type="text" class="form-control" id="acompidade"
-                                                placeholder="Ex: ... 18 anos">
-                                        </div>
-                                        <div class="input-group mt-3 pb-3">
-                                            <div class="input-group-text">Local Ocorrência</div>
-                                            <input type="text" class="form-control" id="specificSizeInputGroupUsername"
-                                                placeholder="Ex: ... Rua Cidade Sevilha...">
-                                        </div>
+                              <form action="/dadospaciente" method="post">
+                                <div class="inputs">
+                                  <label class="visually-hidden" for="specificSizeInputGroupUsername">Data</label>
+                                  <div class="input-group">
+                                    <div class="input-group-text">Data</div>
+                                    <input type="text" class="form-control" id="date" placeholder="dd/mm/aa">
+                                  </div>
+                                  <div class="btn-group mt-3 d-flex justify-content-center" role="group"
+                                    aria-label="Basic radio toggle button group">
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="btnradio1">Masculino</label>
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="btnradio2">Feminino</label>
+                                  </div>
+                                  <div class="input-group mt-3">
+                                    <div class="input-group-text">Nome Hospital</div>
+                                    <input type="text" class="form-control" id="specificSizeInputGroupUsername"
+                                      placeholder="Ex: ... Dona Helena">
+                                  </div>
+                                  <div class="input-group mt-3">
+                                    <div class="input-group-text">Nome Paciente</div>
+                                    <input type="text" class="form-control" id="nomep" placeholder="Ex: ... Augusto Medeiros" id="firstname">
+                                  </div>
+                                  <div class="btn-group mt-3" role="group" aria-label="Basic radio toggle button group" style="width: 100%;">
+                                    <input type="radio" class="btn-check" name="RG_CPF" id="CPF" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="CPF">CPF</label>
+                                    <input type="radio" class="btn-check mb-3" name="RG_CPF" id="RG" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="RG">RG</label>
+                                  </div>
+                                  <div class="cpf" style="display: none;">
+                                    <label class="visually-hidden" for="specificSizeInputGroupUsername">CPF</label>
+                                    <div class="input-group mt-3">
+                                      <div class="input-group-text">CPF</div>
+                                      <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
                                     </div>
-                                </form>
+                                  </div>
+                                  <div class="rg" style="display: none;">
+                                    <div class="input-group mt-3">
+                                      <div class="input-group-text">RG</div>
+                                      <input type="text" class="form-control" id="rg" placeholder="0.000.000">
+                                    </div>
+                                  </div>
+                                  <label class="visually-hidden" for="specificSizeInputGroupUsername">Fone Paciente</label>
+                                  <div class="input-group mt-3">
+                                    <div class="input-group-text">Fone Paciente</div>
+                                    <input type="text" class="form-control" id="number" placeholder="Ex: ... 479982-...">
+                                  </div>
+                                  <label class="visually-hidden" for="specificSizeInputGroupUsername">Idade Paciente</label>
+                                  <div class="input-group mt-3">
+                                    <div class="input-group-text">Idade Paciente</div>
+                                    <input type="text" class="form-control" id="idade" placeholder="Ex: ... 17 anos">
+                                  </div>
+                                  <div class="input-group mt-3">
+                                    <div class="input-group-text">Nome Acompanhante</div>
+                                    <input type="text" class="form-control" id="nomea"
+                                      placeholder="Ex: ... João Michels">
+                                  </div>
+                                  <div class="input-group mt-3">
+                                    <div class="input-group-text">Idade Acompanhante</div>
+                                    <input type="text" class="form-control" id="acompidade" placeholder="Ex: ... 18 anos">
+                                  </div>
+                                  <div class="input-group mt-3 pb-3">
+                                    <div class="input-group-text">Local Ocorrência</div>
+                                    <input type="text" class="form-control" id="specificSizeInputGroupUsername"
+                                      placeholder="Ex: ... Rua Cidade Sevilha...">
+                                  </div>
+                                </div>
+                              </form>
                             </div>
-                        </div>
+                          </div>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Dados Ocorrência
+                        data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                        Accordion Item #3
                     </button>
                 </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="container text-center mt-4">
-                        <h1>Dados Ocorrência</h1>
-                        <div class="input-group mt-4 mb-3">
-                          <span class="input-group-text" id="basic-addon1">N° USB</span>
-                          <input type="text" class="form-control" aria-label="Usuário" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mt-1 mb-3">
-                          <span class="input-group-text" id="basic-addon1">DESP</span>
-                          <input type="text" class="form-control" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mt-1 mb-3">
-                          <span class="input-group-text" id="basic-addon1">H. CH</span>
-                          <input type="text" class="form-control" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mt-1 mb-3">
-                          <span class="input-group-text" id="basic-addon1">KM Final</span>
-                          <input type="text" class="form-control" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="btn-group mt-1   d-flex justify-content-center" role="group"
-                          aria-label="Basic radio toggle button group">
-                          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-                          <label class="btn btn-outline-primary" for="btnradio1">CÓD. IR</label>
-                          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                          <label class="btn btn-outline-primary" for="btnradio2">CÓD. PS</label>
-                        </div>
-                        <div class="input-group mt-3 mb-4">
-                          <span class="input-group-text" id="basic-addon1">CÓD. SIA/SUS</span>
-                          <input type="text" class="form-control" aria-describedby="basic-addon1">
-                        </div>
-                      </div>
+                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Tipo Ocorrência
+                        data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                        Accordion Item #3
                     </button>
                 </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="container text-center mt-4">
-                        <h1>Tipo de Ocorrência (Pré-Hospitalar)</h1>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Afogamento" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Agressão" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Atropelamento" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Causado por animais " style="text-align: center;" aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Choque elétrico quedanível < 2m  " style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Com meio de transporte" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Desabamento" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Desmoronamento /deslizamento " style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Doméstico" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Emergência médica" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Esportivo" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Intoxicação" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Queda bicicleta" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2"><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Queda de altura 2m" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Queda moto" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Queda própria altura" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Tentativa de suicídio" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Queda Nível < 2M" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Trabalho" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Transferência" style="text-align: center;"
-                                aria-label="Nome do usuário" aria-describedby="basic-addon2" disabled>
-                        </div>
-                        <div class="input-group mt-3" id="inputs-container">
-                            <span class="input-group-text" id="basic-addon2 "><input class="form-check-input" type="radio"
-                                    name="tipo_ocorrencia" id="flexRadioDefault1"></span>
-                            <input type="text" class="form-control" placeholder="Outro" style="text-align: center;">
-                            </input>
-                        </div>
-                        <div class="input-group mt-3 mb-4">
-                            <input type="text" class="form-control">
-                            <span class="input-group-text">X</span>
-                            <input type="text" class="form-control">
-                        </div>
+                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse11" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse12" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse13" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse14" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse15" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse16" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapse17" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        AQUI VAI O CONTEUDO
                     </div>
                 </div>
             </div>
         </div>
     </form>
+    <footer class="bg text-light py-3">
+        <div class="container-fluid text-center">
+            <p class="mb-0" style="margin: 0;">&copy; Augusto, Golerme, Bruski e JP. Todos direitos reservados.</p>
+        </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
     <script src="../public/scripts/mask.js"></script>
