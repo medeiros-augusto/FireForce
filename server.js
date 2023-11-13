@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, '/views'))
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: '',
+    password: 'root',
     database: 'noar',
 });
 
@@ -250,8 +250,8 @@ app.get('/usuarios', (req, res) => {
 app.get('/', (req,res)=>{
     if(req.session.nomelogin == 'adm'){
         res.render('painel_adm')
-    }else if (req.session.nomelogin == true){
-        res.render('criar_ocorrencia_historico', {login: global.nomelogin})
+    }else if (req.session.nomelogin){
+        res.render('home', {login: global.nomelogin})
     }else{
         res.render('login')
     }

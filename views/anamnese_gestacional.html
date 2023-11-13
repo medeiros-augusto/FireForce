@@ -26,62 +26,60 @@
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+               
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/login">Login</a>
+                  <a class="nav-link" href="/">Criar Ocorrência/Histórico</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/home">Criar Ocorrência/Histórico</a>
+                  <a class="nav-link" href="dados_paciente">Dados do Paciente</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/dados_paciente">Dados do Paciente</a>
+                  <a class="nav-link" href="dados_ocorrencia">Dados da Ocorrência</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/dados_ocorrencia">Dados da Ocorrência</a>
+                  <a class="nav-link" href="tipo_ocorrencia">Tipo de Ocorrência (Pré-Hospitalar)</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/tipo_ocorrencia">Tipo de Ocorrência (Pré-Hospitalar)</a>
+                  <a class="nav-link" href="problemas_suspeitos">Problemas Encontrados Suspeitos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/problemas_suspeitos">Problemas Encontrados Suspeitos</a>
+                  <a class="nav-link" href="sinais_sintomas">Sinais e Sintomas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/sinais_sintomas">Sinais e Sintomas</a>
+                  <a class="nav-link" href="avaliacao_paciente">Avaliação do Paciente(Glasgow)</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/avaliacao_paciente">Avaliação do Paciente(Glasgow)</a>
+                  <a class="nav-link" href="localizacao_traumas">Localização de Traumas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/localizacao_traumas">Localização de Traumas</a>
+                  <a class="nav-link" href="forma_conducao">Forma Condução/Vítima Era/Objetos Recolhidos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/forma_conducao">Forma Condução/Vítima Era/Objetos Recolhidos</a>
+                  <a class="nav-link" href="decisao_transporte">Decisão Transporte</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/decisao_transporte">Decisão Transporte</a>
+                  <a class="nav-link" href="sinais_vitais">Sinais Vitais</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/sinais_vitais">Sinais Vitais</a>
+                  <a class="nav-link" href="procedimentos_efetuados">Procedimentos Efetuados</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/procedimentos_efetuados">Procedimentos Efetuados</a>
+                  <a class="nav-link" href="anamnese_emergencia_medica">Anamnese da Emergência Médica</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/anamnese_emergencia_medica">Anamnese da Emergência Médica</a>
+                  <a class="nav-link" href="anamnese_gestacional">Anamnese Gestacional</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/anamnese_gestacional">Anamnese Gestacional</a>
+                  <a class="nav-link" href="avaliacao_cinematica">Avaliação Cinemática</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/avaliacao_cinematica">Avaliação Cinemática</a>
+                  <a class="nav-link" href="materiais_utilizados_descartaveis">Materiais Ultilizados Descartável</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/materiais_utilizados_descartaveis">Materiais Ultilizados Descartável</a>
+                  <a class="nav-link" href="materiais_utilizados_hospital">Materiais Ultilizados Deixado no Hospital</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/materiais_utilizados_hospital">Materiais Ultilizados Deixado no Hospital</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="localhost:3010/termo_recusa">Termo de Recusa de Atendimento e/ou Transporte/Observações Importantes</a>
+                  <a class="nav-link" href="termo_recusa">Termo de Recusa de Atendimento e/ou Transporte/Observações Importantes</a>
                 </li>
             </div>
           </div>
@@ -90,19 +88,28 @@
     <div class="container mt-3">
         <h1 class="mb-3" style="text-align: center;">Anamnese Gestacional</h1>
         <div class="input-group mt-3">
-            <input type="text" class="form-control" placeholder="Fez Pré-Natal?" style="text-align: center;" aria-label="Fez Pré-Natal?" aria-describedby="basic-addon2" disabled>
+            <input type="text" class="form-control" placeholder="Fez Pré-Natal?" style="text-align: center;"
+                aria-label="Fez Pré-Natal?" aria-describedby="basic-addon2" disabled>
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Fez Pré-Natal?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sim
-                    </label>
-                </div>                    
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Fez Pré-Natal?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Não
-                    </label>
+                    <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <input class="form-check-input" type="radio" name="Fez Pré-Natal?" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Sim
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group mt-3 mb-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="Fez Pré-Natal?" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Não
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </span>
         </div>
@@ -121,36 +128,57 @@
             </div>
         </div>
         <div class="input-group mt-3">
-            <input type="text" class="form-control" placeholder="Existe Possibilidade de Complicações?" style="text-align: center;" aria-label="Existe Possibilidade de Complicações?" aria-describedby="basic-addon2" disabled>
+            <input type="text" class="form-control" placeholder="Existe Possibilidade de Complicações?"
+                style="text-align: center;" aria-label="Existe Possibilidade de Complicações?"
+                aria-describedby="basic-addon2" disabled>
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Existe Possibilidade de Complicações?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sim
-                    </label>
-                </div>                    
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Existe Possibilidade de Complicações?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Não
-                    </label>
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Existe Possibilidade de Complicações?"
+                                id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Sim
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="Existe Possibilidade de Complicações?"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </span>
         </div>
         <div class="input-group mt-3">
-            <input type="text" class="form-control" placeholder="É o Primeiro Filho?" style="text-align: center;" aria-label="É o Primeiro Filho?" aria-describedby="basic-addon2" disabled>
+            <input type="text" class="form-control" placeholder="É o Primeiro Filho?" style="text-align: center;"
+                aria-label="É o Primeiro Filho?" aria-describedby="basic-addon2" disabled>
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="É o Primeiro Filho?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sim
-                    </label>
-                </div>                    
-                <div class="form-check mb-1">
-                    <input class="form-check-input" type="radio" name="É o Primeiro Filho?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Não
-                    </label>
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="É o Primeiro Filho?" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Sim
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="radio" name="É o Primeiro Filho?" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </span>
         </div>
@@ -184,70 +212,113 @@
             </div>
         </div>
         <div class="input-group mt-3">
-            <input type="text" class="form-control" placeholder="Pressão na Região do Quadril ou Vontade de Evacuar?" style="text-align: center;" aria-label="É o Primeiro Filho?" aria-describedby="basic-addon2" disabled>
+            <input type="text" class="form-control" placeholder="Pressão na Região do Quadril ou Vontade de Evacuar?"
+                style="text-align: center;" aria-label="É o Primeiro Filho?" aria-describedby="basic-addon2" disabled>
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Sente Pressão na Região do Quadril ou Vontade de Evacuar?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sim
-                    </label>
-                </div>                    
-                <div class="form-check mb-1">
-                    <input class="form-check-input" type="radio" name="Sente Pressão na Região do Quadril ou Vontade de Evacuar?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Não
-                    </label>
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                name="Sente Pressão na Região do Quadril ou Vontade de Evacuar?" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Sim
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="radio"
+                                    name="Sente Pressão na Região do Quadril ou Vontade de Evacuar?" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </span>
         </div>
         <div class="input-group mt-3">
-            <input type="text" class="form-control" placeholder="Já Houve Ruptura da Bolsa?" style="text-align: center;" aria-label="Já Houve Ruptura da Bolsa?" aria-describedby="basic-addon2" disabled>
+            <input type="text" class="form-control" placeholder="Já Houve Ruptura da Bolsa?" style="text-align: center;"
+                aria-label="Já Houve Ruptura da Bolsa?" aria-describedby="basic-addon2" disabled>
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Já Houve Ruptura da Bolsa?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sim
-                    </label>
-                </div>                    
-                <div class="form-check mb-1">
-                    <input class="form-check-input" type="radio" name="Já Houve Ruptura da Bolsa?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Não
-                    </label>
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Já Houve Ruptura da Bolsa?"
+                                id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Sim
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="radio" name="Já Houve Ruptura da Bolsa?"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </span>
         </div>
         <div class="input-group mt-3">
-            <input type="text" class="form-control" placeholder="Foi Feito a Inspeção Visual?" style="text-align: center;" aria-label="Foi Feito a Inspeção Visual?" aria-describedby="basic-addon2" disabled>
+            <input type="text" class="form-control" placeholder="Foi Feito a Inspeção Visual?"
+                style="text-align: center;" aria-label="Foi Feito a Inspeção Visual?" aria-describedby="basic-addon2"
+                disabled>
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Foi Feito a Inspeção Visual?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sim
-                    </label>
-                </div>                    
-                <div class="form-check mb-1">
-                    <input class="form-check-input" type="radio" name="Foi Feito a Inspeção Visual?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Não
-                    </label>
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Foi Feito a Inspeção Visual?"
+                                id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Sim
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="radio" name="Foi Feito a Inspeção Visual?"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não
+                                </label>
+                            </div> 
+                        </div>
+                    </div>
                 </div>
             </span>
         </div>
         <div class="input-group mt-3">
-            <input type="text" class="form-control" placeholder="Parto Realizado?" style="text-align: center;" aria-label="Parto Realizado?" aria-describedby="basic-addon2" disabled>
+            <input type="text" class="form-control" placeholder="Parto Realizado?" style="text-align: center;"
+                aria-label="Parto Realizado?" aria-describedby="basic-addon2" disabled>
             <span class="input-group-text" id="basic-addon2" style="width: 20%; flex-direction: column;">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Parto Realizado?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sim
-                    </label>
-                </div>                    
-                <div class="form-check mb-1">
-                    <input class="form-check-input" type="radio" name="Parto Realizado?" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Não
-                    </label>
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Parto Realizado?" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Sim
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mt-3 mb-2">
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="radio" name="Parto Realizado?" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </span>
         </div>
@@ -256,14 +327,15 @@
             <input type="text" class="form-control" id="specificSizeInputGroupUsername">
         </div>
         <div class="input-group mt-3">
-            <input type="text" class="form-control" placeholder="Sexo do Bebê?" style="text-align: center;" aria-label="Sexo do Bebê?" aria-describedby="basic-addon2" disabled>
+            <input type="text" class="form-control" placeholder="Sexo do Bebê?" style="text-align: center;"
+                aria-label="Sexo do Bebê?" aria-describedby="basic-addon2" disabled>
             <span class="input-group-text" id="basic-addon2" style="flex-direction: column;">
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="Sexo do Bebê?" id="flexRadioDefault1">
                     <label class="form-check-label" for="flexRadioDefault1">
                         Feminino
                     </label>
-                </div>                    
+                </div>
                 <div class="form-check mb-1">
                     <input class="form-check-input" type="radio" name="Sexo do Bebê?" id="flexRadioDefault1">
                     <label class="form-check-label" for="flexRadioDefault1">
@@ -271,22 +343,22 @@
                     </label>
                 </div>
             </span>
-        </div> 
+        </div>
         <div class="input-group mt-3 mb-3 text-center">
             <div class="input-group-text">Nome do Bebê?</div>
             <input type="text" class="form-control" id="specificSizeInputGroupUsername">
-        </div>           
+        </div>
     </div>
     <div class="arrow mb-3">
         <div class="voltar">
             <a href="materiais_utilizados_hospital"><i class="bi bi-chevron-left"></i></a>
         </div>
-    
+
         <div class="proximo">
             <a href="avaliacao_cinematica"><i class="bi bi-chevron-right"></i></a>
         </div>
     </div>
-    
+
     <footer class="top-100 start-0 py-3" style="width: 100%; bottom: 0;">
         <div class="container-fluid text-center">
             <div class="p-1 text-light">&copy; Augusto, JP, Bruski e Guilherme. Todos direitos reservados.</div>
