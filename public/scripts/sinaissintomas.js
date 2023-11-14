@@ -46,7 +46,7 @@
 
         // -----------------------------------ADC INPUT----------------------------------
         function adicionarConjuntos() {
-            var divPai = document.getElementById('divPai');
+            var divPai = document.getElementById('divMae');
             var novoInput = document.createElement('div');
             novoInput.classList.add('input-group', 'mt-3', 'conjunto');
 
