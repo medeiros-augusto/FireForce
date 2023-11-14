@@ -18,10 +18,9 @@ app.set('views', path.join(__dirname, '/views'))
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'noar',
 });
-
 
 connection.connect(function (err) {
     if (!err) {
@@ -57,7 +56,7 @@ app.get('/tipo_ocorrencia', (req, res) => {
     if (req.session.nomelogin){
         res.render('tipo_ocorrencia')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -67,7 +66,7 @@ app.get('/problemas_suspeitos', (req, res) => {
     if (req.session.nomelogin){
         res.render('problemas_suspeitos')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -77,7 +76,7 @@ app.get('/sinais_sintomas', (req, res) => {
     if (req.session.nomelogin){
         res.render('sinais_sintomas')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -87,7 +86,7 @@ app.get('/avaliacao_paciente', (req, res) => {
     if (req.session.nomelogin){
         res.render('avaliacao_paciente')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -97,7 +96,7 @@ app.get('/avaliacao_pacienteMaior5', (req, res) => {
     if (req.session.nomelogin){
         res.render('avaliacao_pacienteMaior5')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -107,7 +106,7 @@ app.get('/avaliacao_pacienteMenor5', (req, res) => {
     if (req.session.nomelogin){
         res.render('avaliacao_pacienteMenor5')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -117,7 +116,7 @@ app.get('/localizacao_traumas', (req, res) => {
     if (req.session.nomelogin){
         res.render('localizacao_traumas')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -127,7 +126,7 @@ app.get('/forma_conducao', (req, res) => {
     if (req.session.nomelogin){
         res.render('forma_conducao')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -137,7 +136,7 @@ app.get('/sinais_vitais', (req, res) => {
     if (req.session.nomelogin){
         res.render('sinais_vitais')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -147,7 +146,7 @@ app.get('/decisao_transporte', (req, res) => {
     if (req.session.nomelogin){
         res.render('decisao_transporte')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -157,7 +156,7 @@ app.get('/procedimentos_efetuados', (req, res) => {
     if (req.session.nomelogin){
         res.render('procedimentos_efetuados')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -168,7 +167,7 @@ app.get('/anamnese_emergencia_medica', (req, res) => {
     if (req.session.nomelogin){
         res.render('anamnese_emergencia_medica')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 //--------Anamnese Gestacional--------
@@ -177,7 +176,7 @@ app.get('/anamnese_gestacional', (req, res) => {
     if (req.session.nomelogin){
         res.render('anamnese_gestacional')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 //--------Avaliação Cinemática--------
@@ -186,7 +185,7 @@ app.get('/avaliacao_cinematica', (req, res) => {
     if (req.session.nomelogin){
         res.render('avaliacao_cinematica')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -196,7 +195,7 @@ app.get('/materiais_utilizados_descartaveis', (req, res) => {
     if (req.session.nomelogin){
         res.render('materiais_utilizados_descartaveis')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -206,7 +205,7 @@ app.get('/materiais_utilizados_hospital', (req, res) => {
     if (req.session.nomelogin){
         res.render('materiais_utilizados_hospital')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
@@ -216,7 +215,7 @@ app.get('/termo_recusa', (req, res) => {
     if (req.session.nomelogin){
         res.render('termo_recusa')
     }else{
-        res.render('login')
+        res.redirect('/')
     }
 })
 
