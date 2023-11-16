@@ -47,6 +47,11 @@ img {
     display: block;
     margin: 0 auto;
 }
+.emojis {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
 
 
 
