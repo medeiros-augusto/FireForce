@@ -1,16 +1,35 @@
-    // Função para calcular a pontuação total
-        function calcularPontuacao() {
-            const inputs = document.querySelectorAll('input:checked');
-            let pontuacaoTotal = 0;
+//--------------- MENOR DE 5 ANOS ---------------
 
-            inputs.forEach(input => {
-                const valor = parseInt(input.parentElement.nextElementSibling.value);
-                pontuacaoTotal += valor;
-            });
 
-            document.querySelector('#pontuacaoTotal').value = pontuacaoTotal;
+function calcularPontuacao() {
+    var pontuacao = 0;
+
+    var aberturaOcular = document.getElementsByName('avalia4');
+    aberturaOcular.forEach(function(input) {
+        if (input.checked) {
+            pontuacao += parseInt(input.parentElement.nextElementSibling.value);
         }
-        const inputs = document.querySelectorAll('input[type="radio"]');
-        inputs.forEach(input => {
-            input.addEventListener('change', calcularPontuacao);
-        });
+    });
+
+    var respostaVerbal = document.getElementsByName('avalia5');
+    respostaVerbal.forEach(function(input) {
+        if (input.checked) {
+            pontuacao += parseInt(input.parentElement.nextElementSibling.value);
+        }
+    });
+
+    var respostaMotora = document.getElementsByName('avalia6');
+    respostaMotora.forEach(function(input) {
+        if (input.checked) {
+            pontuacao += parseInt(input.parentElement.nextElementSibling.value);
+        }
+    });
+
+    document.getElementById('pontuacaoTotal').value = pontuacao;
+}
+
+var inputs = document.querySelectorAll('input[type=radio]');
+inputs.forEach(function(input) {
+    input.addEventListener('change', calcularPontuacao);
+});
+

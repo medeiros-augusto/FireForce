@@ -1,4 +1,4 @@
-    //--------------- MENOR DE 5 ANOS ---------------
+    //--------------- MAIOR DE 5 ANOS ---------------
     
     function calcularPontuacao() {
     var pontuacao = 0;
@@ -31,5 +31,4 @@ var inputs = document.querySelectorAll('input[type=radio]');
 inputs.forEach(function (input) {
     input.addEventListener('change', calcularPontuacao);
 });
-
 
