@@ -30,194 +30,13 @@ connection.connect(function (err) {
     }
 });
 
-//--------Dado Paciente--------
-
-app.get('/dados_paciente', (req, res) => {
+app.get('/ocorrencia', (req, res) => {
     if (req.session.nomelogin){
-        res.render('dados_paciente')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Dado Ocorrência--------
-
-app.get('/dados_ocorrencia', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('dados_ocorrencia')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Tipo Ocorrência--------
-
-app.get('/tipo_ocorrencia', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('tipo_ocorrencia')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Problemas Encontrados Suspeito--------
-
-app.get('/problemas_suspeitos', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('problemas_suspeitos')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Sinais Sintomas--------
-
-app.get('/sinais_sintomas', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('sinais_sintomas')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Avaliação Paciente--------
-
-app.get('/avaliacao_paciente', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('avaliacao_paciente')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Avaliação Paciente MAIOR 5--------
-
-app.get('/avaliacao_pacienteMaior5', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('avaliacao_pacienteMaior5')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Avaliação Paciente MENOR 5--------
-
-app.get('/avaliacao_pacienteMenor5', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('avaliacao_pacienteMenor5')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Localização Traumas--------
-
-app.get('/localizacao_traumas', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('localizacao_traumas')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Forma Condução/Vítima Era/Objetos Recolhidos--------
-
-app.get('/forma_conducao', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('forma_conducao')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Sinais Vitais--------
-
-app.get('/sinais_vitais', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('sinais_vitais')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Decisão Transporte--------
-
-app.get('/decisao_transporte', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('decisao_transporte')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Procedimentos Efetuados--------
-
-app.get('/procedimentos_efetuados', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('procedimentos_efetuados')
-    }else{
-        res.redirect('/')
-    }
-})
-
-
-//--------Anamnese Emergência Médica--------
-
-app.get('/anamnese_emergencia_medica', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('anamnese_emergencia_medica')
-    }else{
-        res.redirect('/')
-    }
-})
-//--------Anamnese Gestacional--------
-
-app.get('/anamnese_gestacional', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('anamnese_gestacional')
-    }else{
-        res.redirect('/')
-    }
-})
-//--------Avaliação Cinemática--------
-
-app.get('/avaliacao_cinematica', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('avaliacao_cinematica')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Materiais Utlizados Descartáveis--------
-
-app.get('/materiais_utilizados_descartaveis', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('materiais_utilizados_descartaveis')
-    }else{
-        res.redirect('/')
-    }
-})
-
-//--------Materiais Utlizados Deixados No Hospital--------
-
-app.get('/materiais_utilizados_hospital', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('materiais_utilizados_hospital')
-    }else{
-        res.redirect('/')
-    }
-})
-
-// //--------Termo de Recusa/Observações Importantes--------
-
-app.get('/termo_recusa', (req, res) => {
-    if (req.session.nomelogin){
-        res.render('termo_recusa')
-    }else{
-        res.redirect('/')
-    }
-})
+        res.render('ocorrencia');
+    }else (
+        res.send("[ERRO] Necessário realizar login!")
+    )
+  });
 
 app.get('/usuarios', (req, res) => {
     if (req.session.nomelogin == 'adm'){
@@ -232,7 +51,7 @@ app.get('/usuarios', (req, res) => {
       if (err) {
         console.error('Erro ao fazer logout:', err);
       }
-      res.redirect('/'); // Redireciona o usuário de volta para a página de login ou outra página inicial.
+      res.redirect('/'); 
     });
   });
   
