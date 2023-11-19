@@ -3,21 +3,21 @@
     function calcularPontuacao() {
     var pontuacao = 0;
 
-    var aberturaOcular = document.getElementsByName('avalia1');
+    var aberturaOcular = document.getElementsByName('AberturaOcularMaior');
     aberturaOcular.forEach(function (input) {
         if (input.checked) {
             pontuacao += parseInt(input.parentElement.nextElementSibling.value);
         }
     });
 
-    var respostaVerbal = document.getElementsByName('avalia2');
+    var respostaVerbal = document.getElementsByName('RespostaVerbalMaior');
     respostaVerbal.forEach(function (input) {
         if (input.checked) {
             pontuacao += parseInt(input.parentElement.nextElementSibling.value);
         }
     });
 
-    var respostaMotora = document.getElementsByName('avalia3');
+    var respostaMotora = document.getElementsByName('RespostaMotoraMaior');
     respostaMotora.forEach(function (input) {
         if (input.checked) {
             pontuacao += parseInt(input.parentElement.nextElementSibling.value);

@@ -192,7 +192,58 @@ app.post('/ocorrencia', (req, res) => {
         OutroProblemaProblemasSuspeitos = req.body.ValorOutroProblemaProblemasSuspeitos
     }
     //Accordion Sinais e Sintomas
-    
+    const AbdomenSinaiseSintomas = req.body.AbdomenSinaiseSintomas ? req.body.AbdomenSinaiseSintomas : '*'
+    const AfundamentoSinaiseSintomas = req.body.AfundamentoSinaiseSintomas ? req.body.AfundamentoSinaiseSintomas : '*'
+    const AgitacaoSinaiseSintomas = req.body.AgitacaoSinaiseSintomas ? req.body.AgitacaoSinaiseSintomas : '*'
+    const AmnesiaSinaiseSintomas = req.body.AmnesiaSinaiseSintomas ? req.body.AmnesiaSinaiseSintomas : '*'
+    const AnginaSinaiseSintomas = req.body.AnginaSinaiseSintomas ? req.body.AnginaSinaiseSintomas : '*'
+    const ApineiaSinaiseSintomas = req.body.ApineiaSinaiseSintomas ? req.body.ApineiaSinaiseSintomas : '*'
+    const BradicardiaSinaiseSintomas = req.body.BradicardiaSinaiseSintomas ? req.body.BradicardiaSinaiseSintomas : '*'
+    const BradipneiaSinaiseSintomas = req.body.BradipneiaSinaiseSintomas ? req.body.BradipneiaSinaiseSintomas : '*'
+    const BroncoSinaiseSintomas = req.body.BroncoSinaiseSintomas ? req.body.BroncoSinaiseSintomas : '*'
+    const CefaleiaSinaiseSintomas = req.body.CefaleiaSinaiseSintomas ? req.body.CefaleiaSinaiseSintomas : '*'
+    const CianoseSinaiseSintomas = `${req.body.CianoseSinaiseSintomas ? req.body.CianoseSinaiseSintomas : '*'} ${req.body.LabiosSinaiseSintomas ? req.body.LabiosSinaiseSintomas : '*'} ${req.body.ExtremidadeSinaiseSintomas ? req.body.ExtremidadeSinaiseSintomas : '*'}`
+    const ConvulsaoSinaiseSintomas = req.body.ConvulsaoSinaiseSintomas ? req.body.ConvulsaoSinaiseSintomas : '*'
+    const DecorticacaoSinaiseSintomas = req.body.DecorticacaoSinaiseSintomas ? req.body.DecorticacaoSinaiseSintomas : '*'
+    const DeformidadeSinaiseSintomas = req.body.DeformidadeSinaiseSintomas ? req.body.DeformidadeSinaiseSintomas : '*'
+    const DescerebracaoSinaiseSintomas = req.body.DescerebracaoSinaiseSintomas ? req.body.DescerebracaoSinaiseSintomas : '*'
+    const DesmaioSinaiseSintomas = req.body.DesmaioSinaiseSintomas ? req.body.DesmaioSinaiseSintomas : '*'
+    const DesvioSinaiseSintomas = req.body.DesvioSinaiseSintomas ? req.body.DesvioSinaiseSintomas : '*'
+    const DispneiaSinaiseSintomas = req.body.DispneiaSinaiseSintomas ? req.body.DispneiaSinaiseSintomas : '*'
+    const DorSinaiseSintomas = req.body.DorSinaiseSintomas ? req.body.DorSinaiseSintomas : '*'
+    const EdemaSinaiseSintomas = `${req.body.EdemaSinaiseSintomas ? req.body.EdemaSinaiseSintomas : '*'} ${req.body.GeneralizadoSinaiseSintomas ? req.body.GeneralizadoSinaiseSintomas : '*'} ${req.body.LocalizadoSinaiseSintomas ? req.body.LocalizadoSinaiseSintomas : '*'}`
+    const EstaseSinaiseSintomas = req.body.EstaseSinaiseSintomas ? req.body.EstaseSinaiseSintomas : '*'
+    const FaceSinaiseSintomas = req.body.FaceSinaiseSintomas ? req.body.FaceSinaiseSintomas : '*'
+    const HemorragiaSinaiseSintomas = `${req.body.HemorragiaSinaiseSintomas ? req.body.HemorragiaSinaiseSintomas : '*'} ${req.body.InternaSinaiseSintomas ? req.body.InternaSinaiseSintomas : '*'} ${req.body.ExternaSinaiseSintomas ? req.body.ExternaSinaiseSintomas : '*'}`
+    const HipertensaoSinaiseSintomas = req.body.HipertensaoSinaiseSintomas ? req.body.HipertensaoSinaiseSintomas : '*'
+    const HipotensaoSinaiseSintomas = req.body.HipotensaoSinaiseSintomas ? req.body.HipotensaoSinaiseSintomas : '*'
+    const NauseasSinaiseSintomas = req.body.NauseasSinaiseSintomas ? req.body.NauseasSinaiseSintomas : '*'
+    const NasoragiaSinaiseSintomas = req.body.NasoragiaSinaiseSintomas ? req.body.NasoragiaSinaiseSintomas : '*'
+    const IsocoriaSinaiseSintomas = req.body.IsocoriaSinaiseSintomas ? req.body.IsocoriaSinaiseSintomas : '*'
+    const ObitoSinaiseSintomas = req.body.ObitoSinaiseSintomas ? req.body.ObitoSinaiseSintomas : '*'
+    const OtorreiaSinaiseSintomas = req.body.OtorreiaSinaiseSintomas ? req.body.OtorreiaSinaiseSintomas : '*'
+    const OtorragiaSinaiseSintomas = req.body.OtorragiaSinaiseSintomas ? req.body.OtorragiaSinaiseSintomas : '*'
+    const OVACESinaiseSintomas = req.body.OVACESinaiseSintomas ? req.body.OVACESinaiseSintomas : '*'
+    const ParadaSinaiseSintomas = `${req.body.ParadaSinaiseSintomas ? req.body.ParadaSinaiseSintomas : '*'} ${req.body.CardiacaSinaiseSintomas ? req.body.CardiacaSinaiseSintomas : '*'} ${req.body.RespiratoriaSinaiseSintomas ? req.body.RespiratoriaSinaiseSintomas : '*'}`
+    const PriaprismoSinaiseSintomas = req.body.PriaprismoSinaiseSintomas ? req.body.PriaprismoSinaiseSintomas : '*'
+    const PruridoSinaiseSintomas = req.body.PruridoSinaiseSintomas ? req.body.PruridoSinaiseSintomas : '*'
+    const PupilasSinaiseSintomas = `${req.body.PupilasSinaiseSintomas ? req.body.PupilasSinaiseSintomas : '*'} ${req.body.AnisocoriaSinaiseSintomas ? req.body.AnisocoriaSinaiseSintomas : '*'} ${req.body.MioseSinaiseSintomas ? req.body.MioseSinaiseSintomas : '*'} ${req.body.IsocoriaSinaiseSintomas ? req.body.IsocoriaSinaiseSintomas : '*'} ${req.body.MidriaseSinaiseSintomas ? req.body.MidriaseSinaiseSintomas : '*'} ${req.body.ReagenteSinaiseSintomas ? req.body.ReagenteSinaiseSintomas : '*'} ${req.body.NaoReagenteSinaiseSintomas ? req.body.NaoReagenteSinaiseSintomas : '*'}`
+    const SudoreseSinaiseSintomas = req.body.SudoreseSinaiseSintomas ? req.body.SudoreseSinaiseSintomas : '*'
+    const TaquipneiaSinaiseSintomas = req.body.TaquipneiaSinaiseSintomas ? req.body.TaquipneiaSinaiseSintomas : '*'
+    const TaquicardiaSinaiseSintomas = req.body.TaquicardiaSinaiseSintomas ? req.body.TaquicardiaSinaiseSintomas : '*'
+    var OutroSinaiseSintomas = ''
+    if (req.body.OutroSinaiseSintomas === 'on' && req.body.ValorOutroSinaiseSintomas.length > 0){
+        OutroSinaiseSintomas = req.body.ValorOutroSinaiseSintomas
+    }
+    //Accordion Avaliação Paciente
+    const AberturaOcularMenor = req.body.AberturaOcularMenor ? req.body.AberturaOcularMenor : '*'
+    const RespostaVerbalMenor = req.body.RespostaVerbalMenor ? req.body.RespostaVerbalMenor : '*'
+    const RespostaMotoraMenor = req.body.RespostaMotoraMenor ? req.body.RespostaMotoraMenor : '*'
+    const TotalGCSMenor = req.body.TotalGCSMenor ? req.body.TotalGCSMenor : '*'
+    const AberturaOcularMaior = req.body.AberturaOcularMaior ? req.body.AberturaOcularMaior : '*'
+    const RespostaVerbalMaior = req.body.RespostaVerbalMaior ? req.body.RespostaVerbalMaior : '*'
+    const RespostaMotoraMaior = req.body.RespostaMotoraMaior ? req.body.RespostaMotoraMaior : '*'
+    const TotalGCSMaior = req.body.TotalGCSMaior ? req.body.TotalGCSMaior : '*'
 
     console.log(`
     -----> Dados Paciente <-----
@@ -227,6 +278,58 @@ app.post('/ocorrencia', (req, res) => {
     ${OutroProblemaProblemasSuspeitos}
 
     -----> Sinais e Sintomas <-----
+    ${AbdomenSinaiseSintomas}
+    ${AfundamentoSinaiseSintomas}
+    ${AgitacaoSinaiseSintomas}
+    ${AmnesiaSinaiseSintomas}
+    ${AnginaSinaiseSintomas}
+    ${ApineiaSinaiseSintomas}
+    ${BradicardiaSinaiseSintomas}
+    ${BradipneiaSinaiseSintomas}
+    ${BroncoSinaiseSintomas}
+    ${CefaleiaSinaiseSintomas}
+    ${CianoseSinaiseSintomas}
+    ${ConvulsaoSinaiseSintomas}
+    ${DecorticacaoSinaiseSintomas}
+    ${DeformidadeSinaiseSintomas}
+    ${DescerebracaoSinaiseSintomas}
+    ${DesmaioSinaiseSintomas}
+    ${DesvioSinaiseSintomas}
+    ${DispneiaSinaiseSintomas}
+    ${DorSinaiseSintomas}
+    ${EdemaSinaiseSintomas}
+    ${EstaseSinaiseSintomas}
+    ${FaceSinaiseSintomas}
+    ${HemorragiaSinaiseSintomas}
+    ${HipertensaoSinaiseSintomas}
+    ${HipotensaoSinaiseSintomas}
+    ${NauseasSinaiseSintomas}
+    ${NasoragiaSinaiseSintomas}
+    ${IsocoriaSinaiseSintomas}
+    ${ObitoSinaiseSintomas}
+    ${OtorreiaSinaiseSintomas}
+    ${OtorragiaSinaiseSintomas}
+    ${OVACESinaiseSintomas}
+    ${ParadaSinaiseSintomas}
+    ${PriaprismoSinaiseSintomas}
+    ${PruridoSinaiseSintomas}
+    ${PupilasSinaiseSintomas}
+    ${SudoreseSinaiseSintomas}
+    ${TaquipneiaSinaiseSintomas}
+    ${TaquicardiaSinaiseSintomas}
+    ${OutroSinaiseSintomas}
+
+    -----> Avaliação Paciente Maior 5 anos <-----
+    Abertura Ocular: ${AberturaOcularMenor}
+    Resposta Verbal: ${RespostaVerbalMenor}
+    Resposta Motora: ${RespostaMotoraMenor}
+    Total (GCS) (3-15): ${TotalGCSMenor}
+
+    -----> Avaliação Paciente Maior 5 anos <-----
+    Abertura Ocular: ${AberturaOcularMaior}
+    Resposta Verbal: ${RespostaVerbalMaior}
+    Resposta Motora: ${RespostaMotoraMaior}
+    Total (GCS) (3-15): ${TotalGCSMaior}
 
     `) 
 
