@@ -30,6 +30,16 @@ connection.connect(function (err) {
     }
 });
 
+app.get('/', (req,res)=>{
+    if(req.session.nomelogin == 'adm'){
+        res.render('painel_adm')
+    }else if (req.session.nomelogin){
+        res.render('home', {login: global.nomelogin})
+    }else{
+        res.render('login')
+    }
+})
+
 app.get('/ocorrencia', (req, res) => {
     if (req.session.nomelogin){
         res.render('ocorrencia');
@@ -65,15 +75,7 @@ app.get('/usuarios', (req, res) => {
     });
   });
 
-app.get('/', (req,res)=>{
-    if(req.session.nomelogin == 'adm'){
-        res.render('painel_adm')
-    }else if (req.session.nomelogin){
-        res.render('home', {login: global.nomelogin})
-    }else{
-        res.render('login')
-    }
-})
+
 
 app.get('/criar_usuario', (req, res) =>{
     if (req.session.nomelogin === 'adm'){
@@ -155,6 +157,80 @@ app.post('/usuarios', (req, res) => {
             res.render('usuarios')
         }
     });
+})
+
+app.post('/ocorrencia', (req, res) => {
+    //Accordion Dados Paciente
+    const DataDadosPaciente = req.body.DataDadosPaciente
+    const SexoDadosPaciente = req.body.SexoDadosPaciente
+    const NomeHospitalDadosPaciente = req.body.NomeHospitalDadosPaciente
+    const NomePacienteDadosPaciente = req.body.NomePacienteDadosPaciente
+    const CpfDadosPaciente = 'CPF '+req.body.CpfDadosPaciente
+    const RgDadosPaciente = 'RG '+req.body.RgDadosPaciente
+    const FonePacienteDadosPaciente = req.body.FonePacienteDadosPaciente
+    const IdadePacienteDadosPaciente = req.body.IdadePacienteDadosPaciente
+    const NomeAcompanhanteDadosPaciente = req.body.NomeAcompanhanteDadosPaciente    
+    const IdadeAcompanhanteDadosPaciente = req.body.IdadeAcompanhanteDadosPaciente    
+    const LocalOcorrenciaDadosPaciente = req.body.LocalOcorrenciaDadosPaciente
+    //Accordion Dados Ocorrencia
+    const NumeroUsbDadosOcorrencia = req.body.NumeroUsbDadosOcorrencia
+    const DespDadosOcorrencia = req.body.DespDadosOcorrencia
+    const HCHDadosOcorrencia = req.body.HCHDadosOcorrencia
+    const KmFinalDadosOcorrencia = req.body.KmFinalDadosOcorrencia
+    const CodDadosOcorrencia = req.body.CodDadosOcorrencia
+    const CodSiaSusDadosOcorrencia = req.body.CodSiaSusDadosOcorrencia
+    //Accordion Tipo de Ocorrencia
+    const TipoOcorrencia = req.body.TipoOcorrencia ? req.body.TipoOcorrencia : '*'
+    //Accordion Problemas Encontrados Suspeitos
+    const PsiquiatricoProblemasSuspeitos = req.body.PsiquiatricoProblemasSuspeitos ? req.body.PsiquiatricoProblemasSuspeitos : '*'
+    const RespiratorioProblemasSuspeitos = `${req.body.RespiratorioProblemasSuspeitos ? req.body.RespiratorioProblemasSuspeitos : '*'} ${req.body.DPOCProblemasSuspeitos ? req.body.DPOCProblemasSuspeitos : '*'} ${req.body.InalacaoFumacaProblemasSuspeitos ? req.body.InalacaoFumacaProblemasSuspeitos : '*'}`
+    const DiabetesProblemasSuspeitos = `${req.body.DiabetesProblemasSuspeitos ? req.body.DiabetesProblemasSuspeitos : '*'} ${req.body.HiperglicemiaProblemasSuspeitos ? req.body.HiperglicemiaProblemasSuspeitos : '*'} ${req.body.HipoglicemiaProblemasSuspeitos? req.body.HipoglicemiaProblemasSuspeitos : '*'}`
+    const ObstetricoProblemasSuspeitos = `${req.body.ObstetricoProblemasSuspeitos ? req.body.ObstetricoProblemasSuspeitos : '*' } ${req.body.PartoEmergencialProblemasSuspeitos ? req.body.PartoEmergencialProblemasSuspeitos : '*' } ${req.body.GestanteProblemasSuspeitos ? req.body.GestanteProblemasSuspeitos : '*'} ${req.body.HemorExcessivaProblemasSuspeitos ? req.body.HemorExcessivaProblemasSuspeitos : '*'}`
+    const TransporteProblemasSuspeitos = `${req.body.TransporteProblemasSuspeitos ? req.body.TransporteProblemasSuspeitos : '*'} ${req.body.AereoProblemasSuspeitos ? req.body.AereoProblemasSuspeitos : '*'} ${req.body.ClinicoProblemasSuspeitos ? req.body.ClinicoProblemasSuspeitos : '*'} ${req.body.EmergencialProblemasSuspeitos ? req.body.EmergencialProblemasSuspeitos : '*'} ${req.body.PosTraumaProblemasSuspeitos ? req.body.PosTraumaProblemasSuspeitos : '*'} ${req.body.SamuProblemasSuspeitos ? req.body.SamuProblemasSuspeitos : '*'} ${req.body.SemRemocaoProblemasSuspeitos ? req.body.SemRemocaoProblemasSuspeitos : '*'} ${req.body.ValorOutroTransporteProblemasSuspeitos.length > 0 ? req.body.ValorOutroTransporteProblemasSuspeitos : '*'}`
+    var OutroProblemaProblemasSuspeitos = '*'
+    if (req.body.OutroProblemaProblemasSuspeitos === 'on' && req.body.ValorOutroProblemaProblemasSuspeitos.length > 0){
+        OutroProblemaProblemasSuspeitos = req.body.ValorOutroProblemaProblemasSuspeitos
+    }
+    //Accordion Sinais e Sintomas
+    
+
+    console.log(`
+    -----> Dados Paciente <-----
+    Data: ${DataDadosPaciente}
+    Sexo: ${SexoDadosPaciente}
+    Nome Hospital: ${NomeHospitalDadosPaciente}
+    Nome Paciente: ${NomePacienteDadosPaciente}
+    Documento: ${CpfDadosPaciente +' '+ RgDadosPaciente}
+    Fone Paciente: ${FonePacienteDadosPaciente}
+    Idade Paciente: ${IdadePacienteDadosPaciente}
+    Nome Acompanhante: ${NomeAcompanhanteDadosPaciente}
+    Idade Acompanhante: ${IdadeAcompanhanteDadosPaciente}
+    Local Ocorrência: ${LocalOcorrenciaDadosPaciente}
+
+    -----> Dados Ocorrencia <-----
+    N° USB: ${NumeroUsbDadosOcorrencia}
+    DESP: ${DespDadosOcorrencia}
+    H. CH: ${HCHDadosOcorrencia}
+    KM Final: ${KmFinalDadosOcorrencia}
+    Código: ${CodDadosOcorrencia}
+    CÓD. SIA/SUS: ${CodSiaSusDadosOcorrencia}
+
+    -----> Tipo de Ocorrência <-----
+    ${TipoOcorrencia}
+
+    -----> Problemas Encontrados Suspeitos <-----
+    ${PsiquiatricoProblemasSuspeitos}
+    ${RespiratorioProblemasSuspeitos}
+    ${DiabetesProblemasSuspeitos}
+    ${ObstetricoProblemasSuspeitos}
+    ${TransporteProblemasSuspeitos}
+    ${OutroProblemaProblemasSuspeitos}
+
+    -----> Sinais e Sintomas <-----
+
+    `) 
+
+    res.render('ocorrencia') 
 })
 
 

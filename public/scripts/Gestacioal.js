@@ -25,4 +25,5 @@ function showGestante() {
 function hideGestante() {
     var divGestante = document.getElementById('Gestante');
     divGestante.style.display = 'none';
+    hideAnamnese();
 }
