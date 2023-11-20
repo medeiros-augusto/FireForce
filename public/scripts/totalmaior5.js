@@ -25,6 +25,7 @@
     });
 
     document.getElementById('totalPontuacao').value = pontuacao;
+    document.getElementById('totalmaior').value = pontuacao;
 }
 
 var inputs = document.querySelectorAll('input[type=radio]');

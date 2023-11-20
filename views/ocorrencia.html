@@ -1213,9 +1213,10 @@
                             <div class="container text-center mt-3">
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon1">Total (GCS) (3-15)</span>
-                                    <input type="text" name="TotalGCSMenor" class="form-control" placeholder="0" aria-label="Total"
+                                    <input type="text" class="form-control" placeholder="0" aria-label="Total"
                                         aria-describedby="basic-addon1" style="text-align: center;" id="pontuacaoTotal"
                                         disabled>
+                                    <input type="text" name="TotalGCSMenor" id="totalmenor" style="display: none;">
                                 </div>
                             </div>
                         </div>
@@ -1375,9 +1376,10 @@
                             <div class="container text-center mt-3">
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon1">Total (GCS) (3-15)</span>
-                                    <input type="text" name="TotalGCSMaior" class="form-control" placeholder="0" aria-label="Total"
+                                    <input type="text" class="form-control" placeholder="0" aria-label="Total"
                                         aria-describedby="basic-addon1" style="text-align: center;" id="totalPontuacao"
                                         disabled>
+                                    <input type="text" name="TotalGCSMaior" id="totalmaior" style="display: none;">
                                 </div>
                             </div>
                         </div>
@@ -1409,57 +1411,57 @@
                         <div class="container mt-4">
                             <div class="input-group mb-3 mt-3">
                                 <span class="input-group-text">Pressão Arterial</span>
-                                <input type="text" class="form-control" aria-label="Usuário"
+                                <input type="text" name="PressaoSinaisVitais" class="form-control" aria-label="Usuário"
                                     style="text-align: center;">
                                 <span class="input-group-text">X</span>
-                                <input type="text" class="form-control" aria-label="Servidor"
+                                <input type="text" name="ArterialSinaisVitais" class="form-control" aria-label="Servidor"
                                     style="text-align: center;">
                                 <span class="input-group-text">mmHg</span>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Pulso</span>
-                                <input type="text" class="form-control" aria-label="Usuário"
+                                <input type="text" name="PulsoSinaisVitais" class="form-control" aria-label="Usuário"
                                     style="text-align: center;">
                                 <span class="input-group-text">B.C.P.M</span>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Respiração</span>
-                                <input type="text" class="form-control" aria-label="Usuário"
+                                <input type="text" name="RespiracaoSinaisVitais" class="form-control" aria-label="Usuário"
                                     style="text-align: center;">
                                 <span class="input-group-text">M.R.M.</span>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Saturação</span>
-                                <input type="text" class="form-control" aria-label="Usuário"
+                                <input type="text" name="SaturacaoSinaisVitais" class="form-control" aria-label="Usuário"
                                     style="text-align: center;">
                                 <span class="input-group-text">%</span>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">HGT</span>
-                                <input type="text" class="form-control" aria-label="Usuário"
+                                <input type="text" name="HGTSinaisVitais" class="form-control" aria-label="Usuário"
                                     style="text-align: center;">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Temperatura</span>
-                                <input type="text" class="form-control" aria-label="Usuário"
+                                <input type="text" name="TemperaturaSinaisVitais" class="form-control" aria-label="Usuário"
                                     style="text-align: center;">
                                 <span class="input-group-text">°C</span>
                             </div>
                             <h5 class="mt-3" style="text-align: center;">Perfusão</h5>
                             <div class="btn-group mt-3" role="group" aria-label="Basic radio toggle button group"
                                 style="width: 100%;">
-                                <input type="radio" class="btn-check" name="maior" id="maior2seg" autocomplete="off">
+                                <input type="radio" class="btn-check" name="PerfusaoSinaisVitais" value="> 2 Seg" id="maior2seg" autocomplete="off">
                                 <label class="btn btn-outline-primary" for="maior2seg">> 2 Seg</label>
-                                <input type="radio" class="btn-check" name="maior" id="menor2seg" autocomplete="off">
+                                <input type="radio" class="btn-check" name="PerfusaoSinaisVitais" value="< 2 Seg" id="menor2seg" autocomplete="off">
                                 <label class="btn btn-outline-primary" for="menor2seg">
                                     < 2 Seg</label>
                             </div>
                             <h5 class="mt-3" style="text-align: center;">Situação</h5>
                             <div class="btn-group mt-3" role="group" aria-label="Basic radio toggle button group"
                                 style="width: 100%;">
-                                <input type="radio" class="btn-check" name="normal" id="normal" autocomplete="off">
+                                <input type="radio" class="btn-check" name="SituacaoSinaisVitais" value="Normal" id="normal" autocomplete="off">
                                 <label class="btn btn-outline-primary" for="normal">Normal</label>
-                                <input type="radio" class="btn-check mb-3" name="normal" id="anormal"
+                                <input type="radio" class="btn-check mb-3" name="SituacaoSinaisVitais" value="Anormal" id="anormal"
                                     autocomplete="off">
                                 <label class="btn btn-outline-primary" for="anormal">Anormal</label>
                             </div>
@@ -1477,34 +1479,35 @@
                 <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div class="container mt-3">
+                            <div class="p-3 text-center"><strong>Forma de condução</strong></div>
                             <div class="btn-group mb-3 mt-2" style="width: 100%;" role="group"
                                 aria-label="Grupo de botões estilo checkbox circular">
-                                <input type="radio" class="btn-check" name="btnradio" id="Deitada" autocomplete="off">
+                                <input type="radio" class="btn-check" name="FormaConducao" value="Deitada" id="Deitada" autocomplete="off">
                                 <label class="btn btn-outline-primary" for="Deitada">Deitada</label>
-                                <input type="radio" class="btn-check" name="btnradio" id="Semi-Sentada"
+                                <input type="radio" class="btn-check" name="FormaConducao" value="Semi-Sentada" id="Semi-Sentada"
                                     autocomplete="off">
                                 <label class="btn btn-outline-primary" for="Semi-Sentada">Semi-Sentada</label>
-                                <input type="radio" class="btn-check" name="btnradio" id="Sentada" autocomplete="off">
+                                <input type="radio" class="btn-check" name="FormaConducao" value="Sentada" id="Sentada" autocomplete="off">
                                 <label class="btn btn-outline-primary" for="Sentada">Sentada</label>
                             </div>
                             <div class="col-lg-3 bloco" style="width: 100%;">
-                                <select class="form-select mb-3" aria-label="Seletor padrão">
+                                <select class="form-select mb-3" name="VitimaEra" aria-label="Seletor padrão">
                                     <option style="text-align: center;">Opções Vítima Era</option>
-                                    <option value="1">Ciclista</option>
-                                    <option value="2">Condutor Moto</option>
-                                    <option value="3">Condutor Carro</option>
-                                    <option value="4">Gestante</option>
-                                    <option value="5">Clínico</option>
-                                    <option value="6">Trauma</option>
-                                    <option value="7">Passageiro Banco Frente</option>
-                                    <option value="8">Passageiro Banco Trás</option>
-                                    <option value="9">Passageiro Moto</option>
-                                    <option value="10">Pedestre</option>
+                                    <option value="Ciclista">Ciclista</option>
+                                    <option value="Condutor Moto">Condutor Moto</option>
+                                    <option value="Condutor Carro">Condutor Carro</option>
+                                    <option value="Gestante">Gestante</option>
+                                    <option value="Clínico">Clínico</option>
+                                    <option value="Trauma">Trauma</option>
+                                    <option value="Passageiro Banco Frente">Passageiro Banco Frente</option>
+                                    <option value="Passageiro Banco Trás">Passageiro Banco Trás</option>
+                                    <option value="Passageiro Moto">Passageiro Moto</option>
+                                    <option value="Pedestre">Pedestre</option>
                                 </select>
                             </div>
-                            <p style="text-align: center;"><strong>Objetos Recolhidos</strong></p>
+                            <div class="p-3 text-center"><strong>Objetos Recolhidos</strong></div>
                             <div class="input-group mb-3 mt-2">
-                                <textarea class="form-control" aria-label="Área de texto"
+                                <textarea class="form-control" name="ObjetosRecolhidos" aria-label="Área de texto"
                                     style="resize: none;"></textarea>
                             </div>
                         </div>
@@ -1515,28 +1518,29 @@
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
-                        Decisão Transporte
+                        Decisão Transporte / Equipe de Atendimento
                     </button>
                 </h2>
                 <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div class="container mt-3">
+                            <div class="p-3 text-center"><strong>Decisão Transporte</strong></div>
                             <div class="emojis">
                                 <div class="card" style="width: 14rem;">
                                     <img src="../public/images/emojicagado.png" class="card-img-top" alt="#">
                                     <div class="card-body">
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1"
+                                        <input type="radio" class="btn-check" value="Crítico" name="DecisaoTransporte" id="Critico"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="btnradio1"
+                                        <label class="btn btn-outline-primary" for="Critico"
                                             style="width: 100%;">Crítico</label>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 14rem;">
                                     <img src="../public/images/emojidepresso.png" class="card-img-top" alt="#">
                                     <div class="card-body">
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2"
+                                        <input type="radio" class="btn-check" value="Instável" name="DecisaoTransporte" id="Instavel"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="btnradio2"
+                                        <label class="btn btn-outline-primary" for="Instavel"
                                             style="width: 100%;">Instável</label>
                                     </div>
                                 </div>
@@ -1545,18 +1549,18 @@
                                 <div class="card mt-3" style="width: 14rem;">
                                     <img src="../public/images/emojipensante.jpg" class="card-img-top" alt="100">
                                     <div class="card-body">
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3"
+                                        <input type="radio" class="btn-check" value="Potencialmente Estável" name="DecisaoTransporte" id="PotencialmenteEstavel"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="btnradio3"
+                                        <label class="btn btn-outline-primary" for="PotencialmenteEstavel"
                                             style="width: 100%;">Potencialmente Estável</label>
                                     </div>
                                 </div>
                                 <div class="card mt-3" style="width: 14rem;">
                                     <img src="../public/images/emojiOK.png" class="card-img-top" alt="#">
                                     <div class="card-body">
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio4"
+                                        <input type="radio" class="btn-check" value="Estável" name="DecisaoTransporte" id="Estavel"
                                             autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="btnradio4"
+                                        <label class="btn btn-outline-primary" for="Estavel"
                                             style="width: 100%;">Estável</label>
                                     </div>
                                 </div>
@@ -1571,7 +1575,7 @@
                                     <div class="col-auto">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">M</span>
-                                            <input type="text" class="form-control" aria-label="Usuário"
+                                            <input type="text" name="MEquipeAtendimento" class="form-control" aria-label="Usuário"
                                                 aria-describedby="basic-addon1">
                                         </div>
                                     </div>
@@ -1580,7 +1584,7 @@
                                     <div class="col-auto">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">S1</span>
-                                            <input type="text" class="form-control" aria-label="Usuário"
+                                            <input type="text" name="S1EquipeAtendimento" class="form-control" aria-label="Usuário"
                                                 aria-describedby="basic-addon1">
                                         </div>
                                     </div>
@@ -1591,7 +1595,7 @@
                                     <div class="col-auto">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">S2</span>
-                                            <input type="text" class="form-control" aria-label="Usuário"
+                                            <input type="text" name="S2EquipeAtendimento" class="form-control" aria-label="Usuário"
                                                 aria-describedby="basic-addon1">
                                         </div>
                                     </div>
@@ -1600,7 +1604,7 @@
                                     <div class="col-auto">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">S3</span>
-                                            <input type="text" class="form-control" aria-label="Usuário"
+                                            <input type="text" name="S3EquipeAtendimento" class="form-control" aria-label="Usuário"
                                                 aria-describedby="basic-addon1">
                                         </div>
                                     </div>
@@ -1613,7 +1617,7 @@
                                         <div class="input-group mb-3">
                                             <span style="width: 8rem;" class="input-group-text"
                                                 id="basic-addon1">Equipe</span>
-                                            <input type="text" class="form-control" aria-label="Usuário"
+                                            <input type="text" name="EquipeEquipeAtendimento" class="form-control" aria-label="Usuário"
                                                 aria-describedby="basic-addon1">
                                         </div>
                                     </div>
@@ -1624,7 +1628,7 @@
                                         <div class="input-group mb-3">
                                             <span style="width: 8rem;" class="input-group-text"
                                                 id="basic-addon1">Demandante</span>
-                                            <input type="text" class="form-control" aria-label="Usuário"
+                                            <input type="text" name="DemandanteEquipeAtendimento" class="form-control" aria-label="Usuário"
                                                 aria-describedby="basic-addon1">
                                         </div>
                                     </div>
@@ -1646,14 +1650,14 @@
                         <div class="container">
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Aspiração" name="AspiracaoProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Aspiração"
                                     style="text-align: center;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Avaliação Inicial" name="AvaliacaoInicialProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Avaliação inicial"
                                     style="text-align: center;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
@@ -1661,231 +1665,231 @@
 
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Avaliação Dirigida" name="AvaliacaoDirigidaProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Avaliação dirigida"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Avaliação Continuada" name="AvaliacaoContinuadaProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Avaliação continuada"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Chave RAUTEK" name="ChaveProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Chave RAUTEK"
                                     style="text-align: center;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Canula de Guedel" name="CanulaProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Canula de Guedel"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Desobstrução de V.A" name="DesobstrucaoProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Desobstrução de V.A"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Emprego do D.E.A" name="EmpregoProcedimentosEfetuados"  id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Emprego do D.E.A"
                                     style="text-align: center;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Gerenciamento de Riscos" name="GerenciamentoProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Gerenciamento de Riscos"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Limpeza de Ferimento" name="LimpezaProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Limpeza de ferimento"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Curativos" name="CurativosProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Curativos"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Compressivo" name="CompressivoProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Compressivo"
                                     style="text-align: center;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Encravamento" name="EncravamentoProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Encravamento"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Ocular" name="OcularProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Ocular"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Queimadura" name="QueimaduraProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Queimadura"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Simples" name="SimplesProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Simples"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="3 pontas" name="3PontasProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="3 pontas"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Imobilizações" name="ImobilizacoesProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Imobilizações"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Membro INF .DIR" name="InferiorDireitoProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Membro INF .DIR"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Membro INF .ESQ" name="InferiorEsquerdoProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Membro INF .ESQ"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Membro SUP .DIR" name="SuperiorDireitoProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Membro SUP .DIR"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Membro SUP .ESQ" name="SuperiorEsquerdoProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Membro SUP .ESQ"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Quadril" name="QuadrilProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Quadril"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Cervical" name="CervicalProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Cervical"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Maca sobre rodas" name="MacaRodasProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Maca sobre rodas"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Maca rígida" name="MacaRigidaProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Maca rígida"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Ponte" name="PonteProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Ponte" style="text-align: center; "
                                     style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2"
                                     disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Retirado capacete" name="RetiradoProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Retirado capacete"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="R.C.P" name="RCPProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="R.C.P" style="text-align: center; "
                                     style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2"
                                     disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Rolamento 90º" name="90ProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Rolamento 90º"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Rolamento 180º" name="180ProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Rolamento 180º"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="TOMADA DECISÃO" name="TomadaProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="TOMADA DECISÃO"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Tratado de choque" name="TratadoProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Tratado de choque"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Uso de cânula" name="UsoProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Uso de cânula"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckColar" style="padding: 5%;"></span>
+                                        type="checkbox" value="Uso de Colar" name="ColarProcedimentosEfetuados" id="flexCheckColar" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Uso de Colar"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
@@ -1893,39 +1897,39 @@
                             <div class="TAM" style="display: none;">
                                 <div class="input-group mb-3 ">
                                     <span class="input-group-text" id="basic-addon2">TAM</span>
-                                    <input type="text" class="form-control" style="text-align: center; "
+                                    <input type="text" name="TamColarProcedimentosEfetuados" class="form-control" style="text-align: center; "
                                         style="display: none;" aria-label="Nome do usuário"
                                         aria-describedby="basic-addon2">
                                 </div>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Uso de KED" name="KEDProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Uso de KED"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Uso de TTF" name="TTFProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Uso de TTF"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Ventilação suporte" name="VentilacaoProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Ventilação suporte"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Oxigênioterapia" name="OxigenioterapiaProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Oxigênioterapia"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
-                                <input type="text" class="form-control" style="text-align: center; "
+                                <input type="text" name="ValorOxigenioterapiaProcedimentosEfetuados" class="form-control" style="text-align: center; "
                                     style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2">
                                 <input type="text" class="form-control" placeholder="LPM" style="text-align: center; "
                                     style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2"
@@ -1933,11 +1937,11 @@
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
-                                <input type="text" class="form-control" placeholder="Reanimador "
+                                        type="checkbox" value="Reanimador" name="ReanimadorProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
+                                <input type="text" class="form-control" placeholder="Reanimador"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
-                                <input type="text" class="form-control" style="text-align: center; "
+                                <input type="text" name="ValorReanimadorProcedimentosEfetuados" class="form-control" style="text-align: center; "
                                     style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2">
                                 <input type="text" class="form-control" placeholder="LPM" style="text-align: center; "
                                     style="display: none;" aria-label="Nome do usuário" aria-describedby="basic-addon2"
@@ -1945,21 +1949,21 @@
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Meios auxiliares" name="MeiosProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Meios auxiliares"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="Celesc" name="CelescProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Celesc"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
                             </div>
                             <div class="input-group mb-3 ">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckPolicia" style="padding: 5%;"></span>
+                                        type="checkbox" value="Polícia" name="PoliciaProcedimentosEfetuados" id="flexCheckPolicia" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Polícia"
                                     style="text-align: center; " style="display: none;" aria-label="Nome do usuário"
                                     aria-describedby="basic-addon2" disabled>
@@ -1970,7 +1974,7 @@
                                     <div class="col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
+                                                    class="form-check-input" type="checkbox" name="CivilProcedimentosEfetuados" value="Civil"
                                                     id="flexCheckDefault" style="padding: 5%;"></span>
                                             <input type="text" class="form-control" placeholder="Civil"
                                                 style="text-align: center;" disabled>
@@ -1979,7 +1983,7 @@
                                     <div class="col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
+                                                    class="form-check-input" type="checkbox" name="MilitarProcedimentosEfetuados" value="Militar"
                                                     id="flexCheckDefault" style="padding: 5%;"></span>
                                             <input type="text" class="form-control" placeholder="Militar"
                                                 style="text-align: center;" disabled>
@@ -1990,7 +1994,7 @@
                                     <div class="col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
+                                                    class="form-check-input" type="checkbox" name="PREProcedimentosEfetuados" value="P.R.E"
                                                     id="flexCheckDefault" style="padding: 5%;"></span>
                                             <input type="text" class="form-control" placeholder="P.R.E"
                                                 style="text-align: center;" disabled>
@@ -1999,7 +2003,7 @@
                                     <div class="col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
+                                                    class="form-check-input" type="checkbox" value="P.R.F" name="PRFProcedimentosEfetuados"
                                                     id="flexCheckDefault" style="padding: 5%;"></span>
                                             <input type="text" class="form-control" placeholder="P.R.F"
                                                 style="text-align: center;" disabled>
@@ -2009,19 +2013,19 @@
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="DÉF. Civil" name="DefCivilProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="DÉF. Civil"
                                     style="text-align: center;" disabled>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="IGP/PC" name="IGPPCProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="IGP/PC" style="text-align: center;"
                                     disabled>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckSamu" style="padding: 5%;"></span>
+                                        type="checkbox" value="Samu" name="SamuProcedimentosEfetuados" id="flexCheckSamu" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="Samu" style="text-align: center;"
                                     disabled>
                             </div>
@@ -2030,7 +2034,7 @@
                                     <div class="col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
+                                                    class="form-check-input" type="checkbox" name="USAProcedimentosEfetuados" value="USA"
                                                     id="flexCheckDefault" style="padding: 5%;"></span>
                                             <input type="text" class="form-control" placeholder="USA"
                                                 style="text-align: center;" disabled>
@@ -2039,7 +2043,7 @@
                                     <div class="col-md-6">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon2"><input
-                                                    class="form-check-input" type="checkbox" value=""
+                                                    class="form-check-input" type="checkbox" name="USBProcedimentosEfetuados" value="USB"
                                                     id="flexCheckDefault" style="padding: 5%;"></span>
                                             <input type="text" class="form-control" placeholder="USB"
                                                 style="text-align: center;" disabled>
@@ -2049,16 +2053,15 @@
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon2"><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
+                                        type="checkbox" value="CIT" name="CITProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
                                 <input type="text" class="form-control" placeholder="CIT" style="text-align: center;"
                                     disabled>
                             </div>
                             <div class="input-group mb-3" id="divPadrasto">
                                 <span class="input-group-text" id="basic-addon2 "><input class="form-check-input"
-                                        type="checkbox" value="" id="flexCheckDefault" style="padding: 5%;"></span>
-                                <input type="text" class="form-control" style="text-align: center;" placeholder="Outro"
+                                        type="checkbox" name="OutroProcedimentosEfetuados" id="flexCheckDefault" style="padding: 5%;"></span>
+                                <input type="text" name="ValorOutroProcedimentosEfetuados" class="form-control" style="text-align: center;" placeholder="Outro"
                                     aria-describedby="basic-addon2">
-                                <span class="btn btn-primary" onclick="addConjunto()">Adicionar</span>
                             </div>
                         </div>
                     </div>
@@ -2989,7 +2992,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Distúrbio de Comportamento" id="flexRadioDefault1">
+                                                        name="DisturbioAvaliacaoCinematica" value="Sim" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Sim
                                                     </label>
@@ -3000,7 +3003,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Distúrbio de Comportamento" id="flexRadioDefault1">
+                                                        name="DisturbioAvaliacaoCinematica" value="Não" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Não
                                                     </label>
@@ -3021,7 +3024,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Encontrado de Capacete" id="flexRadioDefault1">
+                                                        name="EncontradoCapaceteAvaliacaoCinematica" value="Sim" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Sim
                                                     </label>
@@ -3032,7 +3035,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Encontrado de Capacete" id="flexRadioDefault1">
+                                                        name="EncontradoCapaceteAvaliacaoCinematica" value="Não" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Não
                                                     </label>
@@ -3053,7 +3056,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Encontrado de Cinto" id="flexRadioDefault1">
+                                                        name="EncontradoCintoAvaliacaoCinematica" value="Sim" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Sim
                                                     </label>
@@ -3064,7 +3067,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Encontrado de Cinto" id="flexRadioDefault1">
+                                                        name="EncontradoCintoAvaliacaoCinematica" value="Não" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Não
                                                     </label>
@@ -3085,7 +3088,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Para-Brisas Avariado" id="flexRadioDefault1">
+                                                        name="ParaBrisasAvariadoAvaliacaoCinematica" value="Sim" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Sim
                                                     </label>
@@ -3096,7 +3099,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Para-Brisas Avariado" id="flexRadioDefault1">
+                                                        name="ParaBrisasAvariadoAvaliacaoCinematica" value="Não" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Não
                                                     </label>
@@ -3115,7 +3118,7 @@
                                     <div class="row">
                                         <div class="col-md-6 mt-3">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="Caminhando na Cena"
+                                                <input class="form-check-input" type="radio" name="CaminhandoAvaliacaoCinematica" value="Sim"
                                                     id="flexRadioDefault1">
                                                 <label class="form-check-label" for="flexRadioDefault1">
                                                     Sim
@@ -3126,7 +3129,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Caminhando na Cena" id="flexRadioDefault1">
+                                                        name="CaminhandoAvaliacaoCinematica" value="Não" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Não
                                                     </label>
@@ -3145,8 +3148,8 @@
                                     <div class="row">
                                         <div class="col-md-6 mt-3">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="Caminhando na Cena"
-                                                    id="flexRadioDefault1">
+                                                <input class="form-check-input" type="radio" name="PainelAvariadoAvaliacaoCinematica"
+                                                    value="Sim" id="flexRadioDefault1">
                                                 <label class="form-check-label" for="flexRadioDefault1">
                                                     Sim
                                                 </label>
@@ -3156,7 +3159,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Caminhando na Cena" id="flexRadioDefault1">
+                                                        name="PainelAvariadoAvaliacaoCinematica" value="Não" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Não
                                                     </label>
@@ -3175,8 +3178,8 @@
                                     <div class="row">
                                         <div class="col-md-6 mt-3">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="Volante Retorcido"
-                                                    id="flexRadioDefault1">
+                                                <input class="form-check-input" type="radio" name="VolanteRetorcidoAvaliacaoCinematica"
+                                                    value="Sim" id="flexRadioDefault1">
                                                 <label class="form-check-label" for="flexRadioDefault1">
                                                     Sim
                                                 </label>
@@ -3186,7 +3189,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Volante Retorcido" id="flexRadioDefault1">
+                                                        value="Não" name="VolanteRetorcidoAvaliacaoCinematica" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Não
                                                     </label>

@@ -26,6 +26,7 @@ function calcularPontuacao() {
     });
 
     document.getElementById('pontuacaoTotal').value = pontuacao;
+    document.getElementById('totalmenor').value = pontuacao;
 }
 
 var inputs = document.querySelectorAll('input[type=radio]');

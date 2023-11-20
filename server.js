@@ -165,8 +165,8 @@ app.post('/ocorrencia', (req, res) => {
     const SexoDadosPaciente = req.body.SexoDadosPaciente
     const NomeHospitalDadosPaciente = req.body.NomeHospitalDadosPaciente
     const NomePacienteDadosPaciente = req.body.NomePacienteDadosPaciente
-    const CpfDadosPaciente = 'CPF '+req.body.CpfDadosPaciente
-    const RgDadosPaciente = 'RG '+req.body.RgDadosPaciente
+    const CpfDadosPaciente = req.body.CpfDadosPaciente
+    const RgDadosPaciente = req.body.RgDadosPaciente
     const FonePacienteDadosPaciente = req.body.FonePacienteDadosPaciente
     const IdadePacienteDadosPaciente = req.body.IdadePacienteDadosPaciente
     const NomeAcompanhanteDadosPaciente = req.body.NomeAcompanhanteDadosPaciente    
@@ -180,78 +180,110 @@ app.post('/ocorrencia', (req, res) => {
     const CodDadosOcorrencia = req.body.CodDadosOcorrencia
     const CodSiaSusDadosOcorrencia = req.body.CodSiaSusDadosOcorrencia
     //Accordion Tipo de Ocorrencia
-    const TipoOcorrencia = req.body.TipoOcorrencia ? req.body.TipoOcorrencia : '*'
+    const TipoOcorrencia = req.body.TipoOcorrencia ? req.body.TipoOcorrencia : ''
     //Accordion Problemas Encontrados Suspeitos
-    const PsiquiatricoProblemasSuspeitos = req.body.PsiquiatricoProblemasSuspeitos ? req.body.PsiquiatricoProblemasSuspeitos : '*'
-    const RespiratorioProblemasSuspeitos = `${req.body.RespiratorioProblemasSuspeitos ? req.body.RespiratorioProblemasSuspeitos : '*'} ${req.body.DPOCProblemasSuspeitos ? req.body.DPOCProblemasSuspeitos : '*'} ${req.body.InalacaoFumacaProblemasSuspeitos ? req.body.InalacaoFumacaProblemasSuspeitos : '*'}`
-    const DiabetesProblemasSuspeitos = `${req.body.DiabetesProblemasSuspeitos ? req.body.DiabetesProblemasSuspeitos : '*'} ${req.body.HiperglicemiaProblemasSuspeitos ? req.body.HiperglicemiaProblemasSuspeitos : '*'} ${req.body.HipoglicemiaProblemasSuspeitos? req.body.HipoglicemiaProblemasSuspeitos : '*'}`
-    const ObstetricoProblemasSuspeitos = `${req.body.ObstetricoProblemasSuspeitos ? req.body.ObstetricoProblemasSuspeitos : '*' } ${req.body.PartoEmergencialProblemasSuspeitos ? req.body.PartoEmergencialProblemasSuspeitos : '*' } ${req.body.GestanteProblemasSuspeitos ? req.body.GestanteProblemasSuspeitos : '*'} ${req.body.HemorExcessivaProblemasSuspeitos ? req.body.HemorExcessivaProblemasSuspeitos : '*'}`
-    const TransporteProblemasSuspeitos = `${req.body.TransporteProblemasSuspeitos ? req.body.TransporteProblemasSuspeitos : '*'} ${req.body.AereoProblemasSuspeitos ? req.body.AereoProblemasSuspeitos : '*'} ${req.body.ClinicoProblemasSuspeitos ? req.body.ClinicoProblemasSuspeitos : '*'} ${req.body.EmergencialProblemasSuspeitos ? req.body.EmergencialProblemasSuspeitos : '*'} ${req.body.PosTraumaProblemasSuspeitos ? req.body.PosTraumaProblemasSuspeitos : '*'} ${req.body.SamuProblemasSuspeitos ? req.body.SamuProblemasSuspeitos : '*'} ${req.body.SemRemocaoProblemasSuspeitos ? req.body.SemRemocaoProblemasSuspeitos : '*'} ${req.body.ValorOutroTransporteProblemasSuspeitos.length > 0 ? req.body.ValorOutroTransporteProblemasSuspeitos : '*'}`
-    var OutroProblemaProblemasSuspeitos = '*'
+    const PsiquiatricoProblemasSuspeitos = req.body.PsiquiatricoProblemasSuspeitos ? req.body.PsiquiatricoProblemasSuspeitos : ''
+    const RespiratorioProblemasSuspeitos = `${req.body.RespiratorioProblemasSuspeitos ? req.body.RespiratorioProblemasSuspeitos : ''} ${req.body.DPOCProblemasSuspeitos ? req.body.DPOCProblemasSuspeitos : ''} ${req.body.InalacaoFumacaProblemasSuspeitos ? req.body.InalacaoFumacaProblemasSuspeitos : ''}`
+    const DiabetesProblemasSuspeitos = `${req.body.DiabetesProblemasSuspeitos ? req.body.DiabetesProblemasSuspeitos : ''} ${req.body.HiperglicemiaProblemasSuspeitos ? req.body.HiperglicemiaProblemasSuspeitos : ''} ${req.body.HipoglicemiaProblemasSuspeitos? req.body.HipoglicemiaProblemasSuspeitos : ''}`
+    const ObstetricoProblemasSuspeitos = `${req.body.ObstetricoProblemasSuspeitos ? req.body.ObstetricoProblemasSuspeitos : '' } ${req.body.PartoEmergencialProblemasSuspeitos ? req.body.PartoEmergencialProblemasSuspeitos : '' } ${req.body.GestanteProblemasSuspeitos ? req.body.GestanteProblemasSuspeitos : ''} ${req.body.HemorExcessivaProblemasSuspeitos ? req.body.HemorExcessivaProblemasSuspeitos : ''}`
+    const TransporteProblemasSuspeitos = `${req.body.TransporteProblemasSuspeitos ? req.body.TransporteProblemasSuspeitos : ''} ${req.body.AereoProblemasSuspeitos ? req.body.AereoProblemasSuspeitos : ''} ${req.body.ClinicoProblemasSuspeitos ? req.body.ClinicoProblemasSuspeitos : ''} ${req.body.EmergencialProblemasSuspeitos ? req.body.EmergencialProblemasSuspeitos : ''} ${req.body.PosTraumaProblemasSuspeitos ? req.body.PosTraumaProblemasSuspeitos : ''} ${req.body.SamuProblemasSuspeitos ? req.body.SamuProblemasSuspeitos : ''} ${req.body.SemRemocaoProblemasSuspeitos ? req.body.SemRemocaoProblemasSuspeitos : ''} ${req.body.ValorOutroTransporteProblemasSuspeitos.length > 0 ? req.body.ValorOutroTransporteProblemasSuspeitos : ''}`
+    var OutroProblemaProblemasSuspeitos = ''
     if (req.body.OutroProblemaProblemasSuspeitos === 'on' && req.body.ValorOutroProblemaProblemasSuspeitos.length > 0){
         OutroProblemaProblemasSuspeitos = req.body.ValorOutroProblemaProblemasSuspeitos
     }
     //Accordion Sinais e Sintomas
-    const AbdomenSinaiseSintomas = req.body.AbdomenSinaiseSintomas ? req.body.AbdomenSinaiseSintomas : '*'
-    const AfundamentoSinaiseSintomas = req.body.AfundamentoSinaiseSintomas ? req.body.AfundamentoSinaiseSintomas : '*'
-    const AgitacaoSinaiseSintomas = req.body.AgitacaoSinaiseSintomas ? req.body.AgitacaoSinaiseSintomas : '*'
-    const AmnesiaSinaiseSintomas = req.body.AmnesiaSinaiseSintomas ? req.body.AmnesiaSinaiseSintomas : '*'
-    const AnginaSinaiseSintomas = req.body.AnginaSinaiseSintomas ? req.body.AnginaSinaiseSintomas : '*'
-    const ApineiaSinaiseSintomas = req.body.ApineiaSinaiseSintomas ? req.body.ApineiaSinaiseSintomas : '*'
-    const BradicardiaSinaiseSintomas = req.body.BradicardiaSinaiseSintomas ? req.body.BradicardiaSinaiseSintomas : '*'
-    const BradipneiaSinaiseSintomas = req.body.BradipneiaSinaiseSintomas ? req.body.BradipneiaSinaiseSintomas : '*'
-    const BroncoSinaiseSintomas = req.body.BroncoSinaiseSintomas ? req.body.BroncoSinaiseSintomas : '*'
-    const CefaleiaSinaiseSintomas = req.body.CefaleiaSinaiseSintomas ? req.body.CefaleiaSinaiseSintomas : '*'
-    const CianoseSinaiseSintomas = `${req.body.CianoseSinaiseSintomas ? req.body.CianoseSinaiseSintomas : '*'} ${req.body.LabiosSinaiseSintomas ? req.body.LabiosSinaiseSintomas : '*'} ${req.body.ExtremidadeSinaiseSintomas ? req.body.ExtremidadeSinaiseSintomas : '*'}`
-    const ConvulsaoSinaiseSintomas = req.body.ConvulsaoSinaiseSintomas ? req.body.ConvulsaoSinaiseSintomas : '*'
-    const DecorticacaoSinaiseSintomas = req.body.DecorticacaoSinaiseSintomas ? req.body.DecorticacaoSinaiseSintomas : '*'
-    const DeformidadeSinaiseSintomas = req.body.DeformidadeSinaiseSintomas ? req.body.DeformidadeSinaiseSintomas : '*'
-    const DescerebracaoSinaiseSintomas = req.body.DescerebracaoSinaiseSintomas ? req.body.DescerebracaoSinaiseSintomas : '*'
-    const DesmaioSinaiseSintomas = req.body.DesmaioSinaiseSintomas ? req.body.DesmaioSinaiseSintomas : '*'
-    const DesvioSinaiseSintomas = req.body.DesvioSinaiseSintomas ? req.body.DesvioSinaiseSintomas : '*'
-    const DispneiaSinaiseSintomas = req.body.DispneiaSinaiseSintomas ? req.body.DispneiaSinaiseSintomas : '*'
-    const DorSinaiseSintomas = req.body.DorSinaiseSintomas ? req.body.DorSinaiseSintomas : '*'
-    const EdemaSinaiseSintomas = `${req.body.EdemaSinaiseSintomas ? req.body.EdemaSinaiseSintomas : '*'} ${req.body.GeneralizadoSinaiseSintomas ? req.body.GeneralizadoSinaiseSintomas : '*'} ${req.body.LocalizadoSinaiseSintomas ? req.body.LocalizadoSinaiseSintomas : '*'}`
-    const EstaseSinaiseSintomas = req.body.EstaseSinaiseSintomas ? req.body.EstaseSinaiseSintomas : '*'
-    const FaceSinaiseSintomas = req.body.FaceSinaiseSintomas ? req.body.FaceSinaiseSintomas : '*'
-    const HemorragiaSinaiseSintomas = `${req.body.HemorragiaSinaiseSintomas ? req.body.HemorragiaSinaiseSintomas : '*'} ${req.body.InternaSinaiseSintomas ? req.body.InternaSinaiseSintomas : '*'} ${req.body.ExternaSinaiseSintomas ? req.body.ExternaSinaiseSintomas : '*'}`
-    const HipertensaoSinaiseSintomas = req.body.HipertensaoSinaiseSintomas ? req.body.HipertensaoSinaiseSintomas : '*'
-    const HipotensaoSinaiseSintomas = req.body.HipotensaoSinaiseSintomas ? req.body.HipotensaoSinaiseSintomas : '*'
-    const NauseasSinaiseSintomas = req.body.NauseasSinaiseSintomas ? req.body.NauseasSinaiseSintomas : '*'
-    const NasoragiaSinaiseSintomas = req.body.NasoragiaSinaiseSintomas ? req.body.NasoragiaSinaiseSintomas : '*'
-    const IsocoriaSinaiseSintomas = req.body.IsocoriaSinaiseSintomas ? req.body.IsocoriaSinaiseSintomas : '*'
-    const ObitoSinaiseSintomas = req.body.ObitoSinaiseSintomas ? req.body.ObitoSinaiseSintomas : '*'
-    const OtorreiaSinaiseSintomas = req.body.OtorreiaSinaiseSintomas ? req.body.OtorreiaSinaiseSintomas : '*'
-    const OtorragiaSinaiseSintomas = req.body.OtorragiaSinaiseSintomas ? req.body.OtorragiaSinaiseSintomas : '*'
-    const OVACESinaiseSintomas = req.body.OVACESinaiseSintomas ? req.body.OVACESinaiseSintomas : '*'
-    const ParadaSinaiseSintomas = `${req.body.ParadaSinaiseSintomas ? req.body.ParadaSinaiseSintomas : '*'} ${req.body.CardiacaSinaiseSintomas ? req.body.CardiacaSinaiseSintomas : '*'} ${req.body.RespiratoriaSinaiseSintomas ? req.body.RespiratoriaSinaiseSintomas : '*'}`
-    const PriaprismoSinaiseSintomas = req.body.PriaprismoSinaiseSintomas ? req.body.PriaprismoSinaiseSintomas : '*'
-    const PruridoSinaiseSintomas = req.body.PruridoSinaiseSintomas ? req.body.PruridoSinaiseSintomas : '*'
-    const PupilasSinaiseSintomas = `${req.body.PupilasSinaiseSintomas ? req.body.PupilasSinaiseSintomas : '*'} ${req.body.AnisocoriaSinaiseSintomas ? req.body.AnisocoriaSinaiseSintomas : '*'} ${req.body.MioseSinaiseSintomas ? req.body.MioseSinaiseSintomas : '*'} ${req.body.IsocoriaSinaiseSintomas ? req.body.IsocoriaSinaiseSintomas : '*'} ${req.body.MidriaseSinaiseSintomas ? req.body.MidriaseSinaiseSintomas : '*'} ${req.body.ReagenteSinaiseSintomas ? req.body.ReagenteSinaiseSintomas : '*'} ${req.body.NaoReagenteSinaiseSintomas ? req.body.NaoReagenteSinaiseSintomas : '*'}`
-    const SudoreseSinaiseSintomas = req.body.SudoreseSinaiseSintomas ? req.body.SudoreseSinaiseSintomas : '*'
-    const TaquipneiaSinaiseSintomas = req.body.TaquipneiaSinaiseSintomas ? req.body.TaquipneiaSinaiseSintomas : '*'
-    const TaquicardiaSinaiseSintomas = req.body.TaquicardiaSinaiseSintomas ? req.body.TaquicardiaSinaiseSintomas : '*'
+    const AbdomenSinaiseSintomas = req.body.AbdomenSinaiseSintomas ? req.body.AbdomenSinaiseSintomas : ''
+    const AfundamentoSinaiseSintomas = req.body.AfundamentoSinaiseSintomas ? req.body.AfundamentoSinaiseSintomas : ''
+    const AgitacaoSinaiseSintomas = req.body.AgitacaoSinaiseSintomas ? req.body.AgitacaoSinaiseSintomas : ''
+    const AmnesiaSinaiseSintomas = req.body.AmnesiaSinaiseSintomas ? req.body.AmnesiaSinaiseSintomas : ''
+    const AnginaSinaiseSintomas = req.body.AnginaSinaiseSintomas ? req.body.AnginaSinaiseSintomas : ''
+    const ApineiaSinaiseSintomas = req.body.ApineiaSinaiseSintomas ? req.body.ApineiaSinaiseSintomas : ''
+    const BradicardiaSinaiseSintomas = req.body.BradicardiaSinaiseSintomas ? req.body.BradicardiaSinaiseSintomas : ''
+    const BradipneiaSinaiseSintomas = req.body.BradipneiaSinaiseSintomas ? req.body.BradipneiaSinaiseSintomas : ''
+    const BroncoSinaiseSintomas = req.body.BroncoSinaiseSintomas ? req.body.BroncoSinaiseSintomas : ''
+    const CefaleiaSinaiseSintomas = req.body.CefaleiaSinaiseSintomas ? req.body.CefaleiaSinaiseSintomas : ''
+    const CianoseSinaiseSintomas = `${req.body.CianoseSinaiseSintomas ? req.body.CianoseSinaiseSintomas : ''} ${req.body.LabiosSinaiseSintomas ? req.body.LabiosSinaiseSintomas : ''} ${req.body.ExtremidadeSinaiseSintomas ? req.body.ExtremidadeSinaiseSintomas : ''}`
+    const ConvulsaoSinaiseSintomas = req.body.ConvulsaoSinaiseSintomas ? req.body.ConvulsaoSinaiseSintomas : ''
+    const DecorticacaoSinaiseSintomas = req.body.DecorticacaoSinaiseSintomas ? req.body.DecorticacaoSinaiseSintomas : ''
+    const DeformidadeSinaiseSintomas = req.body.DeformidadeSinaiseSintomas ? req.body.DeformidadeSinaiseSintomas : ''
+    const DescerebracaoSinaiseSintomas = req.body.DescerebracaoSinaiseSintomas ? req.body.DescerebracaoSinaiseSintomas : ''
+    const DesmaioSinaiseSintomas = req.body.DesmaioSinaiseSintomas ? req.body.DesmaioSinaiseSintomas : ''
+    const DesvioSinaiseSintomas = req.body.DesvioSinaiseSintomas ? req.body.DesvioSinaiseSintomas : ''
+    const DispneiaSinaiseSintomas = req.body.DispneiaSinaiseSintomas ? req.body.DispneiaSinaiseSintomas : ''
+    const DorSinaiseSintomas = req.body.DorSinaiseSintomas ? req.body.DorSinaiseSintomas : ''
+    const EdemaSinaiseSintomas = `${req.body.EdemaSinaiseSintomas ? req.body.EdemaSinaiseSintomas : ''} ${req.body.GeneralizadoSinaiseSintomas ? req.body.GeneralizadoSinaiseSintomas : ''} ${req.body.LocalizadoSinaiseSintomas ? req.body.LocalizadoSinaiseSintomas : ''}`
+    const EstaseSinaiseSintomas = req.body.EstaseSinaiseSintomas ? req.body.EstaseSinaiseSintomas : ''
+    const FaceSinaiseSintomas = req.body.FaceSinaiseSintomas ? req.body.FaceSinaiseSintomas : ''
+    const HemorragiaSinaiseSintomas = `${req.body.HemorragiaSinaiseSintomas ? req.body.HemorragiaSinaiseSintomas : ''} ${req.body.InternaSinaiseSintomas ? req.body.InternaSinaiseSintomas : ''} ${req.body.ExternaSinaiseSintomas ? req.body.ExternaSinaiseSintomas : ''}`
+    const HipertensaoSinaiseSintomas = req.body.HipertensaoSinaiseSintomas ? req.body.HipertensaoSinaiseSintomas : ''
+    const HipotensaoSinaiseSintomas = req.body.HipotensaoSinaiseSintomas ? req.body.HipotensaoSinaiseSintomas : ''
+    const NauseasSinaiseSintomas = req.body.NauseasSinaiseSintomas ? req.body.NauseasSinaiseSintomas : ''
+    const NasoragiaSinaiseSintomas = req.body.NasoragiaSinaiseSintomas ? req.body.NasoragiaSinaiseSintomas : ''
+    const IsocoriaSinaiseSintomas = req.body.IsocoriaSinaiseSintomas ? req.body.IsocoriaSinaiseSintomas : ''
+    const ObitoSinaiseSintomas = req.body.ObitoSinaiseSintomas ? req.body.ObitoSinaiseSintomas : ''
+    const OtorreiaSinaiseSintomas = req.body.OtorreiaSinaiseSintomas ? req.body.OtorreiaSinaiseSintomas : ''
+    const OtorragiaSinaiseSintomas = req.body.OtorragiaSinaiseSintomas ? req.body.OtorragiaSinaiseSintomas : ''
+    const OVACESinaiseSintomas = req.body.OVACESinaiseSintomas ? req.body.OVACESinaiseSintomas : ''
+    const ParadaSinaiseSintomas = `${req.body.ParadaSinaiseSintomas ? req.body.ParadaSinaiseSintomas : ''} ${req.body.CardiacaSinaiseSintomas ? req.body.CardiacaSinaiseSintomas : ''} ${req.body.RespiratoriaSinaiseSintomas ? req.body.RespiratoriaSinaiseSintomas : ''}`
+    const PriaprismoSinaiseSintomas = req.body.PriaprismoSinaiseSintomas ? req.body.PriaprismoSinaiseSintomas : ''
+    const PruridoSinaiseSintomas = req.body.PruridoSinaiseSintomas ? req.body.PruridoSinaiseSintomas : ''
+    const PupilasSinaiseSintomas = `${req.body.PupilasSinaiseSintomas ? req.body.PupilasSinaiseSintomas : ''} ${req.body.AnisocoriaSinaiseSintomas ? req.body.AnisocoriaSinaiseSintomas : ''} ${req.body.MioseSinaiseSintomas ? req.body.MioseSinaiseSintomas : ''} ${req.body.IsocoriaSinaiseSintomas ? req.body.IsocoriaSinaiseSintomas : ''} ${req.body.MidriaseSinaiseSintomas ? req.body.MidriaseSinaiseSintomas : ''} ${req.body.ReagenteSinaiseSintomas ? req.body.ReagenteSinaiseSintomas : ''} ${req.body.NaoReagenteSinaiseSintomas ? req.body.NaoReagenteSinaiseSintomas : ''}`
+    const SudoreseSinaiseSintomas = req.body.SudoreseSinaiseSintomas ? req.body.SudoreseSinaiseSintomas : ''
+    const TaquipneiaSinaiseSintomas = req.body.TaquipneiaSinaiseSintomas ? req.body.TaquipneiaSinaiseSintomas : ''
+    const TaquicardiaSinaiseSintomas = req.body.TaquicardiaSinaiseSintomas ? req.body.TaquicardiaSinaiseSintomas : ''
     var OutroSinaiseSintomas = ''
     if (req.body.OutroSinaiseSintomas === 'on' && req.body.ValorOutroSinaiseSintomas.length > 0){
         OutroSinaiseSintomas = req.body.ValorOutroSinaiseSintomas
     }
     //Accordion Avaliação Paciente
-    const AberturaOcularMenor = req.body.AberturaOcularMenor ? req.body.AberturaOcularMenor : '*'
-    const RespostaVerbalMenor = req.body.RespostaVerbalMenor ? req.body.RespostaVerbalMenor : '*'
-    const RespostaMotoraMenor = req.body.RespostaMotoraMenor ? req.body.RespostaMotoraMenor : '*'
-    const TotalGCSMenor = req.body.TotalGCSMenor ? req.body.TotalGCSMenor : '*'
-    const AberturaOcularMaior = req.body.AberturaOcularMaior ? req.body.AberturaOcularMaior : '*'
-    const RespostaVerbalMaior = req.body.RespostaVerbalMaior ? req.body.RespostaVerbalMaior : '*'
-    const RespostaMotoraMaior = req.body.RespostaMotoraMaior ? req.body.RespostaMotoraMaior : '*'
-    const TotalGCSMaior = req.body.TotalGCSMaior ? req.body.TotalGCSMaior : '*'
+    const AberturaOcularMenor = req.body.AberturaOcularMenor ? req.body.AberturaOcularMenor : ''
+    const RespostaVerbalMenor = req.body.RespostaVerbalMenor ? req.body.RespostaVerbalMenor : ''
+    const RespostaMotoraMenor = req.body.RespostaMotoraMenor ? req.body.RespostaMotoraMenor : ''
+    const TotalGCSMenor = req.body.TotalGCSMenor ? req.body.TotalGCSMenor : ''
+    const AberturaOcularMaior = req.body.AberturaOcularMaior ? req.body.AberturaOcularMaior : ''
+    const RespostaVerbalMaior = req.body.RespostaVerbalMaior ? req.body.RespostaVerbalMaior : ''
+    const RespostaMotoraMaior = req.body.RespostaMotoraMaior ? req.body.RespostaMotoraMaior : ''
+    const TotalGCSMaior = req.body.TotalGCSMaior ? req.body.TotalGCSMaior : ''
+    //Accordion Sinais Vitais
+    const PressaoSinaisVitais = req.body.PressaoSinaisVitais
+    const ArterialSinaisVitais = req.body.ArterialSinaisVitais
+    const PulsoSinaisVitais = req.body.PulsoSinaisVitais
+    const RespiracaoSinaisVitais = req.body.RespiracaoSinaisVitais
+    const SaturacaoSinaisVitais = req.body.SaturacaoSinaisVitais
+    const HGTSinaisVitais = req.body.HGTSinaisVitais
+    const TemperaturaSinaisVitais = req.body.TemperaturaSinaisVitais
+    const PerfusaoSinaisVitais = req.body.PerfusaoSinaisVitais ? req.body.PerfusaoSinaisVitais : ''
+    const SituacaoSinaisVitais = req.body.SituacaoSinaisVitais ? req.body.SituacaoSinaisVitais : ''
+    //Accordion Forma de condução / Vitima era / Objetos Recolhidos
+    const FormaConducao = req.body.FormaConducao ? req.body.FormaConducao : ''
+    const VitimaEra = req.body.VitimaEra ? req.body.VitimaEra : ''
+    const ObjetosRecolhidos = req.body.ObjetosRecolhidos ? req.body.ObjetosRecolhidos : ''
+    //Accordion Decisão Transporte / Equipe de Atendimento
+    const DecisaoTransporte = req.body.DecisaoTransporte ? req.body.DecisaoTransporte : ''
+    const MEquipeAtendimento = req.body.MEquipeAtendimento ? req.body.MEquipeAtendimento : ''
+    const S1EquipeAtendimento = req.body.S1EquipeAtendimento ? req.body.S1EquipeAtendimento : ''
+    const S2EquipeAtendimento = req.body.S2EquipeAtendimento ? req.body.S2EquipeAtendimento : ''
+    const S3EquipeAtendimento = req.body.S3EquipeAtendimento ? req.body.S3EquipeAtendimento : ''
+    const EquipeEquipeAtendimento = req.body.EquipeEquipeAtendimento ? req.body.EquipeEquipeAtendimento : ''
+    const DemandanteEquipeAtendimento = req.body.DemandanteEquipeAtendimento ? req.body.DemandanteEquipeAtendimento : ''
+
+    //Accordion Avaliação Cinemática
+    const DisturbioAvaliacaoCinematica = req.body.DisturbioAvaliacaoCinematica ? req.body.DisturbioAvaliacaoCinematica : ''
+    const EncontradoCapaceteAvaliacaoCinematica = req.body.EncontradoCapaceteAvaliacaoCinematica ? req.body.EncontradoCapaceteAvaliacaoCinematica : ''
+    const EncontradoCintoAvaliacaoCinematica = req.body.EncontradoCintoAvaliacaoCinematica ? req.body.EncontradoCintoAvaliacaoCinematica : ''
+    const ParaBrisasAvariadoAvaliacaoCinematica = req.body.ParaBrisasAvariadoAvaliacaoCinematica ? req.body.ParaBrisasAvariadoAvaliacaoCinematica : ''
+    const CaminhandoAvaliacaoCinematica = req.body.CaminhandoAvaliacaoCinematica ? req.body.CaminhandoAvaliacaoCinematica : ''
+    const PainelAvariadoAvaliacaoCinematica = req.body.PainelAvariadoAvaliacaoCinematica ? req.body.PainelAvariadoAvaliacaoCinematica : ''
+    const VolanteRetorcidoAvaliacaoCinematica = req.body.VolanteRetorcidoAvaliacaoCinematica ? req.body.VolanteRetorcidoAvaliacaoCinematica : ''
+    //Accordion Termo de Recusa de Atendimento E/OU Transporte
 
     console.log(`
     -----> Dados Paciente <-----
     Data: ${DataDadosPaciente}
-    Sexo: ${SexoDadosPaciente}
+    Sexo: ${SexoDadosPaciente ? SexoDadosPaciente : ''}
     Nome Hospital: ${NomeHospitalDadosPaciente}
     Nome Paciente: ${NomePacienteDadosPaciente}
-    Documento: ${CpfDadosPaciente +' '+ RgDadosPaciente}
+    Documento: CPF ${CpfDadosPaciente} RG ${RgDadosPaciente}
     Fone Paciente: ${FonePacienteDadosPaciente}
     Idade Paciente: ${IdadePacienteDadosPaciente}
     Nome Acompanhante: ${NomeAcompanhanteDadosPaciente}
@@ -319,7 +351,7 @@ app.post('/ocorrencia', (req, res) => {
     ${TaquicardiaSinaiseSintomas}
     ${OutroSinaiseSintomas}
 
-    -----> Avaliação Paciente Maior 5 anos <-----
+    -----> Avaliação Paciente Menor 5 anos <-----
     Abertura Ocular: ${AberturaOcularMenor}
     Resposta Verbal: ${RespostaVerbalMenor}
     Resposta Motora: ${RespostaMotoraMenor}
@@ -330,6 +362,53 @@ app.post('/ocorrencia', (req, res) => {
     Resposta Verbal: ${RespostaVerbalMaior}
     Resposta Motora: ${RespostaMotoraMaior}
     Total (GCS) (3-15): ${TotalGCSMaior}
+
+    -----> Localização Traumas <-----
+    [ERRO] Não há disponível essa funcionalidade.
+
+    -----> Sinais Vitais <-----
+    Pressão Arterial: ${PressaoSinaisVitais} x ${ArterialSinaisVitais} mmHg
+    Pulso: ${PulsoSinaisVitais} B.C.P.M
+    Respiração: ${RespiracaoSinaisVitais} M.R.M.
+    Saturação: ${SaturacaoSinaisVitais} %
+    HGT: ${HGTSinaisVitais}
+    Temperatura: ${TemperaturaSinaisVitais} °C
+    Perfusão: ${PerfusaoSinaisVitais}
+    Situação: ${SituacaoSinaisVitais}
+
+    -----> Forma de condução / Vitima era / Objetos Recolhidos <-----
+    Forma Condução: ${FormaConducao}
+    Vitima era: ${VitimaEra}
+    Objetos Recolhidos: ${ObjetosRecolhidos}
+
+    -----> Decisão Transporte / Equipe de Atendimento <-----
+    Decisão Transporte: ${DecisaoTransporte}
+    M: ${MEquipeAtendimento}
+    S1: ${S1EquipeAtendimento}
+    S2: ${S2EquipeAtendimento}
+    S3: ${S3EquipeAtendimento}
+    Equipe: ${EquipeEquipeAtendimento}
+    Demandante: ${DemandanteEquipeAtendimento}
+
+    -----> Procedimentos efetuados <-----
+    
+
+    -----> Anamnese emergência médica / Gestacional <-----
+
+    -----> Materiais Ultilizados Descartáveis <-----
+
+    -----> Materiais Ultilizados Deixado no Hospital <-----
+
+    -----> Avaliação Cinemática <-----
+    Distúrbio de Comportamento: ${DisturbioAvaliacaoCinematica}
+    Encontrado de Capacete: ${EncontradoCapaceteAvaliacaoCinematica}
+    Encontrado de Cinto: ${EncontradoCintoAvaliacaoCinematica}
+    Para-Brisas Avariado: ${ParaBrisasAvariadoAvaliacaoCinematica}
+    Caminhando na Cena: ${CaminhandoAvaliacaoCinematica}
+    Painel Avariado: ${PainelAvariadoAvaliacaoCinematica}
+    Volante Retorcido: ${VolanteRetorcidoAvaliacaoCinematica}
+
+    -----> Termo de Recusa de Atendimento E/OU Transporte <-----
 
     `) 
 
