@@ -266,6 +266,7 @@ app.post('/ocorrencia', (req, res) => {
     const S3EquipeAtendimento = req.body.S3EquipeAtendimento ? req.body.S3EquipeAtendimento : ''
     const EquipeEquipeAtendimento = req.body.EquipeEquipeAtendimento ? req.body.EquipeEquipeAtendimento : ''
     const DemandanteEquipeAtendimento = req.body.DemandanteEquipeAtendimento ? req.body.DemandanteEquipeAtendimento : ''
+    //Accordion Procedimentos Efetuados
 
     //Accordion Avaliação Cinemática
     const DisturbioAvaliacaoCinematica = req.body.DisturbioAvaliacaoCinematica ? req.body.DisturbioAvaliacaoCinematica : ''
@@ -276,6 +277,7 @@ app.post('/ocorrencia', (req, res) => {
     const PainelAvariadoAvaliacaoCinematica = req.body.PainelAvariadoAvaliacaoCinematica ? req.body.PainelAvariadoAvaliacaoCinematica : ''
     const VolanteRetorcidoAvaliacaoCinematica = req.body.VolanteRetorcidoAvaliacaoCinematica ? req.body.VolanteRetorcidoAvaliacaoCinematica : ''
     //Accordion Termo de Recusa de Atendimento E/OU Transporte
+
 
     console.log(`
     -----> Dados Paciente <-----
