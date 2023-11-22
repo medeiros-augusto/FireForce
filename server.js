@@ -267,6 +267,58 @@ app.post('/ocorrencia', (req, res) => {
     const EquipeEquipeAtendimento = req.body.EquipeEquipeAtendimento ? req.body.EquipeEquipeAtendimento : ''
     const DemandanteEquipeAtendimento = req.body.DemandanteEquipeAtendimento ? req.body.DemandanteEquipeAtendimento : ''
     //Accordion Procedimentos Efetuados
+    const AspiracaoProcedimentosEfetuados = req.body.AspiracaoProcedimentosEfetuados ? req.body.AspiracaoProcedimentosEfetuados : ''
+    const AvaliacaoInicialProcedimentosEfetuados = req.body.AvaliacaoInicialProcedimentosEfetuados ? req.body.AvaliacaoInicialProcedimentosEfetuados : ''
+    const AvaliacaoDirigidaProcedimentosEfetuados = req.body.AvaliacaoDirigidaProcedimentosEfetuados ? req.body.AvaliacaoDirigidaProcedimentosEfetuados : ''
+    const AvaliacaoContinuadaProcedimentosEfetuados = req.body.AvaliacaoContinuadaProcedimentosEfetuados ? req.body.AvaliacaoContinuadaProcedimentosEfetuados : ''
+    const ChaveProcedimentosEfetuados = req.body.ChaveProcedimentosEfetuados ? req.body.ChaveProcedimentosEfetuados : ''
+    const CanulaProcedimentosEfetuados = req.body.CanulaProcedimentosEfetuados ? req.body.CanulaProcedimentosEfetuados : ''
+    const DesobstrucaoProcedimentosEfetuados = req.body.DesobstrucaoProcedimentosEfetuados ? req.body.DesobstrucaoProcedimentosEfetuados : ''
+    const EmpregoProcedimentosEfetuados = req.body.EmpregoProcedimentosEfetuados ? req.body.EmpregoProcedimentosEfetuados : ''
+    const GerenciamentoProcedimentosEfetuados = req.body.GerenciamentoProcedimentosEfetuados ? req.body.GerenciamentoProcedimentosEfetuados : ''
+    const LimpezaProcedimentosEfetuados = req.body.LimpezaProcedimentosEfetuados ? req.body.LimpezaProcedimentosEfetuados : ''
+    const CurativosProcedimentosEfetuados = req.body.CurativosProcedimentosEfetuados ? req.body.CurativosProcedimentosEfetuados : ''
+    const CompressivoProcedimentosEfetuados = req.body.CompressivoProcedimentosEfetuados ? req.body.CompressivoProcedimentosEfetuados : ''
+    const EncravamentoProcedimentosEfetuados = req.body.EncravamentoProcedimentosEfetuados ? req.body.EncravamentoProcedimentosEfetuados : ''
+    const OcularProcedimentosEfetuados = req.body.OcularProcedimentosEfetuados ? req.body.OcularProcedimentosEfetuados : ''
+    const QueimaduraProcedimentosEfetuados = req.body.QueimaduraProcedimentosEfetuados ? req.body.QueimaduraProcedimentosEfetuados : ''
+    const SimplesProcedimentosEfetuados = req.body.SimplesProcedimentosEfetuados ? req.body.SimplesProcedimentosEfetuados : ''
+    const _3PontasProcedimentosEfetuados = req.body._3PontasProcedimentosEfetuados ? req.body._3PontasProcedimentosEfetuados : ''
+    const ImobilizacoesProcedimentosEfetuados = req.body.ImobilizacoesProcedimentosEfetuados ? req.body.ImobilizacoesProcedimentosEfetuados : ''
+    const InferiorDireitoProcedimentosEfetuados = req.body.InferiorDireitoProcedimentosEfetuados ? req.body.InferiorDireitoProcedimentosEfetuados : ''
+    const InferiorEsquerdoProcedimentosEfetuados = req.body.InferiorEsquerdoProcedimentosEfetuados ? req.body.InferiorEsquerdoProcedimentosEfetuados : ''
+    const SuperiorDireitoProcedimentosEfetuados = req.body.SuperiorDireitoProcedimentosEfetuados ? req.body.SuperiorDireitoProcedimentosEfetuados : ''
+    const SuperiorEsquerdoProcedimentosEfetuados = req.body.SuperiorEsquerdoProcedimentosEfetuados ? req.body.SuperiorEsquerdoProcedimentosEfetuados : ''
+    const QuadrilProcedimentosEfetuados = req.body.QuadrilProcedimentosEfetuados ? req.body.QuadrilProcedimentosEfetuados : ''
+    const CervicalProcedimentosEfetuados = req.body.CervicalProcedimentosEfetuados ? req.body.CervicalProcedimentosEfetuados : ''
+    const MacaRodasProcedimentosEfetuados = req.body.MacaRodasProcedimentosEfetuados ? req.body.MacaRodasProcedimentosEfetuados : ''
+    const MacaRigidaProcedimentosEfetuados = req.body.MacaRigidaProcedimentosEfetuados ? req.body.MacaRigidaProcedimentosEfetuados : ''
+    const PonteProcedimentosEfetuados = req.body.PonteProcedimentosEfetuados ? req.body.PonteProcedimentosEfetuados : ''
+    const RetiradoProcedimentosEfetuados = req.body.RetiradoProcedimentosEfetuados ? req.body.RetiradoProcedimentosEfetuados : ''
+    const RCPProcedimentosEfetuados = req.body.RCPProcedimentosEfetuados ? req.body.RCPProcedimentosEfetuados : ''
+    const _90ProcedimentosEfetuados = req.body._90ProcedimentosEfetuados ? req.body._90ProcedimentosEfetuados : ''
+    const _180ProcedimentosEfetuados = req.body._180ProcedimentosEfetuados ? req.body._180ProcedimentosEfetuados : ''
+    const TomadaProcedimentosEfetuados = req.body.TomadaProcedimentosEfetuados ? req.body.TomadaProcedimentosEfetuados : ''
+    const TratadoProcedimentosEfetuados = req.body.TratadoProcedimentosEfetuados ? req.body.TratadoProcedimentosEfetuados : ''
+    const UsoProcedimentosEfetuados = req.body.UsoProcedimentosEfetuados ? req.body.UsoProcedimentosEfetuados : ''
+    const ColarProcedimentosEfetuados = req.body.ColarProcedimentosEfetuados ? req.body.ColarProcedimentosEfetuados : ''
+    const TTFProcedimentosEfetuados = req.body.TTFProcedimentosEfetuados ? req.body.TTFProcedimentosEfetuados : ''
+    const VentilacaoProcedimentosEfetuados = req.body.VentilacaoProcedimentosEfetuados ? req.body.VentilacaoProcedimentosEfetuados : ''
+    const OxigenioterapiaProcedimentosEfetuados = req.body.OxigenioterapiaProcedimentosEfetuados ? req.body.OxigenioterapiaProcedimentosEfetuados : ''
+    const ReanimadorProcedimentosEfetuados = req.body.ReanimadorProcedimentosEfetuados ? req.body.ReanimadorProcedimentosEfetuados : ''
+    const MeiosProcedimentosEfetuados = req.body.MeiosProcedimentosEfetuados ? req.body.MeiosProcedimentosEfetuados : ''
+    const CelescProcedimentosEfetuados = req.body.CelescProcedimentosEfetuados ? req.body.CelescProcedimentosEfetuados : ''
+    const PoliciaProcedimentosEfetuados = req.body.PoliciaProcedimentosEfetuados ? req.body.PoliciaProcedimentosEfetuados : ''
+    const DefCivilProcedimentosEfetuados = req.body.DefCivilProcedimentosEfetuados ? req.body.DefCivilProcedimentosEfetuados : ''
+    const IGPPCProcedimentosEfetuados = req.body.IGPPCProcedimentosEfetuados ? req.body.IGPPCProcedimentosEfetuados : ''
+    const SamuProcedimentosEfetuados = req.body.SamuProcedimentosEfetuados ? req.body.SamuProcedimentosEfetuados : ''
+    const CITProcedimentosEfetuados = req.body.CITProcedimentosEfetuados ? req.body.CITProcedimentosEfetuados : ''
+    const OutroProcedimentosEfetuados = req.body.OutroProcedimentosEfetuados ? req.body.OutroProcedimentosEfetuados : ''
+    //Accordion Anamnese Emergência Médica / Gestacional
+    //Medica
+    const OqueMedica = req.body.OqueMedica ? req.body.OqueMedica : ''
+
+
 
     //Accordion Avaliação Cinemática
     const DisturbioAvaliacaoCinematica = req.body.DisturbioAvaliacaoCinematica ? req.body.DisturbioAvaliacaoCinematica : ''
@@ -393,10 +445,86 @@ app.post('/ocorrencia', (req, res) => {
     Demandante: ${DemandanteEquipeAtendimento}
 
     -----> Procedimentos efetuados <-----
-    
+    ${AspiracaoProcedimentosEfetuados}
+    ${AvaliacaoInicialProcedimentosEfetuados}
+    ${AvaliacaoDirigidaProcedimentosEfetuados}
+    ${AvaliacaoContinuadaProcedimentosEfetuados}
+    ${ChaveProcedimentosEfetuados}
+    ${CanulaProcedimentosEfetuados}
+    ${DesobstrucaoProcedimentosEfetuados}
+    ${EmpregoProcedimentosEfetuados}
+    ${GerenciamentoProcedimentosEfetuados}
+    ${LimpezaProcedimentosEfetuados}
+    ${CurativosProcedimentosEfetuados}
+    ${CompressivoProcedimentosEfetuados}
+    ${EncravamentoProcedimentosEfetuados}
+    ${OcularProcedimentosEfetuados}
+    ${QueimaduraProcedimentosEfetuados}
+    ${SimplesProcedimentosEfetuados}
+    ${_3PontasProcedimentosEfetuados}
+    ${ImobilizacoesProcedimentosEfetuados}
+    ${InferiorDireitoProcedimentosEfetuados}
+    ${InferiorEsquerdoProcedimentosEfetuados}
+    ${SuperiorDireitoProcedimentosEfetuados}
+    ${SuperiorEsquerdoProcedimentosEfetuados}
+    ${QuadrilProcedimentosEfetuados}
+    ${CervicalProcedimentosEfetuados}
+    ${MacaRodasProcedimentosEfetuados}
+    ${MacaRigidaProcedimentosEfetuados}
+    ${PonteProcedimentosEfetuados}
+    ${RetiradoProcedimentosEfetuados}
+    ${RCPProcedimentosEfetuados}
+    ${_90ProcedimentosEfetuados}
+    ${_180ProcedimentosEfetuados}
+    ${TomadaProcedimentosEfetuados}
+    ${TratadoProcedimentosEfetuados}
+    ${UsoProcedimentosEfetuados}
+    ${ColarProcedimentosEfetuados}
+    ${TTFProcedimentosEfetuados}
+    ${VentilacaoProcedimentosEfetuados}
+    ${OxigenioterapiaProcedimentosEfetuados}
+    ${ReanimadorProcedimentosEfetuados}
+    ${MeiosProcedimentosEfetuados}
+    ${CelescProcedimentosEfetuados}
+    ${PoliciaProcedimentosEfetuados}
+    ${DefCivilProcedimentosEfetuados}
+    ${IGPPCProcedimentosEfetuados}
+    ${SamuProcedimentosEfetuados}
+    ${CITProcedimentosEfetuados}
+    ${OutroProcedimentosEfetuados}
 
     -----> Anamnese emergência médica / Gestacional <-----
-
+    *emergência médica*
+    O Que Aconteceu (Sinais e Sintomas): ${OqueMedica}
+    Aconteceu outras vezes: ${OutrasVezesMedica}
+    A quanto tempo aconteceu: ${QuantoTempoMedica}
+    Possui algum problema de saúde: ${ProblemaMedica}
+    Quais Problemas: ${QualProblemaMedica}
+    Faz uso de medicação: ${MedicacaoMedica}
+    Horário da última medicação: ${HorarioMedicacaoMedica}
+    Qual medicação: ${QualMedicacaoMedica}
+    Alérgico: ${AlergicoMedica}
+    Qual alergia: ${QualAlergicoMedica}
+    Inseriu alimento ou líquido ≥ 6 horas: ${IngeriuMedica}
+    Horário da ingestão: ${HorarioIngeriuMedica}
+    
+    *gestacional*
+    Fez Pré-natal: ${}
+    Período Gestacional: ${}
+    Nome do médico: ${}
+    Existe Probabilidade de Complicações: ${}
+    É o primeiro filho: ${}
+    Quantos: ${}
+    Que horas iniciaram as contrações: ${}
+    Duração: ${}
+    Intervalo: ${}
+    Pressão na Região do Quadril ou Vontade de Evacuar: ${}
+    Já Houve Ruptura da Bolsa: ${}
+    Foi Feito a Inspeção Visual: ${}
+    Parto Realizado: ${}
+    Hora do Nascimento: ${}
+    Sexo do bebê: ${}
+    Nome do bebê: ${}
     -----> Materiais Ultilizados Descartáveis <-----
 
     -----> Materiais Ultilizados Deixado no Hospital <-----
@@ -411,7 +539,7 @@ app.post('/ocorrencia', (req, res) => {
     Volante Retorcido: ${VolanteRetorcidoAvaliacaoCinematica}
 
     -----> Termo de Recusa de Atendimento E/OU Transporte <-----
-
+    
     `) 
 
     res.render('ocorrencia') 

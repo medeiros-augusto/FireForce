@@ -2079,7 +2079,7 @@
                             <h1 style="text-align: center;">Anamnese Emergência Médica</h1>
                             <h2 style="text-align: center;">O Que Aconteceu (Sinais e Sintomas)</h2>
                             <div class="input-group mt-3">
-                                <textarea class="form-control" aria-label="Área de texto" style="resize: none;"
+                                <textarea name="OqueMedica" class="form-control" aria-label="Área de texto" style="resize: none;"
                                     placeholder="Escreva aqui"></textarea>
                             </div>
                             <div class="input-group mt-3">
@@ -2092,7 +2092,7 @@
                                         <div class="col-md-6 mt-3">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio"
-                                                    name="Aconteceu Outras Vezes?" id="flexRadioDefault1">
+                                                    name="OutrasVezesMedica" value="Sim" id="flexRadioDefault1">
                                                 <label class="form-check-label" for="flexRadioDefault1">
                                                     Sim
                                                 </label>
@@ -2102,7 +2102,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Aconteceu Outras Vezes?" id="flexRadioDefault1">
+                                                        name="OutrasVezesMedica" value="Não" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Não
                                                     </label>
@@ -2114,7 +2114,7 @@
                             </div>
                             <div class="input-group mt-3 text-center">
                                 <div class="input-group-text">A Quanto Tempo Isso Aconteceu?</div>
-                                <input type="text" class="form-control" id="specificSizeInputGroupUsername">
+                                <input type="text" class="form-control" name="QuantoTempoMedica" id="specificSizeInputGroupUsername">
                             </div>
                             <div class="input-group mt-3">
                                 <input type="text" class="form-control" placeholder="Possui Algum Problema de Saúde?"
@@ -2126,7 +2126,7 @@
                                         <div class="col-md-6 mt-3">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio"
-                                                    name="Possui Algum Problema de Saúde?" id="flexRadioDefault1">
+                                                    name="ProblemaMedica" value="Sim" id="flexRadioDefault1">
                                                 <label class="form-check-label" for="flexRadioDefault1">
                                                     Sim
                                                 </label>
@@ -2136,7 +2136,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Possui Algum Problema de Saúde?" id="flexRadioDefault1">
+                                                        name="ProblemaMedica" value="Não" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Não
                                                     </label>
@@ -2148,7 +2148,7 @@
                             </div>
                             <div class="input-group mt-3 text-center">
                                 <div class="input-group-text">Quais?</div>
-                                <input type="text" class="form-control" id="specificSizeInputGroupUsername">
+                                <input type="text" name="QualProblemaMedica" class="form-control" id="specificSizeInputGroupUsername">
                             </div>
                             <div class="input-group mt-3">
                                 <input type="text" class="form-control" placeholder="Faz Uso de Medicação?"
@@ -2160,7 +2160,7 @@
                                         <div class="col-md-6 mt-3">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio"
-                                                    name="Faz Uso de Medicação?" id="flexRadioDefault1">
+                                                    name="MedicacaoMedica" value="Sim" id="flexRadioDefault1">
                                                 <label class="form-check-label" for="flexRadioDefault1">
                                                     Sim
                                                 </label>
@@ -2170,7 +2170,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Faz Uso de Medicação?" id="flexRadioDefault1">
+                                                        name="MedicacaoMedica" value="Não" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Não
                                                     </label>
@@ -2182,13 +2182,11 @@
                             </div>
                             <div class="input-group mt-3">
                                 <span class="input-group-text">Horario da Última Medicação</span>
-                                <input type="text" class="form-control">
-                                <span class="input-group-text">:</span>
-                                <input type="text" class="form-control">
+                                <input type="text" name="HorarioMedicacaoMedica" class="form-control">
                             </div>
                             <div class="input-group mt-3 text-center">
                                 <div class="input-group-text">Quais?</div>
-                                <input type="text" class="form-control" id="specificSizeInputGroupUsername">
+                                <input type="text" name="QualMedicacaoMedica" class="form-control" id="specificSizeInputGroupUsername">
                             </div>
                             <div class="input-group mt-3">
                                 <input type="text" class="form-control" placeholder="Alérgico a Alguma Coisa?"
@@ -2200,7 +2198,7 @@
                                         <div class="col-md-6 mt-3">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio"
-                                                    name="Alérgico a Alguma Coisa?" id="flexRadioDefault1">
+                                                    name="AlergicoMedica" value="Sim" id="flexRadioDefault1">
                                                 <label class="form-check-label" for="flexRadioDefault1">
                                                     Sim
                                                 </label>
@@ -2210,7 +2208,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Alérgico a Alguma Coisa?" id="flexRadioDefault1">
+                                                        name="AlergicoMedica" value="Não" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Não
                                                     </label>
@@ -2222,7 +2220,7 @@
                             </div>
                             <div class="input-group mt-3 text-center">
                                 <div class="input-group-text">Se Sim, Especifique?</div>
-                                <input type="text" class="form-control" id="specificSizeInputGroupUsername">
+                                <input type="text" name="QualAlergicoMedica" class="form-control" id="specificSizeInputGroupUsername">
                             </div>
                             <div class="input-group mt-3">
                                 <input type="text" class="form-control"
@@ -2235,7 +2233,7 @@
                                         <div class="col-md-6 mt-3">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio"
-                                                    name="Inseriu Alimento ou Líquido ≥ 6 Horas" id="flexRadioDefault1">
+                                                    name="IngeriuMedica" value="Sim" id="flexRadioDefault1">
                                                 <label class="form-check-label" for="flexRadioDefault1">
                                                     Sim
                                                 </label>
@@ -2245,7 +2243,7 @@
                                             <div class="input-group mt-3 mb-2">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="Inseriu Alimento ou Líquido ≥ 6 Horas"
+                                                        name="IngeriuMedica" value="Não"
                                                         id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Não
@@ -2258,9 +2256,7 @@
                             </div>
                             <div class="input-group mt-3 mb-3">
                                 <span class="input-group-text">Que Horas?</span>
-                                <input type="text" class="form-control">
-                                <span class="input-group-text">:</span>
-                                <input type="text" class="form-control">
+                                <input type="text" name="HorarioIngeriuMedica" class="form-control">
                             </div>
                         </div>
                         <div class="container mt-3" id="anamnese">
