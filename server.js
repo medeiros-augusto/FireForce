@@ -509,9 +509,9 @@ app.post('/ocorrencia', (req, res) => {
     Horário da ingestão: ${HorarioIngeriuMedica}
     
     *gestacional*
-    Fez Pré-natal: ${}
-    Período Gestacional: ${}
-    Nome do médico: ${}
+    Fez Pré-natal: ${PreNatal}
+    Período Gestacional: ${PeriodoGestacional}
+    Nome do médico: ${NomeMedicoGestacional}
     Existe Probabilidade de Complicações: ${}
     É o primeiro filho: ${}
     Quantos: ${}
