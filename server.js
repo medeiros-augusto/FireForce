@@ -551,6 +551,18 @@ app.post('/ocorrencia', (req, res) => {
     Sexo do bebê: ${SexoBebe}
     Nome do bebê: ${NomeBebe}
     -----> Materiais Ultilizados Descartáveis <-----
+    ${AtaduraDescartavel} ${TamAtaduraDescartavel} ${QuantAtaduraDescartavel}
+    ${CateterDescartavel} ${QuantCateterDescartavel}
+    ${CompressaDescartavel} ${QuantCompressaDescartavel}
+    ${KitDescartavel} ${TamKitDescartavel} ${QuantKitDescartavel}
+    ${LuvasDescartavel} ${QuantLuvasDescartavel}
+    ${MascaraDescartavel} ${QuantMascaraDescartavel}
+    ${MantaDescartavel} ${QuantMantaDescartavel}
+    ${PasDescartavel} ${QuantPasDescartavel}
+    ${SondaDescartavel} ${QuantSondaDescartavel}
+    ${SoroDescartavel} ${QuantSoroDescartavel}
+    ${TalasDescartavel} ${TamTalasDescartavel} ${QuantTalasDescartavel}
+    ${OutroDescartavel} ${QuantOutroDescartavel}
 
     -----> Materiais Ultilizados Deixado no Hospital <-----
 
