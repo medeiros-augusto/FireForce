@@ -550,6 +550,7 @@ app.post('/ocorrencia', (req, res) => {
     Hora do Nascimento: ${HoraNascimentoGestacional}
     Sexo do bebê: ${SexoBebe}
     Nome do bebê: ${NomeBebe}
+
     -----> Materiais Ultilizados Descartáveis <-----
     ${AtaduraDescartavel} ${TamAtaduraDescartavel} ${QuantAtaduraDescartavel}
     ${CateterDescartavel} ${QuantCateterDescartavel}
@@ -565,7 +566,16 @@ app.post('/ocorrencia', (req, res) => {
     ${OutroDescartavel} ${QuantOutroDescartavel}
 
     -----> Materiais Ultilizados Deixado no Hospital <-----
-
+    Sonda de Aspiração: ${SondaHospital}
+    Colar: ${ColarHospital}
+    Coxins Estabiliza: ${CoxinsHospital}
+    Maca Rígida: ${MacaHospital}
+    T.T.F: ${TTFHospital}
+    Tirante Aranha: ${TiranteAranhaHospital}
+    Tirante De Cabeça: ${TiranteCabecaHospital}
+    Cânula: ${CanulaHospital}
+    Outro Material: ${OutroHospital}
+    
     -----> Avaliação Cinemática <-----
     Distúrbio de Comportamento: ${DisturbioAvaliacaoCinematica}
     Encontrado de Capacete: ${EncontradoCapaceteAvaliacaoCinematica}
