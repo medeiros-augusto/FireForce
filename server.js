@@ -563,11 +563,7 @@ app.post('/ocorrencia', (req, res) => {
     Tirante De Cabeça: ${TiranteCabecaHospital}
     Cânula: ${CanulaHospital}
     Outro Material: ${OutroHospital}
-
-
-
-
-
+    
     -----> Avaliação Cinemática <-----
     Distúrbio de Comportamento: ${DisturbioAvaliacaoCinematica}
     Encontrado de Capacete: ${EncontradoCapaceteAvaliacaoCinematica}
