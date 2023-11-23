@@ -317,9 +317,34 @@ app.post('/ocorrencia', (req, res) => {
     //Accordion Anamnese Emergência Médica / Gestacional
     //Medica
     const OqueMedica = req.body.OqueMedica ? req.body.OqueMedica : ''
-
-
-
+    const OutrasVezesMedica = req.body.OutrasVezesMedica ? req.body.OutrasVezesMedica : ''
+    const QuantoTempoMedica = req.body.QuantoTempoMedica ? req.body.QuantoTempoMedica : ''
+    const ProblemaMedica = req.body.ProblemaMedica ? req.body.ProblemaMedica : ''
+    const QualProblemaMedica = req.body.QualProblemaMedica ? req.body.QualProblemaMedica : ''
+    const MedicacaoMedica = req.body.MedicacaoMedica ? req.body.MedicacaoMedica : ''
+    const HorarioMedicacaoMedica = req.body.HorarioMedicacaoMedica ? req.body.HorarioMedicacaoMedica : ''
+    const QualMedicacaoMedica = req.body.QualMedicacaoMedica ? req.body.QualMedicacaoMedica : ''
+    const AlergicoMedica = req.body.AlergicoMedica ? req.body.AlergicoMedica : ''
+    const QualAlergicoMedica = req.body.QualAlergicoMedica ? req.body.QualAlergicoMedica : ''
+    const IngeriuMedica = req.body.IngeriuMedica ? req.body.IngeriuMedica : ''
+    const HorarioIngeriuMedica = req.body.HorarioIngeriuMedica ? req.body.HorarioIngeriuMedica : ''
+    //Gestacional
+    const PreNatal = req.body.PreNatal ? req.body.PreNatal : ''
+    const PeriodoGestacional = req.body.PeriodoGestacional ? req.body.PeriodoGestacional : ''
+    const NomeMedicoGestacional = req.body.NomeMedicoGestacional ? req.body.NomeMedicoGestacional : ''
+    const PossibilidadeGestacional = req.body.PossibilidadeGestacional ? req.body.PossibilidadeGestacional : ''
+    const PrimeiroGestacional = req.body.PrimeiroGestacional ? req.body.PrimeiroGestacional : ''
+    const QuantosGestacional = req.body.QuantosGestacional ? req.body.QuantosGestacional : ''
+    const HorarioContracaoGestacional = req.body.HorarioContracaoGestacional ? req.body.HorarioContracaoGestacional : ''
+    const DuracaoContracaoGestacional = req.body.DuracaoContracaoGestacional ? req.body.DuracaoContracaoGestacional : ''
+    const IntervaloContracaoGestacional = req.body.IntervaloContracaoGestacional ? req.body.IntervaloContracaoGestacional : ''
+    const PressaoGestacional = req.body.PressaoGestacional ? req.body.PressaoGestacional : ''
+    const RupturaGestacional = req.body.RupturaGestacional ? req.body.RupturaGestacional : ''
+    const InspecaoGestacional = req.body.InspecaoGestacional ? req.body.InspecaoGestacional : ''
+    const PartoGestacional = req.body.PartoGestacional ? req.body.PartoGestacional : ''
+    const HoraNascimentoGestacional = req.body.HoraNascimentoGestacional ? req.body.HoraNascimentoGestacional : ''
+    const SexoBebe = req.body.SexoBebe ? req.body.SexoBebe : ''
+    const NomeBebe = req.body.NomeBebe ? req.body.NomeBebe : ''
     //Accordion Avaliação Cinemática
     const DisturbioAvaliacaoCinematica = req.body.DisturbioAvaliacaoCinematica ? req.body.DisturbioAvaliacaoCinematica : ''
     const EncontradoCapaceteAvaliacaoCinematica = req.body.EncontradoCapaceteAvaliacaoCinematica ? req.body.EncontradoCapaceteAvaliacaoCinematica : ''
@@ -512,19 +537,19 @@ app.post('/ocorrencia', (req, res) => {
     Fez Pré-natal: ${PreNatal}
     Período Gestacional: ${PeriodoGestacional}
     Nome do médico: ${NomeMedicoGestacional}
-    Existe Probabilidade de Complicações: ${}
-    É o primeiro filho: ${}
-    Quantos: ${}
-    Que horas iniciaram as contrações: ${}
-    Duração: ${}
-    Intervalo: ${}
-    Pressão na Região do Quadril ou Vontade de Evacuar: ${}
-    Já Houve Ruptura da Bolsa: ${}
-    Foi Feito a Inspeção Visual: ${}
-    Parto Realizado: ${}
-    Hora do Nascimento: ${}
-    Sexo do bebê: ${}
-    Nome do bebê: ${}
+    Existe Probabilidade de Complicações: ${PossibilidadeGestacional}
+    É o primeiro filho: ${PrimeiroGestacional}
+    Quantos: ${QuantosGestacional}
+    Que horas iniciaram as contrações: ${HorarioContracaoGestacional}
+    Duração: ${DuracaoContracaoGestacional}
+    Intervalo: ${IntervaloContracaoGestacional}
+    Pressão na Região do Quadril ou Vontade de Evacuar: ${PressaoGestacional}
+    Já Houve Ruptura da Bolsa: ${RupturaGestacional}
+    Foi Feito a Inspeção Visual: ${InspecaoGestacional}
+    Parto Realizado: ${PartoGestacional}
+    Hora do Nascimento: ${HoraNascimentoGestacional}
+    Sexo do bebê: ${SexoBebe}
+    Nome do bebê: ${NomeBebe}
     -----> Materiais Ultilizados Descartáveis <-----
 
     -----> Materiais Ultilizados Deixado no Hospital <-----
