@@ -19,7 +19,7 @@ const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
     password: '',
-    database: 'noar',
+    database: 'noar2',
 });
 
 connection.connect(function (err) {
@@ -345,6 +345,39 @@ app.post('/ocorrencia', (req, res) => {
     const HoraNascimentoGestacional = req.body.HoraNascimentoGestacional ? req.body.HoraNascimentoGestacional : ''
     const SexoBebe = req.body.SexoBebe ? req.body.SexoBebe : ''
     const NomeBebe = req.body.NomeBebe ? req.body.NomeBebe : ''
+    //Accordion Materiais Utilizados Descartaveis
+    const AtaduraDescartavel = req.body.AtaduraDescartavel ? req.body.AtaduraDescartavel : ''
+    const TamAtaduraDescartavel = req.body.TamAtaduraDescartavel ? req.body.TamAtaduraDescartavel : ''
+    const QuantAtaduraDescartavel = req.body.QuantAtaduraDescartavel ? req.body.QuantAtaduraDescartavel : ''
+    const CateterDescartavel = req.body.CateterDescartavel ? req.body.CateterDescartavel : ''
+    const QuantCateterDescartavel = req.body.QuantCateterDescartavel ? req.body.QuantCateterDescartavel : ''
+    const CompressaDescartavel = req.body.CompressaDescartavel ? req.body.CompressaDescartavel : ''
+    const QuantCompressaDescartavel = req.body.QuantCompressaDescartavel ? req.body.QuantCompressaDescartavel : ''
+    const KitDescartavel = req.body.KitDescartavel ? req.body.KitDescartavel : ''
+    const TamKitDescartavel = req.body.TamKitDescartavel ? req.body.TamKitDescartavel : ''
+    const QuantKitDescartavel = req.body.QuantKitDescartavel ? req.body.QuantKitDescartavel : ''
+    const LuvasDescartavel = req.body.LuvasDescartavel ? req.body.LuvasDescartavel : ''
+    const QuantLuvasDescartavel = req.body.QuantLuvasDescartavel ? req.body.QuantLuvasDescartavel : ''
+    const MascaraDescartavel = req.body.MascaraDescartavel ? req.body.MascaraDescartavel : ''
+    const QuantMascaraDescartavel = req.body.QuantMascaraDescartavel ? req.body.QuantMascaraDescartavel : ''
+    const MantaDescartavel = req.body.MantaDescartavel ? req.body.MantaDescartavel : ''
+    const QuantMantaDescartavel = req.body.QuantMantaDescartavel ? req.body.QuantMantaDescartavel : ''
+    const PasDescartavel = req.body.PasDescartavel ? req.body.PasDescartavel : ''
+    const QuantPasDescartavel = req.body.QuantPasDescartavel ? req.body.QuantPasDescartavel : ''
+    const SondaDescartavel = req.body.SondaDescartavel ? req.body.SondaDescartavel : ''
+    const QuantSondaDescartavel = req.body.QuantSondaDescartavel ? req.body.QuantSondaDescartavel : ''
+    const SoroDescartavel = req.body.SoroDescartavel ? req.body.SoroDescartavel : ''
+    const QuantSoroDescartavel = req.body.QuantSoroDescartavel ? req.body.QuantSoroDescartavel : ''
+    const TalasDescartavel = req.body.TalasDescartavel ? req.body.TalasDescartavel : ''
+    const TamTalasDescartavel = req.body.TamTalasDescartavel ? req.body.TamTalasDescartavel : ''
+    const QuantTalasDescartavel = req.body.QuantTalasDescartavel ? req.body.QuantTalasDescartavel : ''
+    const OutroDescartavel = req.body.OutroDescartavel
+    if (OutroDescartavel === 'on'){
+        OutroDescartavel = req.body.ValorOutroDescartavel
+    }
+    const QuantOutroDescartavel = req.body.QuantOutroDescartavel ? req.body.QuantOutroDescartavel : ''
+    //Accordion Materiais utilizados deixados no Hospital
+
     //Accordion Avaliação Cinemática
     const DisturbioAvaliacaoCinematica = req.body.DisturbioAvaliacaoCinematica ? req.body.DisturbioAvaliacaoCinematica : ''
     const EncontradoCapaceteAvaliacaoCinematica = req.body.EncontradoCapaceteAvaliacaoCinematica ? req.body.EncontradoCapaceteAvaliacaoCinematica : ''
