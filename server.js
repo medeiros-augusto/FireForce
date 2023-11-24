@@ -599,15 +599,15 @@ app.post('/ocorrencia', (req, res) => {
     ${OutroDescartavel} ${QuantOutroDescartavel}
 
     -----> Materiais Ultilizados Deixado no Hospital <-----
-    Sonda de Aspiração: ${SondaHospital}
-    Colar: ${ColarHospital}
-    Coxins Estabiliza: ${CoxinsHospital}
-    Maca Rígida: ${MacaHospital}
-    T.T.F: ${TTFHospital}
-    Tirante Aranha: ${TiranteAranhaHospital}
-    Tirante De Cabeça: ${TiranteCabecaHospital}
-    Cânula: ${CanulaHospital}
-    Outro Material: ${OutroHospital}
+    Sonda de Aspiração: ${SondaHospital} ${QuantSondaHospital}
+    Colar: ${ColarHospital} ${TamColarHospital}${OutroTamColarHospital} ${QuantColarHospital}
+    Coxins Estabiliza: ${CoxinsHospital} ${QuantCoxinsHospital}
+    Maca Rígida: ${MacaHospital} ${QuantMacaHospital} ${QuantTTFHospital}
+    T.T.F: ${TTFHospital} ${TamTTFHospital}
+    Tirante Aranha: ${TiranteAranhaHospital} ${QuantTiranteAranhaHospital}
+    Tirante De Cabeça: ${TiranteCabecaHospital} ${QuantTiranteCabecaHospital}
+    Cânula: ${CanulaHospital} ${QuantCanulaHospital}
+    Outro Material: ${OutroHospital} ${QuantOutroHospital}
     
     -----> Avaliação Cinemática <-----
     Distúrbio de Comportamento: ${DisturbioAvaliacaoCinematica}
@@ -619,7 +619,8 @@ app.post('/ocorrencia', (req, res) => {
     Volante Retorcido: ${VolanteRetorcidoAvaliacaoCinematica}
 
     -----> Termo de Recusa de Atendimento E/OU Transporte <-----
-    
+    ${ArqAssinatura}
+    ${ObsImportantes}
     `) 
 
     res.render('ocorrencia') 
