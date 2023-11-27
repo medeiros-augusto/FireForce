@@ -7,8 +7,8 @@ const port = 3010;
 var path = require('path')
 const app = express()
 
-app.use(session({secret:'gsdgsdfqfq2f3fd'}))
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(session({ secret: 'gsdgsdfqfq2f3fd' }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.engine('html', require('ejs').renderFile)
 app.set('view engine', 'html')
@@ -30,62 +30,79 @@ connection.connect(function (err) {
     }
 });
 
-app.get('/', (req,res)=>{
-    if(req.session.nomelogin == 'adm'){
+app.get('/', (req, res) => {
+    if (req.session.nomelogin == 'adm') {
         res.render('painel_adm')
-    }else if (req.session.nomelogin){
-        res.render('home', {login: global.nomelogin})
-    }else{
+    } else if (req.session.nomelogin) {
+        res.render('home', { login: global.nomelogin })
+    } else {
         res.render('login')
     }
 })
 
 app.get('/ocorrencia', (req, res) => {
-    if (req.session.nomelogin){
+    if (req.session.nomelogin) {
         res.render('ocorrencia');
-    }else (
+    } else (
         res.send("[ERRO] Necessário realizar login!")
     )
-  });
+});
+
+app.get('/historico', (req, res) => {
+    if (req.session.nomelogin) {
+        res.render('historico');
+    } else (
+        res.send("[ERRO] Necessário realizar login!")
+    )
+});
 
 app.get('/usuarios', (req, res) => {
-    if (req.session.nomelogin == 'adm'){
+    if (req.session.nomelogin == 'adm') {
         res.render('usuarios');
-    }else (
+    } else (
         res.send("[ERRO] Usuário logado não é Administrador!")
     )
-  });
+});
 
-  app.get('/logout', (req, res) => {
+app.get('/logout', (req, res) => {
     req.session.destroy(err => {
-      if (err) {
-        console.error('Erro ao fazer logout:', err);
-      }
-      res.redirect('/'); 
+        if (err) {
+            console.error('Erro ao fazer logout:', err);
+        }
+        res.redirect('/');
     });
-  });
-  
-  app.get('/getUsers', (req, res) => {
+});
+
+app.get('/getUsers', (req, res) => {
     connection.query('SELECT id_usuario, nome_usuario, senha_usuario FROM usuario', (error, results) => {
-      if (error) {
-        res.status(500).json({ error: 'Erro ao buscar dados do banco de dados' });
-      } else {
-        res.status(200).json(results);
-      }
+        if (error) {
+            res.status(500).json({ error: 'Erro ao buscar dados do banco de dados' });
+        } else {
+            res.status(200).json(results);
+        }
     });
-  });
+});
+
+app.get('/getOcorrencia', (req, res) => {
+    connection.query('SELECT id_ocorrencia, DataDadosPaciente, NomePacienteDadosPaciente FROM ocorrencia', (error, results) => {
+        if (error) {
+            res.status(500).json({ error: 'Erro ao buscar dados do banco de dados' });
+        } else {
+            res.status(200).json(results);
+        }
+    });
+});
 
 
-
-app.get('/criar_usuario', (req, res) =>{
-    if (req.session.nomelogin === 'adm'){
+app.get('/criar_usuario', (req, res) => {
+    if (req.session.nomelogin === 'adm') {
         res.render('criar_usuario')
-    }else{
+    } else {
         res.send("[ERRO] Usuário logado não é Administrador!")
     }
 })
 
-app.post('/', (req, res) =>{
+app.post('/', (req, res) => {
     global.nomelogin = req.body.nomelogin
     let senha = req.body.senhalogin
 
@@ -94,10 +111,10 @@ app.post('/', (req, res) =>{
             if (rows.length > 0) {
                 if (rows[0].senha_usuario === senha) {
                     req.session.nomelogin = global.nomelogin
-                    if (req.session.nomelogin == 'adm'){
-                        res.render('painel_adm', {login: global.nomelogin})
-                    }else{
-                        res.render('home', {login: global.nomelogin})
+                    if (req.session.nomelogin == 'adm') {
+                        res.render('painel_adm', { login: global.nomelogin })
+                    } else {
+                        res.render('home', { login: global.nomelogin })
                     }
                 } else {
                     res.render('login')
@@ -184,11 +201,11 @@ app.post('/ocorrencia', (req, res) => {
     //Accordion Problemas Encontrados Suspeitos
     const PsiquiatricoProblemasSuspeitos = req.body.PsiquiatricoProblemasSuspeitos ? req.body.PsiquiatricoProblemasSuspeitos : '*'
     const RespiratorioProblemasSuspeitos = `${req.body.RespiratorioProblemasSuspeitos ? req.body.RespiratorioProblemasSuspeitos : '*'} ${req.body.DPOCProblemasSuspeitos ? req.body.DPOCProblemasSuspeitos : '*'} ${req.body.InalacaoFumacaProblemasSuspeitos ? req.body.InalacaoFumacaProblemasSuspeitos : '*'}`
-    const DiabetesProblemasSuspeitos = `${req.body.DiabetesProblemasSuspeitos ? req.body.DiabetesProblemasSuspeitos : '*'} ${req.body.HiperglicemiaProblemasSuspeitos ? req.body.HiperglicemiaProblemasSuspeitos : '*'} ${req.body.HipoglicemiaProblemasSuspeitos? req.body.HipoglicemiaProblemasSuspeitos : '*'}`
-    const ObstetricoProblemasSuspeitos = `${req.body.ObstetricoProblemasSuspeitos ? req.body.ObstetricoProblemasSuspeitos : '*' } ${req.body.PartoEmergencialProblemasSuspeitos ? req.body.PartoEmergencialProblemasSuspeitos : '*' } ${req.body.GestanteProblemasSuspeitos ? req.body.GestanteProblemasSuspeitos : '*'} ${req.body.HemorExcessivaProblemasSuspeitos ? req.body.HemorExcessivaProblemasSuspeitos : '*'}`
+    const DiabetesProblemasSuspeitos = `${req.body.DiabetesProblemasSuspeitos ? req.body.DiabetesProblemasSuspeitos : '*'} ${req.body.HiperglicemiaProblemasSuspeitos ? req.body.HiperglicemiaProblemasSuspeitos : '*'} ${req.body.HipoglicemiaProblemasSuspeitos ? req.body.HipoglicemiaProblemasSuspeitos : '*'}`
+    const ObstetricoProblemasSuspeitos = `${req.body.ObstetricoProblemasSuspeitos ? req.body.ObstetricoProblemasSuspeitos : '*'} ${req.body.PartoEmergencialProblemasSuspeitos ? req.body.PartoEmergencialProblemasSuspeitos : '*'} ${req.body.GestanteProblemasSuspeitos ? req.body.GestanteProblemasSuspeitos : '*'} ${req.body.HemorExcessivaProblemasSuspeitos ? req.body.HemorExcessivaProblemasSuspeitos : '*'}`
     const TransporteProblemasSuspeitos = `${req.body.TransporteProblemasSuspeitos ? req.body.TransporteProblemasSuspeitos : '*'} ${req.body.AereoProblemasSuspeitos ? req.body.AereoProblemasSuspeitos : '*'} ${req.body.ClinicoProblemasSuspeitos ? req.body.ClinicoProblemasSuspeitos : '*'} ${req.body.EmergencialProblemasSuspeitos ? req.body.EmergencialProblemasSuspeitos : '*'} ${req.body.PosTraumaProblemasSuspeitos ? req.body.PosTraumaProblemasSuspeitos : '*'} ${req.body.SamuProblemasSuspeitos ? req.body.SamuProblemasSuspeitos : '*'} ${req.body.SemRemocaoProblemasSuspeitos ? req.body.SemRemocaoProblemasSuspeitos : '*'} ${req.body.ValorOutroTransporteProblemasSuspeitos.length > 0 ? req.body.ValorOutroTransporteProblemasSuspeitos : '*'}`
     var OutroProblemaProblemasSuspeitos = '*'
-    if (req.body.OutroProblemaProblemasSuspeitos === 'on' && req.body.ValorOutroProblemaProblemasSuspeitos.length > 0){
+    if (req.body.OutroProblemaProblemasSuspeitos === 'on' && req.body.ValorOutroProblemaProblemasSuspeitos.length > 0) {
         OutroProblemaProblemasSuspeitos = req.body.ValorOutroProblemaProblemasSuspeitos
     }
     //Accordion Sinais e Sintomas
@@ -232,129 +249,129 @@ app.post('/ocorrencia', (req, res) => {
     const TaquipneiaSinaiseSintomas = req.body.TaquipneiaSinaiseSintomas ? req.body.TaquipneiaSinaiseSintomas : '*'
     const TaquicardiaSinaiseSintomas = req.body.TaquicardiaSinaiseSintomas ? req.body.TaquicardiaSinaiseSintomas : '*'
     var OutroSinaiseSintomas = '*'
-    if (req.body.OutroSinaiseSintomas === 'on' && req.body.ValorOutroSinaiseSintomas.length > 0){
+    if (req.body.OutroSinaiseSintomas === 'on' && req.body.ValorOutroSinaiseSintomas.length > 0) {
         OutroSinaiseSintomas = req.body.ValorOutroSinaiseSintomas
     }
     var SinaiseSintomas = ''
-    if (AbdomenSinaiseSintomas.length > 1){
+    if (AbdomenSinaiseSintomas.length > 1) {
         SinaiseSintomas = SinaiseSintomas + '' + AbdomenSinaiseSintomas
     }
-    if (AfundamentoSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + ', ' + AfundamentoSinaiseSintomas 
+    if (AfundamentoSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + ', ' + AfundamentoSinaiseSintomas
     }
-    if (AgitacaoSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + ', ' + AgitacaoSinaiseSintomas 
+    if (AgitacaoSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + ', ' + AgitacaoSinaiseSintomas
     }
-    if (AmnesiaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + AmnesiaSinaiseSintomas 
+    if (AmnesiaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + AmnesiaSinaiseSintomas
     }
-    if (AnginaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + AnginaSinaiseSintomas 
+    if (AnginaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + AnginaSinaiseSintomas
     }
-    if (ApineiaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + ApineiaSinaiseSintomas 
+    if (ApineiaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + ApineiaSinaiseSintomas
     }
-    if (BradicardiaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + BradicardiaSinaiseSintomas 
+    if (BradicardiaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + BradicardiaSinaiseSintomas
     }
-    if (BradipneiaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + BradipneiaSinaiseSintomas 
+    if (BradipneiaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + BradipneiaSinaiseSintomas
     }
-    if (BroncoSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + BroncoSinaiseSintomas 
+    if (BroncoSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + BroncoSinaiseSintomas
     }
-    if (CefaleiaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + CefaleiaSinaiseSintomas 
+    if (CefaleiaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + CefaleiaSinaiseSintomas
     }
-    if (CianoseSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + CianoseSinaiseSintomas 
+    if (CianoseSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + CianoseSinaiseSintomas
     }
-    if (ConvulsaoSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + ConvulsaoSinaiseSintomas 
+    if (ConvulsaoSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + ConvulsaoSinaiseSintomas
     }
-    if (DecorticacaoSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + DecorticacaoSinaiseSintomas 
+    if (DecorticacaoSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + DecorticacaoSinaiseSintomas
     }
-    if (DeformidadeSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + DeformidadeSinaiseSintomas 
+    if (DeformidadeSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + DeformidadeSinaiseSintomas
     }
-    if (DescerebracaoSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + DescerebracaoSinaiseSintomas 
+    if (DescerebracaoSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + DescerebracaoSinaiseSintomas
     }
-    if (DesmaioSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + DesmaioSinaiseSintomas 
+    if (DesmaioSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + DesmaioSinaiseSintomas
     }
-    if (DesvioSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + DesvioSinaiseSintomas 
+    if (DesvioSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + DesvioSinaiseSintomas
     }
-    if (DispneiaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + DispneiaSinaiseSintomas 
+    if (DispneiaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + DispneiaSinaiseSintomas
     }
-    if (DorSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + DorSinaiseSintomas 
+    if (DorSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + DorSinaiseSintomas
     }
-    if (EdemaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + EdemaSinaiseSintomas 
+    if (EdemaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + EdemaSinaiseSintomas
     }
-    if (EstaseSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + EstaseSinaiseSintomas 
+    if (EstaseSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + EstaseSinaiseSintomas
     }
-    if (FaceSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + FaceSinaiseSintomas 
+    if (FaceSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + FaceSinaiseSintomas
     }
-    if (HemorragiaSinaiseSintomas.length > 1){
+    if (HemorragiaSinaiseSintomas.length > 1) {
         SinaiseSintomas = SinaiseSintomas + '' + HemorragiaSinaiseSintomas
     }
-    if (HipertensaoSinaiseSintomas.length > 1){
+    if (HipertensaoSinaiseSintomas.length > 1) {
         SinaiseSintomas = SinaiseSintomas + '' + HipertensaoSinaiseSintomas
     }
-    if (HipotensaoSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + HipotensaoSinaiseSintomas 
+    if (HipotensaoSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + HipotensaoSinaiseSintomas
     }
-    if (NauseasSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + NauseasSinaiseSintomas 
+    if (NauseasSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + NauseasSinaiseSintomas
     }
-    if (NasoragiaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + NasoragiaSinaiseSintomas 
+    if (NasoragiaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + NasoragiaSinaiseSintomas
     }
-    if (IsocoriaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + IsocoriaSinaiseSintomas 
+    if (IsocoriaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + IsocoriaSinaiseSintomas
     }
-    if (ObitoSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + ObitoSinaiseSintomas 
+    if (ObitoSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + ObitoSinaiseSintomas
     }
-    if (OtorreiaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + OtorreiaSinaiseSintomas 
+    if (OtorreiaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + OtorreiaSinaiseSintomas
     }
-    if (OtorragiaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + OtorragiaSinaiseSintomas 
+    if (OtorragiaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + OtorragiaSinaiseSintomas
     }
-    if (OVACESinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + OVACESinaiseSintomas 
+    if (OVACESinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + OVACESinaiseSintomas
     }
-    if (ParadaSinaiseSintomas.length > 1){
+    if (ParadaSinaiseSintomas.length > 1) {
         SinaiseSintomas = SinaiseSintomas + '' + ParadaSinaiseSintomas
     }
-    if (PriaprismoSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + PriaprismoSinaiseSintomas 
+    if (PriaprismoSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + PriaprismoSinaiseSintomas
     }
-    if (PruridoSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + PruridoSinaiseSintomas  
+    if (PruridoSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + PruridoSinaiseSintomas
     }
-    if (PupilasSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + PupilasSinaiseSintomas  
+    if (PupilasSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + PupilasSinaiseSintomas
     }
-    if (SudoreseSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + SudoreseSinaiseSintomas  
+    if (SudoreseSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + SudoreseSinaiseSintomas
     }
-    if (TaquipneiaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + TaquipneiaSinaiseSintomas   
+    if (TaquipneiaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + TaquipneiaSinaiseSintomas
     }
-    if (TaquicardiaSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + TaquicardiaSinaiseSintomas 
+    if (TaquicardiaSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + TaquicardiaSinaiseSintomas
     }
-    if (OutroSinaiseSintomas.length > 1){
-        SinaiseSintomas = SinaiseSintomas + '' + OutroSinaiseSintomas 
+    if (OutroSinaiseSintomas.length > 1) {
+        SinaiseSintomas = SinaiseSintomas + '' + OutroSinaiseSintomas
     }
     //Accordion Avaliação Paciente
     const AberturaOcularMenor = req.body.AberturaOcularMenor ? req.body.AberturaOcularMenor : '*'
@@ -436,146 +453,146 @@ app.post('/ocorrencia', (req, res) => {
     const CITProcedimentosEfetuados = req.body.CITProcedimentosEfetuados ? req.body.CITProcedimentosEfetuados : '*'
     const OutroProcedimentosEfetuados = req.body.OutroProcedimentosEfetuados ? req.body.OutroProcedimentosEfetuados : '*'
     var ProcedimentosEfetuados = '*'
-    if (AspiracaoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + AspiracaoProcedimentosEfetuados 
+    if (AspiracaoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + AspiracaoProcedimentosEfetuados
     }
-    if (AvaliacaoInicialProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + ', ' + AvaliacaoInicialProcedimentosEfetuados  
+    if (AvaliacaoInicialProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + ', ' + AvaliacaoInicialProcedimentosEfetuados
     }
-    if (AvaliacaoDirigidaProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + ', ' + AvaliacaoDirigidaProcedimentosEfetuados  
+    if (AvaliacaoDirigidaProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + ', ' + AvaliacaoDirigidaProcedimentosEfetuados
     }
-    if (AvaliacaoContinuadaProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + AvaliacaoContinuadaProcedimentosEfetuados  
+    if (AvaliacaoContinuadaProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + AvaliacaoContinuadaProcedimentosEfetuados
     }
-    if (ChaveProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + ChaveProcedimentosEfetuados  
+    if (ChaveProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + ChaveProcedimentosEfetuados
     }
-    if (CanulaProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + CanulaProcedimentosEfetuados  
+    if (CanulaProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + CanulaProcedimentosEfetuados
     }
-    if (DesobstrucaoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + DesobstrucaoProcedimentosEfetuados  
+    if (DesobstrucaoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + DesobstrucaoProcedimentosEfetuados
     }
-    if (EmpregoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + EmpregoProcedimentosEfetuados  
+    if (EmpregoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + EmpregoProcedimentosEfetuados
     }
-    if (GerenciamentoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + GerenciamentoProcedimentosEfetuados  
+    if (GerenciamentoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + GerenciamentoProcedimentosEfetuados
     }
-    if (LimpezaProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + LimpezaProcedimentosEfetuados  
+    if (LimpezaProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + LimpezaProcedimentosEfetuados
     }
-    if (CurativosProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + CurativosProcedimentosEfetuados  
+    if (CurativosProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + CurativosProcedimentosEfetuados
     }
-    if (CompressivoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + CompressivoProcedimentosEfetuados  
+    if (CompressivoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + CompressivoProcedimentosEfetuados
     }
-    if (EncravamentoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + EncravamentoProcedimentosEfetuados  
+    if (EncravamentoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + EncravamentoProcedimentosEfetuados
     }
-    if (OcularProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + OcularProcedimentosEfetuados  
+    if (OcularProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + OcularProcedimentosEfetuados
     }
-    if (QueimaduraProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + QueimaduraProcedimentosEfetuados  
+    if (QueimaduraProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + QueimaduraProcedimentosEfetuados
     }
-    if (SimplesProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + SimplesProcedimentosEfetuados  
+    if (SimplesProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + SimplesProcedimentosEfetuados
     }
-    if (_3PontasProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + _3PontasProcedimentosEfetuados  
+    if (_3PontasProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + _3PontasProcedimentosEfetuados
     }
-    if (ImobilizacoesProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + ImobilizacoesProcedimentosEfetuados  
+    if (ImobilizacoesProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + ImobilizacoesProcedimentosEfetuados
     }
-    if (InferiorDireitoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + InferiorDireitoProcedimentosEfetuados  
+    if (InferiorDireitoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + InferiorDireitoProcedimentosEfetuados
     }
-    if (InferiorEsquerdoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + InferiorEsquerdoProcedimentosEfetuados  
+    if (InferiorEsquerdoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + InferiorEsquerdoProcedimentosEfetuados
     }
-    if (SuperiorDireitoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + SuperiorDireitoProcedimentosEfetuados  
+    if (SuperiorDireitoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + SuperiorDireitoProcedimentosEfetuados
     }
-    if (SuperiorEsquerdoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + SuperiorEsquerdoProcedimentosEfetuados  
+    if (SuperiorEsquerdoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + SuperiorEsquerdoProcedimentosEfetuados
     }
-    if (QuadrilProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + QuadrilProcedimentosEfetuados 
+    if (QuadrilProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + QuadrilProcedimentosEfetuados
     }
-    if (CervicalProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + CervicalProcedimentosEfetuados 
+    if (CervicalProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + CervicalProcedimentosEfetuados
     }
-    if (MacaRodasProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + MacaRodasProcedimentosEfetuados  
+    if (MacaRodasProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + MacaRodasProcedimentosEfetuados
     }
-    if (MacaRigidaProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + MacaRigidaProcedimentosEfetuados  
+    if (MacaRigidaProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + MacaRigidaProcedimentosEfetuados
     }
-    if (PonteProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + PonteProcedimentosEfetuados  
+    if (PonteProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + PonteProcedimentosEfetuados
     }
-    if (RetiradoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + RetiradoProcedimentosEfetuados  
+    if (RetiradoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + RetiradoProcedimentosEfetuados
     }
-    if (RCPProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + RCPProcedimentosEfetuados  
+    if (RCPProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + RCPProcedimentosEfetuados
     }
-    if (_90ProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + _90ProcedimentosEfetuados  
+    if (_90ProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + _90ProcedimentosEfetuados
     }
-    if (_180ProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + _180ProcedimentosEfetuados  
+    if (_180ProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + _180ProcedimentosEfetuados
     }
-    if (TomadaProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + TomadaProcedimentosEfetuados  
+    if (TomadaProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + TomadaProcedimentosEfetuados
     }
-    if (TratadoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + TratadoProcedimentosEfetuados 
+    if (TratadoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + TratadoProcedimentosEfetuados
     }
-    if (UsoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + UsoProcedimentosEfetuados  
+    if (UsoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + UsoProcedimentosEfetuados
     }
-    if (ColarProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + ColarProcedimentosEfetuados   
+    if (ColarProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + ColarProcedimentosEfetuados
     }
-    if (TTFProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + TTFProcedimentosEfetuados   
+    if (TTFProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + TTFProcedimentosEfetuados
     }
-    if (VentilacaoProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + VentilacaoProcedimentosEfetuados  
+    if (VentilacaoProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + VentilacaoProcedimentosEfetuados
     }
-    if (OxigenioterapiaProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + OxigenioterapiaProcedimentosEfetuados    
+    if (OxigenioterapiaProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + OxigenioterapiaProcedimentosEfetuados
     }
-    if (ReanimadorProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + ReanimadorProcedimentosEfetuados  
+    if (ReanimadorProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + ReanimadorProcedimentosEfetuados
     }
-    if (MeiosProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + MeiosProcedimentosEfetuados  
+    if (MeiosProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + MeiosProcedimentosEfetuados
     }
-    if (CelescProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + CelescProcedimentosEfetuados   
+    if (CelescProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + CelescProcedimentosEfetuados
     }
-    if (PoliciaProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + PoliciaProcedimentosEfetuados   
+    if (PoliciaProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + PoliciaProcedimentosEfetuados
     }
-    if (DefCivilProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + DefCivilProcedimentosEfetuados   
+    if (DefCivilProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + DefCivilProcedimentosEfetuados
     }
-    if (IGPPCProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + IGPPCProcedimentosEfetuados   
+    if (IGPPCProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + IGPPCProcedimentosEfetuados
     }
-    if (SamuProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + SamuProcedimentosEfetuados   
+    if (SamuProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + SamuProcedimentosEfetuados
     }
-    if (CITProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + CITProcedimentosEfetuados   
+    if (CITProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + CITProcedimentosEfetuados
     }
-    if (OutroProcedimentosEfetuados.length > 1){
-        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + OutroProcedimentosEfetuados   
+    if (OutroProcedimentosEfetuados.length > 1) {
+        ProcedimentosEfetuados = ProcedimentosEfetuados + '' + OutroProcedimentosEfetuados
     }
     //Accordion Anamnese Emergência Médica / Gestacional
     //Medica
@@ -635,7 +652,7 @@ app.post('/ocorrencia', (req, res) => {
     const TamTalasDescartavel = req.body.TamTalasDescartavel ? req.body.TamTalasDescartavel : '*'
     const QuantTalasDescartavel = req.body.QuantTalasDescartavel ? req.body.QuantTalasDescartavel : '*'
     var OutroDescartavel = '*'
-    if (req.body.OutroDescartavel === 'on'){
+    if (req.body.OutroDescartavel === 'on') {
         OutroDescartavel = req.body.ValorOutroDescartavel
     }
     const QuantOutroDescartavel = req.body.QuantOutroDescartavel ? req.body.QuantOutroDescartavel : '*'
@@ -659,7 +676,7 @@ app.post('/ocorrencia', (req, res) => {
     const CanulaHospital = req.body.CanulaHospital ? req.body.CanulaHospital : '*'
     const QuantCanulaHospital = req.body.QuantCanulaHospital ? req.body.QuantCanulaHospital : '*'
     var OutroHospital = '*'
-    if (req.body.OutroHospital === 'on'){
+    if (req.body.OutroHospital === 'on') {
         OutroHospital = req.body.ValorOutroHospital
     }
     const QuantOutroHospital = req.body.QuantOutroHospital ? req.body.QuantOutroHospital : '*'
@@ -810,20 +827,20 @@ app.post('/ocorrencia', (req, res) => {
         QuantCanulaHospital,
         OutroHospital,
         QuantOutroHospital], function (err, result) {
-        if (!err) {
-            console.log("Ocorrência criada com sucesso!");
-            res.render('historico');
-        } else {
-            console.log("Erro ao inserir no banco de dados:", err);
-            res.status(500).send("Erro ao cadastrar usuário");
-        }
-    });
+            if (!err) {
+                console.log("Ocorrência criada com sucesso!");
+                res.render('historico');
+            } else {
+                console.log("Erro ao inserir no banco de dados:", err);
+                res.status(500).send("Erro ao cadastrar usuário");
+            }
+        });
 
 
-    res.render('ocorrencia') 
+    res.render('ocorrencia')
 })
 
 
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log(`Servidor Rodando na porta ${port}`)
 })
