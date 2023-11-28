@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionamento com Pop-up</title>
+</head>
+<body>
+
+    <div class="row mb-4" id="ConjuntoHospital">
+        <div class="col-md-6">
+            <div class="input-group mt-3">
+                <input type="text" class="form-control" name="NOcorrencia" placeholder="Digite o número da ocorrência"
+                    style="text-align: center;" disabled>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group mt-3">
+                <input type="text" class="form-control" placeholder="Nº Ocorrência"
+                    style="text-align: center;" name="QuantOutroHospital" id="inputNumeroOcorrencia">
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" value="Buscar" style="width: 100%; height: 4vh; border: none; border-radius: 5px; background-color: rgb(25, 25, 145); color: #fff;" onclick="buscarEExibirResultado()">
+
+    <script>
+        function buscarEExibirResultado() {
+            // Obtém o valor do campo "Nº Ocorrência"
+            var numeroOcorrencia = document.getElementById('inputNumeroOcorrencia').value;
+
+            // Verifica se o valor não está vazio
+            if (numeroOcorrencia.trim() !== '') {
+                // Tenta encontrar o elemento com o ID correspondente
+                var elementoAlvo = document.getElementById(numeroOcorrencia);
+
+                if (elementoAlvo) {
+                    // Se encontrado, rola para o elemento
+                    elementoAlvo.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    // Se não encontrado, exibe um pop-up
+                    alert('Ocorrência não encontrada');
+                }
+            }
+        }
+    </script>
+
+    <!-- Exemplo de um elemento com ID correspondente -->
+    <div id="exemploElemento" style="margin-top: 500px;">
+        Conteúdo do elemento com ID "exemploElemento"
+    </div>
+
+</body>
+</html>

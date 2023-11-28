@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../public/assets/all.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../public/scripts/historico.js">
 </head>
 <body>
   <nav class="navbar">
@@ -16,6 +17,22 @@
     </div>
   </nav>
   <div class="container">
+    <div class="row mb-4" id="ConjuntoHospital">
+      <div class="col-md-6">
+          <div class="input-group mt-3">
+              <input type="text" class="form-control" name="NOcorrencia" placeholder="Digite o número da ocorrência"
+                  style="text-align: center;" disabled>
+          </div>
+      </div>
+      <div class="col-md-6">
+          <div class="input-group mt-3">
+              <input type="text" class="form-control" placeholder="Nº Ocorrência"
+                  style="text-align: center;" name="QuantOutroHospital" id="inputNumeroOcorrencia">
+          </div>
+      </div>
+  </div>
+
+  <input type="submit" value="Buscar" style="width: 100%; height: 4vh; border: none; border-radius: 5px; background-color: rgb(25, 25, 145); color: #fff;" onclick="buscarEExibirResultado()">
     <div class="cards">
       <div class="row" id="ocorrencia-data"></div>
     </div>
