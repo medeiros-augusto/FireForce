@@ -3,6 +3,7 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const mysql = require('mysql2')
 
+
 const port = 3010;
 var path = require('path')
 const app = express()
@@ -18,7 +19,7 @@ app.set('views', path.join(__dirname, '/views'))
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: '',
+    password: 'root',
     database: 'noar2',
 });
 
