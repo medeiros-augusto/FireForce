@@ -1,18 +1,22 @@
 body {
     margin: 0;
 }
-.container-fluid, nav,footer{
-    background: linear-gradient(90deg, rgba(40,132,150,1) 0%, rgba(28,28,128,1) 50%, rgba(40,132,150,1) 100%);
+
+.container-fluid, nav, footer {
+    /* Estilização do fundo com gradiente linear e texto em branco */
+    background: linear-gradient(90deg, rgba(40, 132, 150, 1) 0%, rgba(28, 28, 128, 1) 50%, rgba(40, 132, 150, 1) 100%);
     color: white;
 }
 
 .div-img {
+    /* Centralização e espaçamento para a div de imagem */
     text-align: center;
     margin: 5px;
     margin-bottom: 30px;
 }
 
 footer {
+    /* Rodapé fixo na parte inferior da página */
     left: 0;
     bottom: 0;
     width: 100%;
@@ -20,8 +24,8 @@ footer {
 
 /* ------------------INPUTS----------------- */
 
-
 .form {
+    /* Estilização do formulário com fundo branco, bordas arredondadas, e sombra */
     background-color: white;
     border-radius: 10px;
     text-align: center;
@@ -31,6 +35,7 @@ footer {
 }
 
 .form input {
+    /* Estilização dos inputs no formulário */
     margin: 10px;
     width: min-content;
 }
