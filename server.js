@@ -833,7 +833,7 @@ app.post('/ocorrencia', (req, res) => {
                 res.render('historico');
             } else {
                 console.log("Erro ao inserir no banco de dados:", err);
-                res.status(500).send("Erro ao cadastrar usuário");
+                res.status(500).send("Erro ao cadastrar ocorrencia");
             }
         });
 
