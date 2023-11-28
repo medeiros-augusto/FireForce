@@ -1,20 +1,37 @@
+// Função para exibir a imagem selecionada pelo usuário
 function exibirImagem(event) {
-    var inputFile = event.target;
-    var imagemContainer = document.getElementById('imagemContainer');
-    var uploadContainer = document.getElementById('uploadContainer');
-    var file = inputFile.files[0];
+  // Obtém o elemento de entrada de arquivo que acionou o evento
+  var inputFile = event.target;
+  // Obtém as referências aos elementos do DOM necessários
+  var imagemContainer = document.getElementById('imagemContainer');
+  var uploadContainer = document.getElementById('uploadContainer');
+  // Obtém o arquivo selecionado pelo usuário
+  var file = inputFile.files[0];
 
-    if (file) {
+  // Verifica se um arquivo foi selecionado
+  if (file) {
+      // Cria um objeto FileReader para ler o conteúdo do arquivo
       var reader = new FileReader();
+
+      // Configura a função a ser executada quando o conteúdo do arquivo for lido
       reader.onload = function () {
-        var imagem = new Image();
-        imagem.src = reader.result;
-        imagem.className = 'img-fluid';
-        imagemContainer.innerHTML = '';
-        imagemContainer.appendChild(imagem);
-        uploadContainer.style.display = 'none'; // Esconde o container de upload
-      }
+          // Cria um elemento de imagem e configura seus atributos
+          var imagem = new Image();
+          imagem.src = reader.result;
+          imagem.className = 'img-fluid';
+
+          // Limpa o conteúdo anterior e adiciona a nova imagem ao contêiner de imagem
+          imagemContainer.innerHTML = '';
+          imagemContainer.appendChild(imagem);
+
+          // Esconde o contêiner de upload
+          uploadContainer.style.display = 'none';
+      };
+
+      // Inicia a leitura do conteúdo do arquivo como um URL de dados
       reader.readAsDataURL(file);
-    }
   }
-  document.getElementById('inputFile').addEventListener('change', exibirImagem);
+}
+
+// Adiciona um ouvinte de eventos para o evento 'change' do elemento de entrada de arquivo
+document.getElementById('inputFile').addEventListener('change', exibirImagem);

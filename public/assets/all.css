@@ -1,30 +1,35 @@
 /* ----------------------------------PADRÃO------------------------------------- */
 
+/* Estilização da barra de navegação e rodapé com gradiente linear */
 .navbar, footer {
     background: linear-gradient(90deg, rgba(40, 132, 150, 1) 0%, rgba(28, 28, 128, 1) 50%, rgba(40, 132, 150, 1) 100%);
 }
+
 /* ---------------- DADOS PACIENTES ----------- */
 
-.dados{
+/* Estilização do container de dados do paciente */
+.dados {
     margin: 0 auto;
     background-color: rgb(211, 223, 223);
     border-radius: 10px;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilização da seta de navegação */
 .arrow {
     display: flex;
     justify-content: space-between;
 }
- i {
+
+/* Estilização do ícone */
+i {
     padding: 10px;
-    font-size: 3rem; 
+    font-size: 3rem;
 }
-
-
 
 /* ------------INSERIR IMG----------------- */
 
+/* Estilização do container de upload de imagem */
 .upload-container {
     border: 2px dashed #ccc;
     padding: 20px;
@@ -33,25 +38,27 @@
     transition: border 0.3s;
 }
 
+/* Efeito de destaque no hover */
 .upload-container:hover {
     border: 2px dashed #007bff;
 }
 
+/* Estilização da imagem */
 img {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
 }
 
+/* Estilização do botão de upload */
 .btn-upload {
     display: block;
     margin: 0 auto;
 }
+
+/* Estilização da seção de emojis */
 .emojis {
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
-
-
-
