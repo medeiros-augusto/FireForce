@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Configuração do conjunto de caracteres -->
     <meta charset="UTF-8">
+    <!-- Configuração para dimensionamento inicial -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
     <title>Redirecionamento com Pop-up</title>
 </head>
-<body>
 
+<body>
+    <!-- Campos para entrada de dados -->
     <div class="row mb-4" id="ConjuntoHospital">
+        <!-- Campo para número da ocorrência -->
         <div class="col-md-6">
             <div class="input-group mt-3">
                 <input type="text" class="form-control" name="NOcorrencia" placeholder="Digite o número da ocorrência"
                     style="text-align: center;" disabled>
             </div>
         </div>
+        <!-- Campo para inserir o número da ocorrência -->
         <div class="col-md-6">
             <div class="input-group mt-3">
                 <input type="text" class="form-control" placeholder="Nº Ocorrência"
@@ -22,8 +29,10 @@
         </div>
     </div>
 
+    <!-- Botão de busca -->
     <input type="submit" value="Buscar" style="width: 100%; height: 4vh; border: none; border-radius: 5px; background-color: rgb(25, 25, 145); color: #fff;" onclick="buscarEExibirResultado()">
 
+    <!-- Script para buscar e exibir resultados -->
     <script>
         function buscarEExibirResultado() {
             // Obtém o valor do campo "Nº Ocorrência"
@@ -51,4 +60,5 @@
     </div>
 
 </body>
+
 </html>

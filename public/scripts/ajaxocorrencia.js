@@ -1,7 +1,11 @@
+// Realiza uma requisição para a rota '/getOcorrencia'
 fetch('/getOcorrencia')
-    .then(response => response.json())
+    .then(response => response.json())  // Converte a resposta para formato JSON
     .then(ocorrencias => {
+        // Obtém a referência para a div onde os dados da ocorrência serão exibidos
         const ocorrenciaDataDiv = document.getElementById('ocorrencia-data');
+        
+        // Mapeia as ocorrências recebidas e cria um bloco HTML para cada uma
         const ocorrenciaList = ocorrencias.map(ocorrencia => {
             return `
                 <div class="col-lg-6">
@@ -16,6 +20,7 @@ fetch('/getOcorrencia')
                                 data-bs-target="#exampleModal-${ocorrencia.id_ocorrencia}"
                                 data-bs-whatever="${ocorrencia.id_ocorrencia}">Visualizar ocorrência
                                 ${ocorrencia.id_ocorrencia}</button>
+                            <!-- Modal para exibir detalhes e modificar a ocorrência -->
                             <div class="modal fade" id="exampleModal-${ocorrencia.id_ocorrencia}" tabindex="-1"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -27,9 +32,10 @@ fetch('/getOcorrencia')
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
+                                        <!-- Formulário para modificar a ocorrência -->
                                         <form action="" method="post">
                                             <div class="modal-body">
-        
+                                                <!-- Conteúdo do corpo do modal -->
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
@@ -45,8 +51,11 @@ fetch('/getOcorrencia')
                 </div>
             `;
         });
+
+        // Insere os blocos HTML na div de dados da ocorrência
         ocorrenciaDataDiv.innerHTML = ocorrenciaList.join('');
     })
     .catch(error => {
+        // Trata erros caso ocorram durante a requisição
         console.error('Erro ao buscar dados do servidor', error);
     });

@@ -2,34 +2,89 @@
 <html lang="en">
 
 <head>
+  <!-- Configuração do conjunto de caracteres -->
   <meta charset="UTF-8">
+  <!-- Título da página -->
   <title>Histórico Ocorrência</title>
+  <!-- Ícone da página -->
   <link rel="icon" href="../public/images/logo.png">
+  <!-- Estilos gerais -->
   <link rel="stylesheet" href="../public/assets/all.css">
+  <!-- Ícones do Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Estilos do Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<<<<<<< HEAD
+=======
+  <!-- Script para histórico -->
+  <link rel="stylesheet" href="../public/scripts/historico.js">
+>>>>>>> 7ec47e233e89ce69c889e73c620fef47238b8185
 </head>
+
 <body>
+  <!-- Barra de navegação -->
   <nav class="navbar">
     <div class="container-fluid">
       <img src="../public/images/logo_medicina.png" width="35px" height="35px">
     </div>
   </nav>
+
+  <!-- Container principal -->
   <div class="container">
+<<<<<<< HEAD
     <div class="cards">
       <div class="row" id="ocorrencia-data"></div>
     </div>
+=======
+    <!-- Formulário para número da ocorrência -->
+    <div class="row mb-4" id="ConjuntoHospital">
+      <div class="col-md-6">
+          <div class="input-group mt-3">
+              <!-- Campo para exibir número de ocorrência (desativado) -->
+              <input type="text" class="form-control" name="NOcorrencia" placeholder="Digite o número da ocorrência"
+                  style="text-align: center;" disabled>
+          </div>
+      </div>
+      <div class="col-md-6">
+          <div class="input-group mt-3">
+              <!-- Campo para inserir número de ocorrência -->
+              <input type="text" class="form-control" placeholder="Nº Ocorrência"
+                  style="text-align: center;" name="QuantOutroHospital" id="inputNumeroOcorrencia">
+          </div>
+      </div>
+  </div>
+
+  <!-- Botão para buscar -->
+  <input type="submit" value="Buscar" style="width: 100%; height: 4vh; border: none; border-radius: 5px; background-color: rgb(25, 25, 145); color: #fff;" onclick="buscarEExibirResultado()">
+  
+  <!-- Container para exibição de resultados -->
+  <div class="cards">
+    <div class="row" id="ocorrencia-data"></div>
+  </div>
+
+  <!-- Setas de navegação -->
+  <div style="position: fixed; bottom: 0; right: 0; width: 100%;">
+>>>>>>> 7ec47e233e89ce69c889e73c620fef47238b8185
     <div class="arrow mb-3 mt-3">
       <div class="voltar">
         <a href="/"><i class="bi bi-chevron-left"></i></a>
       </div>
+    </div>
   </div>
+<<<<<<< HEAD
   </div>
+=======
+
+  <!-- Rodapé -->
+>>>>>>> 7ec47e233e89ce69c889e73c620fef47238b8185
   <footer class="bg text-light mt-5 py-3">
     <div class="container-fluid text-center">
+      <!-- Informações de direitos autorais -->
       <p class="mb-0" style="margin: 0;">&copy; Augusto, Golerme, Bruski e JP. Todos direitos reservados.</p>
     </div>
   </footer>
+  
+  <!-- Scripts necessários -->
   <script src="../public/scripts/ajaxocorrencia.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
