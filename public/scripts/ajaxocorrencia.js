@@ -26,23 +26,20 @@ fetch('/getOcorrencia')
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Ocorrência N°
                                                 ${ocorrencia.id_ocorrencia}
                                             </h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
                                         <!-- Formulário para modificar a ocorrência -->
-                                        <form action="" method="post">
                                             <div class="modal-body">
-                                                <!-- Conteúdo do corpo do modal -->
+                                            <span style="cursor: pointer;" value="../logspdf/dadosocorrencia${ocorrencia.id_ocorrencia}.pdf" target="_blank" onclick="openPdf(event)">Abrir PDF</span>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
-                                                <input type="submit" class="btn btn-primary" value="Modificar">
                                             </div>
-                                        </form>
                                     </div>
                                 </div>
                             </div>

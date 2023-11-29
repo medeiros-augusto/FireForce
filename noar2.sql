@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Nov-2023 às 05:29
+-- Tempo de geração: 29-Nov-2023 às 05:09
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -167,14 +167,6 @@ CREATE TABLE `ocorrencia` (
   `QuantOutroHospital` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Extraindo dados da tabela `ocorrencia`
---
-
-INSERT INTO `ocorrencia` (`id_ocorrencia`, `DataDadosPaciente`, `SexoDadosPaciente`, `NomeHospitalDadosPaciente`, `NomePacienteDadosPaciente`, `CpfDadosPaciente`, `RgDadosPaciente`, `FonePacienteDadosPaciente`, `IdadePacienteDadosPaciente`, `NomeAcompanhanteDadosPaciente`, `IdadeAcompanhanteDadosPaciente`, `LocalOcorrenciaDadosPaciente`, `NumeroUsbDadosOcorrencia`, `DespDadosOcorrencia`, `HCHDadosOcorrencia`, `KmFinalDadosOcorrencia`, `CodDadosOcorrencia`, `CodSiaSusDadosOcorrencia`, `TipoOcorrencia`, `PsiquiatricoProblemasSuspeitos`, `RespiratorioProblemasSuspeitos`, `DiabetesProblemasSuspeitos`, `ObstetricoProblemasSuspeitos`, `TransporteProblemasSuspeitos`, `OutroProblemaProblemaSuspeitos`, `SinaiseSintomas`, `AberturaOcularMenor`, `RespostaVerbalMenor`, `RespostaMotoraMenor`, `TotalGCSMenor`, `AberturaOcularMaior`, `RespostaVerbalMaior`, `RespostaMotoraMaior`, `TotalGCSMaior`, `PressaoSinaisVitais`, `ArterialSinaisVitais`, `PulsoSinaisVitais`, `RespiracaoSinaisVitais`, `SaturacaoSinaisVitais`, `HGTSinaisVitais`, `TemperaturaSinaisVitais`, `PerfusaoSinaisVitais`, `SituacaoSinaisVitais`, `FormaConducao`, `VitimaEra`, `ObjetosRecolhidos`, `DecisaoTransporte`, `MEquipeAtendimento`, `S1EquipeAtendimento`, `S2EquipeAtendimento`, `S3EquipeAtendimento`, `EquipeEquipeAtendimento`, `DemandanteEquipeAtendimento`, `DisturbioAvaliacaoCinematica`, `EncontradoCapaceteAvaliacaoCinematica`, `EncontradoCintoAvaliacaoCinematica`, `ParaBrisasAvariadoAvaliacaoCinematica`, `CaminhandoAvaliacaoCinematica`, `PainelAvariadoAvaliacaoCinematica`, `VolanteRetorcidoAvaliacaoCinematica`, `ProcedimentosEfetuados`, `OqueMedica`, `OutrasVezesMedica`, `QuantoTempoMedica`, `ProblemaMedica`, `QualProblemaMedica`, `MedicacaoMedica`, `HorarioMedicacaoMedica`, `QualMedicacaoMedica`, `AlergicoMedica`, `QualAlergicoMedica`, `IngeriuMedica`, `HorarioIngeriuMedica`, `PreNatal`, `PeriodoGestacional`, `NomeMedicoGestacional`, `PossibilidadeGestacional`, `PrimeiroGestacional`, `QuantosGestacional`, `HorarioContracaoGestacional`, `DuracaoContracaoGestacional`, `IntervaloContracaoGestacional`, `PressaoGestacional`, `RupturaGestacional`, `InspecaoGestacional`, `PartoGestacional`, `HoraNascimentoGestacional`, `SexoBebe`, `NomeBebe`, `AtaduraDescartavel`, `TamAtaduraDescartavel`, `QuantAtaduraDescartavel`, `CateterDescartavel`, `QuantCateterDescartavel`, `CompressaDescartavel`, `QuantCompressaDescartavel`, `KitDescartavel`, `TamKitDescartavel`, `QuantKitDescartavel`, `LuvasDescartavel`, `QuantLuvasDescartavel`, `MascaraDescartavel`, `QuantMascaraDescartavel`, `MantaDescartavel`, `QuantMantaDescartavel`, `PasDescartavel`, `QuantPasDescartavel`, `SondaDescartavel`, `QuantSondaDescartavel`, `SoroDescartavel`, `QuantSoroDescartavel`, `TalasDescartavel`, `TamTalasDescartavel`, `QuantTalasDescartavel`, `OutroDescartavel`, `QuantOutroDescartavel`, `SondaHospital`, `QuantSondaHospital`, `ColarHospital`, `TamColarHospital`, `OutroTamColarHospital`, `QuantColarHospital`, `CoxinsHospital`, `QuantCoxinsHospital`, `MacaHospital`, `QuantMacaHospital`, `QuantTTFHospital`, `TTFHospital`, `TamTTFHospital`, `TiranteAranhaHospital`, `QuantTiranteAranhaHospital`, `TiranteCabecaHospital`, `QuantTiranteCabecaHospital`, `CanulaHospital`, `QuantCanulaHospital`, `OutroHospital`, `QuantOutroHospital`) VALUES
-(4, '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '* * *', '* * *', '* * * *', '* * * * * * * *', '*', '* * ** * ** * ** * ** * * * * * *', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', 'Opções Vítima Era', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '0', '*', '*', '*', '*', '*', '*', '0', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '0', '*', '*', '*', '*', '*', '*', '0', '', '*', '*', '*', '*', '*', '*', '*', '0', '*', '*', '*', '*', '*', '*', '*', '*'),
-(5, '24/10/2005', 'Masculino', 'Dona Helena', 'Augusto Medeiros', '130.194.419-00', '*', '(47) 9636-8412', '17', 'João Michels', '18', 'Rua Cidade Sevilha', '2', '1', '4', '12', 'IR', '112', 'Afogamento', '*', 'Respiratório DPOC *', '* * *', '* * * *', '* * * * * * * *', '*', 'Bronco-aspirando* * *Convulsão* * ** * ** * ** * * * * * *', '*', '*', '*', '0', 'Espontâneo', 'Palavras Inapropriadas', 'Obedece Comandos', '13', '21', '34', '323', '42', '44', '553', '56', '> 2 Seg', 'Normal', 'Deitada', 'Pedestre', 'celular', 'Instável', '1', '2', '3', '4', 'cv', 'pgc', '*', '*', '*', '*', '*', '*', '*', '*ImobilizaçõesTOMADA DECISÃO', 'se afogou', 'Não', '23', 'Não', '23', 'Não', '32', '23', 'Sim', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '0', '*', '*', '*', '*', '*', '*', '0', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '0', '*', '*', '*', '*', '*', '*', 'N', '', '23', '*', '*', '*', '*', '*', '*', '0', '*', '*', '*', '*', '*', '*', '*', '*');
-
 -- --------------------------------------------------------
 
 --
@@ -219,7 +211,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `ocorrencia`
 --
 ALTER TABLE `ocorrencia`
-  MODIFY `id_ocorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_ocorrencia` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`

@@ -2,7 +2,7 @@ const express = require('express')
 const session = require('express-session')
 const bodyParser = require('body-parser')
 const mysql = require('mysql2')
-const { PDFDocument } = require('pdf-lib');
+const { PDFDocument, rgb } = require('pdf-lib');
 const fs = require('fs');
 
 const port = 3010;
@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.engine('html', require('ejs').renderFile)
 app.set('view engine', 'html')
 app.use('/public', express.static(path.join(__dirname, 'public')))
+app.use('/logspdf', express.static(path.join(__dirname, 'logspdf')));
 app.set('views', path.join(__dirname, '/views'))
 
 const connection = mysql.createConnection({
@@ -32,24 +33,48 @@ connection.connect(function (err) {
     }
 });
 
+let contaid;
+
+// Tenta carregar o valor atual do contador a partir de um arquivo
+try {
+  const data = fs.readFileSync('contador.txt', 'utf8');
+  contaid = parseInt(data, 10) || 1; // Se o arquivo estiver vazio, começa com 1
+} catch (error) {
+  console.error('Erro ao ler o arquivo do contador:', error);
+  contaid = 1; // Define um valor padrão se houver um erro
+}
+
 async function criarPDFComString(conteudo) {
     // Cria um novo documento PDF
     const pdfDoc = await PDFDocument.create();
+    const linhasPorPagina = 30; // ajuste conforme necessário
+
+    // Divide o conteúdo em linhas
+    const linhas = conteudo.split('\n');
   
-    // Adiciona uma nova página ao documento
-    const page = pdfDoc.addPage();
+    // Adiciona páginas ao documento
+    for (let i = 0; i < linhas.length; i += linhasPorPagina) {
+      const page = pdfDoc.addPage();
   
-    // Adiciona o conteúdo à página
-    page.drawText(conteudo, { x: 50, y: 500, fontColor: rgb(0, 0, 0) });
+      // Calcula as linhas para esta página
+      const linhasDaPagina = linhas.slice(i, i + linhasPorPagina);
+  
+      // Adiciona o conteúdo à página com o tamanho da fonte
+      page.drawText(linhasDaPagina.join('\n'), { x: 10, y: 820, size: 12 });
+    }
   
     // Converte o documento para um buffer
     const pdfBytes = await pdfDoc.save();
   
     // Salva o PDF no disco
-    fs.writeFileSync('logspdf/output.pdf', pdfBytes);
+    fs.writeFileSync(`logspdf/dadosocorrencia${contaid}.pdf`, pdfBytes);
+  
+    contaid++;
+    fs.writeFileSync('contador.txt', contaid.toString());
   
     console.log('PDF criado com sucesso!');
   }
+  
 
 app.get('/', (req, res) => {
     if (req.session.nomelogin == 'adm') {
@@ -194,7 +219,6 @@ app.post('/usuarios', (req, res) => {
         }
     });
 })
-
 
 app.post('/ocorrencia', (req, res) => {
     //Accordion Dados Paciente
@@ -849,10 +873,156 @@ app.post('/ocorrencia', (req, res) => {
         QuantOutroHospital], function (err, result) {
             if (!err) {
                 console.log("Ocorrência criada com sucesso!");
-                res.render('historico');
                 let relatorio = `
-                
+    Ocorrência criada por ${req.session.nomelogin}
+
+    -----> Dados Paciente <-----
+    Data: ${DataDadosPaciente}
+    Sexo: ${SexoDadosPaciente ? SexoDadosPaciente : ''}
+    Nome Hospital: ${NomeHospitalDadosPaciente}
+    Nome Paciente: ${NomePacienteDadosPaciente}
+    Documento: CPF ${CpfDadosPaciente} RG ${RgDadosPaciente}
+    Fone Paciente: ${FonePacienteDadosPaciente}
+    Idade Paciente: ${IdadePacienteDadosPaciente}
+    Nome Acompanhante: ${NomeAcompanhanteDadosPaciente}
+    Idade Acompanhante: ${IdadeAcompanhanteDadosPaciente}
+    Local Ocorrência: ${LocalOcorrenciaDadosPaciente}
+
+    -----> Dados Ocorrencia <-----
+    N° USB: ${NumeroUsbDadosOcorrencia}
+    DESP: ${DespDadosOcorrencia}
+    H. CH: ${HCHDadosOcorrencia}
+    KM Final: ${KmFinalDadosOcorrencia}
+    Código: ${CodDadosOcorrencia}
+    CÓD. SIA/SUS: ${CodSiaSusDadosOcorrencia}
+
+    -----> Tipo de Ocorrência <-----
+    ${TipoOcorrencia}
+
+    -----> Problemas Encontrados Suspeitos <-----
+    ${PsiquiatricoProblemasSuspeitos}
+    ${RespiratorioProblemasSuspeitos}
+    ${DiabetesProblemasSuspeitos}
+    ${ObstetricoProblemasSuspeitos}
+    ${TransporteProblemasSuspeitos}
+    ${OutroProblemaProblemasSuspeitos}
+
+    -----> Sinais e Sintomas <-----
+    ${SinaiseSintomas}
+
+    -----> Avaliação Paciente Menor 5 anos <-----
+    Abertura Ocular: ${AberturaOcularMenor}
+    Resposta Verbal: ${RespostaVerbalMenor}
+    Resposta Motora: ${RespostaMotoraMenor}
+    Total (GCS) (3-15): ${TotalGCSMenor}
+
+    -----> Avaliação Paciente Maior 5 anos <-----
+    Abertura Ocular: ${AberturaOcularMaior}
+    Resposta Verbal: ${RespostaVerbalMaior}
+    Resposta Motora: ${RespostaMotoraMaior}
+    Total (GCS) (3-15): ${TotalGCSMaior}
+
+    -----> Localização Traumas <-----
+    [ERRO] Não há disponível essa funcionalidade.
+
+    -----> Sinais Vitais <-----
+    Pressão Arterial: ${PressaoSinaisVitais} x ${ArterialSinaisVitais} mmHg
+    Pulso: ${PulsoSinaisVitais} B.C.P.M
+    Respiração: ${RespiracaoSinaisVitais} M.R.M.
+    Saturação: ${SaturacaoSinaisVitais} %
+    HGT: ${HGTSinaisVitais}
+    Temperatura: ${TemperaturaSinaisVitais} °C
+    Perfusão: ${PerfusaoSinaisVitais}
+    Situação: ${SituacaoSinaisVitais}
+
+    -----> Forma de condução / Vitima era / Objetos Recolhidos <-----
+    Forma Condução: ${FormaConducao}
+    Vitima era: ${VitimaEra}
+    Objetos Recolhidos: ${ObjetosRecolhidos}
+
+    -----> Decisão Transporte / Equipe de Atendimento <-----
+    Decisão Transporte: ${DecisaoTransporte}
+    M: ${MEquipeAtendimento}
+    S1: ${S1EquipeAtendimento}
+    S2: ${S2EquipeAtendimento}
+    S3: ${S3EquipeAtendimento}
+    Equipe: ${EquipeEquipeAtendimento}
+    Demandante: ${DemandanteEquipeAtendimento}
+
+    -----> Procedimentos efetuados <-----
+    ${ProcedimentosEfetuados}
+
+    -----> Anamnese emergência médica / Gestacional <-----
+    *emergência médica*
+    O Que Aconteceu (Sinais e Sintomas): ${OqueMedica}
+    Aconteceu outras vezes: ${OutrasVezesMedica}
+    A quanto tempo aconteceu: ${QuantoTempoMedica}
+    Possui algum problema de saúde: ${ProblemaMedica}
+    Quais Problemas: ${QualProblemaMedica}
+    Faz uso de medicação: ${MedicacaoMedica}
+    Horário da última medicação: ${HorarioMedicacaoMedica}
+    Qual medicação: ${QualMedicacaoMedica}
+    Alérgico: ${AlergicoMedica}
+    Qual alergia: ${QualAlergicoMedica}
+    Inseriu alimento ou líquido maior ou igual a 6 horas: ${IngeriuMedica}
+    Horário da ingestão: ${HorarioIngeriuMedica}
+    
+    *gestacional*
+    Fez Pré-natal: ${PreNatal}
+    Período Gestacional: ${PeriodoGestacional}
+    Nome do médico: ${NomeMedicoGestacional}
+    Existe Probabilidade de Complicações: ${PossibilidadeGestacional}
+    É o primeiro filho: ${PrimeiroGestacional}
+    Quantos: ${QuantosGestacional}
+    Que horas iniciaram as contrações: ${HorarioContracaoGestacional}
+    Duração: ${DuracaoContracaoGestacional}
+    Intervalo: ${IntervaloContracaoGestacional}
+    Pressão na Região do Quadril ou Vontade de Evacuar: ${PressaoGestacional}
+    Já Houve Ruptura da Bolsa: ${RupturaGestacional}
+    Foi Feito a Inspeção Visual: ${InspecaoGestacional}
+    Parto Realizado: ${PartoGestacional}
+    Hora do Nascimento: ${HoraNascimentoGestacional}
+    Sexo do bebê: ${SexoBebe}
+    Nome do bebê: ${NomeBebe}
+
+    -----> Materiais Ultilizados Descartáveis <-----
+    ${AtaduraDescartavel} ${TamAtaduraDescartavel} ${QuantAtaduraDescartavel}
+    ${CateterDescartavel} ${QuantCateterDescartavel}
+    ${CompressaDescartavel} ${QuantCompressaDescartavel}
+    ${KitDescartavel} ${TamKitDescartavel} ${QuantKitDescartavel}
+    ${LuvasDescartavel} ${QuantLuvasDescartavel}
+    ${MascaraDescartavel} ${QuantMascaraDescartavel}
+    ${MantaDescartavel} ${QuantMantaDescartavel}
+    ${PasDescartavel} ${QuantPasDescartavel}
+    ${SondaDescartavel} ${QuantSondaDescartavel}
+    ${SoroDescartavel} ${QuantSoroDescartavel}
+    ${TalasDescartavel} ${TamTalasDescartavel} ${QuantTalasDescartavel}
+    ${OutroDescartavel} ${QuantOutroDescartavel}
+
+    -----> Materiais Ultilizados Deixado no Hospital <-----
+    Sonda de Aspiração: ${SondaHospital} ${QuantSondaHospital}
+    Colar: ${ColarHospital} ${TamColarHospital} ${QuantColarHospital}
+    Coxins Estabiliza: ${CoxinsHospital} ${QuantCoxinsHospital}
+    Maca Rígida: ${MacaHospital} ${QuantMacaHospital} ${QuantTTFHospital}
+    T.T.F: ${TTFHospital} ${TamTTFHospital}
+    Tirante Aranha: ${TiranteAranhaHospital} ${QuantTiranteAranhaHospital}
+    Tirante De Cabeça: ${TiranteCabecaHospital} ${QuantTiranteCabecaHospital}
+    Cânula: ${CanulaHospital} ${QuantCanulaHospital}
+    Outro Material: ${OutroHospital} ${QuantOutroHospital}
+    
+    -----> Avaliação Cinemática <-----
+    Distúrbio de Comportamento: ${DisturbioAvaliacaoCinematica}
+    Encontrado de Capacete: ${EncontradoCapaceteAvaliacaoCinematica}
+    Encontrado de Cinto: ${EncontradoCintoAvaliacaoCinematica}
+    Para-Brisas Avariado: ${ParaBrisasAvariadoAvaliacaoCinematica}
+    Caminhando na Cena: ${CaminhandoAvaliacaoCinematica}
+    Painel Avariado: ${PainelAvariadoAvaliacaoCinematica}
+    Volante Retorcido: ${VolanteRetorcidoAvaliacaoCinematica}
+
+    -----> Termo de Recusa de Atendimento E/OU Transporte <-----
+    ${ObsImportantes}
                 `
+                criarPDFComString(relatorio)
             } else {
                 console.log("Erro ao inserir no banco de dados:", err);
                 res.status(500).send("Erro ao cadastrar usuário");
@@ -860,7 +1030,7 @@ app.post('/ocorrencia', (req, res) => {
         });
 
 
-    res.render('ocorrencia')
+    res.render('home')
 })
 
 
