@@ -2,7 +2,8 @@ const express = require('express')
 const session = require('express-session')
 const bodyParser = require('body-parser')
 const mysql = require('mysql2')
-
+const { PDFDocument } = require('pdf-lib');
+const fs = require('fs');
 
 const port = 3010;
 var path = require('path')
@@ -19,7 +20,7 @@ app.set('views', path.join(__dirname, '/views'))
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'noar2',
 });
 
@@ -30,6 +31,25 @@ connection.connect(function (err) {
         console.log("Erro: Conexão NÃO realizada", err)
     }
 });
+
+async function criarPDFComString(conteudo) {
+    // Cria um novo documento PDF
+    const pdfDoc = await PDFDocument.create();
+  
+    // Adiciona uma nova página ao documento
+    const page = pdfDoc.addPage();
+  
+    // Adiciona o conteúdo à página
+    page.drawText(conteudo, { x: 50, y: 500, fontColor: rgb(0, 0, 0) });
+  
+    // Converte o documento para um buffer
+    const pdfBytes = await pdfDoc.save();
+  
+    // Salva o PDF no disco
+    fs.writeFileSync('logspdf/output.pdf', pdfBytes);
+  
+    console.log('PDF criado com sucesso!');
+  }
 
 app.get('/', (req, res) => {
     if (req.session.nomelogin == 'adm') {
@@ -168,14 +188,13 @@ app.post('/usuarios', (req, res) => {
         if (err) {
             console.error('Erro na atualização: ' + err.message)
             res.send('Erro na atualização no perfil do usuário.')
-            console.log(id)
         } else {
             console.log('Registro atualizado com sucesso')
-            console.log(id)
             res.render('usuarios')
         }
     });
 })
+
 
 app.post('/ocorrencia', (req, res) => {
     //Accordion Dados Paciente
@@ -661,7 +680,7 @@ app.post('/ocorrencia', (req, res) => {
     const SondaHospital = req.body.SondaHospital ? req.body.SondaHospital : '*'
     const QuantSondaHospital = req.body.QuantSondaHospital ? req.body.QuantSondaHospital : '*'
     const ColarHospital = req.body.ColarHospital ? req.body.ColarHospital : '*'
-    const TamColarHospital = req.body.TamColarHospital ? req.body.TamColarHospital : '*'
+    const TamColarHospital = req.body.TamColarHospital || req.body.OutroTamColarHospital ? req.body.TamColarHospital + req.body.OutroTamColarHospital : '*'
     const QuantColarHospital = req.body.QuantColarHospital ? req.body.QuantColarHospital : '*'
     const CoxinsHospital = req.body.CoxinsHospital ? req.body.CoxinsHospital : '*'
     const QuantCoxinsHospital = req.body.QuantCoxinsHospital ? req.body.QuantCoxinsHospital : '*'
@@ -831,9 +850,12 @@ app.post('/ocorrencia', (req, res) => {
             if (!err) {
                 console.log("Ocorrência criada com sucesso!");
                 res.render('historico');
+                let relatorio = `
+                
+                `
             } else {
                 console.log("Erro ao inserir no banco de dados:", err);
-                res.status(500).send("Erro ao cadastrar ocorrencia");
+                res.status(500).send("Erro ao cadastrar usuário");
             }
         });
 
