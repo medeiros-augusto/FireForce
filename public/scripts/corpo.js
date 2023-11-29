@@ -62,7 +62,7 @@ document.getElementById('nextBtn').addEventListener('click', async function (e) 
     window.location.href = 'traumaDesc.html';
 });
 
-let img = document.getElementById('humanBody');
+let img = document.getElementById('corpo');
 img.addEventListener('click', function (e) {
     let x = e.offsetX;
     let y = e.offsetY;

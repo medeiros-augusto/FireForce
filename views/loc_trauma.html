@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="../public/scripts/corpo.js">
+    <link rel="stylesheet" href="../public/assets/corpo.css">
 </head>
 
 
@@ -36,10 +36,10 @@
                     </select>
 
                     <div class="row position-relative" id="imageContainer">
-                        <img id="humanBody" src="../public/images/corpo-frontal.png" alt="body-image">
+                        <img id="corpo" src="../public/images/body.png" alt="body-image">
                     </div>
                     <div class="d-flex justify-content-center mt-4">
-                        <button type="button" class="btn btn-light fw-bold" id="undoBtn">Eliminar</button>
+                        <button type="button" class="btn btn-light fw-bold" id="undoBtn">Desfazer</button>
                     </div>
                     <div class="container mt-3">
                         <div class="row">
@@ -114,7 +114,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-between mt-4">
+                    <div class="d-flex justify-content-between mt-4" style="overflow: hidden; height: 0;">
                         <button type="submit" class="btn btn-light" id="backBtn">Voltar</button>
                         <button type="submit" class="btn btn-primary" id="nextBtn">Próximo</button>
                     </div>
@@ -123,105 +123,9 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
-    <script>
-        function storeTraumaIcon(x, y, traumaType) {
-            let traumaIcons = JSON.parse(localStorage.getItem('traumaIcons')) || [];
-            traumaIcons.push({ x, y, traumaType });
-            localStorage.setItem('traumaIcons', JSON.stringify(traumaIcons));
-        }
-
-        function removeLastTraumaIcon() {
-            let traumaIcons = JSON.parse(localStorage.getItem('traumaIcons')) || [];
-            if (traumaIcons.length > 0) {
-                traumaIcons.pop();
-                localStorage.setItem('traumaIcons', JSON.stringify(traumaIcons));
-
-                let imageContainer = document.getElementById('imageContainer');
-                let lastIcon = imageContainer.lastElementChild;
-                if (lastIcon.tagName === 'IMG') {
-                    imageContainer.removeChild(lastIcon);
-                }
-            }
-        }
-
-        function recreateTraumaImage() {
-            let traumaIcons = JSON.parse(localStorage.getItem('traumaIcons')) || {};
-            traumaIcons.forEach(icon => {
-                createTraumaIcon(icon.x, icon.y, icon.traumaType);
-            });
-        }
-
-        function createTraumaIcon(x, y, traumaType) {
-            let icon = document.createElement('img');
-            icon.src = `/trauma_icon/${traumaType}.png`;
-            icon.style.position = 'absolute';
-            let iconWidth = 50;
-            let iconHeight = 50;
-            icon.style.left = `${x - iconWidth / 2}px`;
-            icon.style.top = `${y - iconHeight / 2}px`;
-            icon.style.width = `${iconWidth}px`;
-            icon.style.height = `${iconHeight}px`;
-            icon.style.padding = '0';
-            document.getElementById('imageContainer').appendChild(icon);
-        }
-
-        document.addEventListener('DOMContentLoaded', recreateTraumaImage);
-
-        document.getElementById('undoBtn').addEventListener('click', function () {
-            removeLastTraumaIcon();
-        });
-
-        document.getElementById('nextBtn').addEventListener('click', async function (e) {
-            e.preventDefault();
-
-            let canvas = await html2canvas(document.getElementById('imageContainer'));
-            let imgData = canvas.toDataURL('image/png');
-
-            let formData = JSON.parse(localStorage.getItem('formData')) || {};
-
-            formData['traumaImage'] = imgData;
-
-            localStorage.setItem('formData', JSON.stringify(formData));
-
-            console.log('Stored Data:', formData);  
-
-            window.location.href = 'traumaDesc.html';
-        });
-
-        let img = document.getElementById('humanBody');
-        img.addEventListener('click', function (e) {
-            let x = e.offsetX;
-            let y = e.offsetY;
-            let traumaType = document.getElementById('traumaType').value;
-
-            storeTraumaIcon(x, y, traumaType);
-            createTraumaIcon(x, y, traumaType);
-        });
-
-        function imageLogin() {
-            fetch('/home').then(res => res.json()).then(data => {
-                if (data.loggedin) {
-                    window.location.href = '/home.html';
-                } else {
-                    window.location.href = '/login.html';
-                }
-            }).catch(err => {
-                console.error(err);
-                alert('Erro de conexão!');
-            });
-        }
-
-        const activeLink = document.querySelector('.list-group-item.active');
-
-        if (activeLink) {
-            activeLink.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-        }
-
-    </script>
+    <script src="../public/scripts/corpo.js"></script>
 </body>
 
 </html>
