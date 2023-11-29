@@ -27,7 +27,7 @@ function recreateTraumaImage() {
 
 function createTraumaIcon(x, y, traumaType) {
     let icon = document.createElement('img');
-    icon.src = `/trauma_icon/${traumaType}.png`;
+    icon.src = `../public/images/${traumaType}.png`;
     icon.style.position = 'absolute';
     let iconWidth = 50;
     let iconHeight = 50;
