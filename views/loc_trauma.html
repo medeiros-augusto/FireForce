@@ -35,7 +35,7 @@
                     </select>
 
                     <div class="row position-relative" id="imageContainer">
-                        <img id="humanBody" src="/body.png" alt="body-image">
+                        <img id="humanBody" src="images/body.png" alt="body-image">
                     </div>
                     <div class="d-flex justify-content-center mt-4">
                         <button type="button" class="btn btn-light fw-bold" id="undoBtn">Desfazer</button>
@@ -139,7 +139,6 @@
                 traumaIcons.pop();
                 localStorage.setItem('traumaIcons', JSON.stringify(traumaIcons));
 
-                // Remove o último ícone da imagem
                 let imageContainer = document.getElementById('imageContainer');
                 let lastIcon = imageContainer.lastElementChild;
                 if (lastIcon.tagName === 'IMG') {
@@ -181,18 +180,14 @@
             let canvas = await html2canvas(document.getElementById('imageContainer'));
             let imgData = canvas.toDataURL('image/png');
 
-            // Recupera o objeto JSON existente ou cria um novo se não existir
             let formData = JSON.parse(localStorage.getItem('formData')) || {};
 
-            // Adiciona a imagem ao objeto JSON
             formData['traumaImage'] = imgData;
 
-            // Armazena o objeto JSON atualizado no localStorage
             localStorage.setItem('formData', JSON.stringify(formData));
 
-            console.log('Stored Data:', formData);  // Imprime os dados armazenados no localStorage
+            console.log('Stored Data:', formData);  
 
-            // Navega para a próxima página
             window.location.href = 'traumaDesc.html';
         });
 
@@ -207,13 +202,10 @@
         });
 
         function imageLogin() {
-            // Verify if the user is logged in
-            fetch('/menu').then(res => res.json()).then(data => {
+            fetch('/home').then(res => res.json()).then(data => {
                 if (data.loggedin) {
-                    // If the user is logged in, redirect to the menu
-                    window.location.href = '/menu.html';
+                    window.location.href = '/home.html';
                 } else {
-                    // If the user is not logged in, redirect to the login page
                     window.location.href = '/login.html';
                 }
             }).catch(err => {
@@ -222,10 +214,8 @@
             });
         }
 
-        // Get the active link
         const activeLink = document.querySelector('.list-group-item.active');
 
-        // Scroll to the active link
         if (activeLink) {
             activeLink.scrollIntoView({ behavior: 'smooth', inline: 'center' });
         }
