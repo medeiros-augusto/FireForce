@@ -72,21 +72,3 @@ img.addEventListener('click', function (e) {
     createTraumaIcon(x, y, traumaType);
 });
 
-function imageLogin() {
-    fetch('/home').then(res => res.json()).then(data => {
-        if (data.loggedin) {
-            window.location.href = '/home.html';
-        } else {
-            window.location.href = '/login.html';
-        }
-    }).catch(err => {
-        console.error(err);
-        alert('Erro de conexão!');
-    });
-}
-
-const activeLink = document.querySelector('.list-group-item.active');
-
-if (activeLink) {
-    activeLink.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-}
