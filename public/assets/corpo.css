@@ -4,5 +4,7 @@
     height: 50px;
   }
 
-
-
+  #imagemContainer {
+    margin: 0 auto;
+    width: 5%;
+}

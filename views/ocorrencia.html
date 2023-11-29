@@ -8,6 +8,7 @@
     <link rel="icon" href="../public/images/logo.png">
     <link rel="stylesheet" href="../public/assets/all.css">
     <link rel="stylesheet" href="../public/assets/navbar.css">
+    <link rel="stylesheet" href="../public/assets/corpo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -1401,7 +1402,107 @@
                 </h2>
                 <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        AQUI VAI O CONTEUDO
+                        <div class="card mb-2 text-center">
+                            <h1>Localização Traumas</h1>
+                            <h2>Selecione o Tipo do Trauma</h2>
+                            <div class="card-body">
+                                <form id="TraumaLocForm">
+                                    <select id="traumaType" class="form-control text-center mb-3" onchange="mostrarImagem()">
+                                        <option value="Fratura_Luxacao_Entorse">Fraturas/Luxações/Entorses</option>
+                                        <option value="Ferimentos_diversos">Ferimentos diversos</option>
+                                        <option value="Hemorragia">Hemorragia</option>
+                                        <option value="Evisceracao">Evisceração</option>
+                                        <option value="FAB_FAF">FAB/FAF</option>
+                                        <option value="Amputacao">Amputação</option>
+                                        <option value="Queimadura_1">Queimadura 1° grau</option>
+                                        <option value="Queimadura_2">Queimadura 2° grau</option>
+                                        <option value="Queimadura_3">Queimadura 3° grau</option>
+                                    </select>
+                                    <div id="imagemContainer">
+                                        <img id="imagemMostrada" class="img-fluid">
+                                    </div>
+                                    <div class="container mt-3">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="table-responsive table-container">
+                                                    <table class="table text-center text-break w-100">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row"><img src="../public/images/Amputacao.png" alt="Amputação"
+                                                                        class="img-small"></th>
+                                                                <td class="small">Amputação</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><img src="../public/images/Evisceracao.png" alt="Amputação"
+                                                                        class="img-small"></th>
+                                                                <td class="small">Evisceração</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><img src="../public/images/FAB_FAF.png" alt="Amputação"
+                                                                        class="img-small"></th>
+                                                                <td class="small">FAB/FAF</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="table-responsive table-container">
+                                                    <table class="table text-center text-break w-100">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row"><img src="../public/images/Ferimentos_diversos.png"
+                                                                        alt="Amputação" class="img-small"></th>
+                                                                <td class="small">Ferimentos diversos</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><img src="../public/images/Fratura_Luxacao_Entorse.png"
+                                                                        alt="Amputação" class="img-small"></th>
+                                                                <td class="small">Fratura/Luxação/Entorse</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><img src="../public/images/Hemorragia.png" alt="Amputação"
+                                                                        class="img-small"></th>
+                                                                <td class="small">Hemorragia</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="table-responsive table-container">
+                                                    <table class="table text-center text-break w-100">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row"><img src="../public/images/Queimadura_1.png" alt="Amputação"
+                                                                        class="img-small"></th>
+                                                                <td class="small">Queimadura 1° grau</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><img src="../public/images/Queimadura_2.png" alt="Amputação"
+                                                                        class="img-small"></th>
+                                                                <td class="small">Queimadura 2° grau</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><img src="../public/images/Queimadura_3.png" alt="Amputação"
+                                                                        class="img-small" id="nextBtn"></th>
+                                                                <td class="small">Queimadura 3° grau</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-center mt-4">
+                                            <button type="button" class="btn btn-light fw-bold" id="undoBtn" style="background-color: rgb(37, 37, 116); color: #fff; width: 100%;">Eliminar</button>
+                                        </div>
+                                        <div class="row position-relative" id="imageContainer">
+                                            <img id="corpo" src="../public/images/body.png" alt="body-image">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3262,6 +3363,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="../public/scripts/corpo.js"></script>
 </body>
 
 </html>

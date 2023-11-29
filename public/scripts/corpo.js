@@ -72,3 +72,32 @@ img.addEventListener('click', function (e) {
     createTraumaIcon(x, y, traumaType);
 });
 
+// --------------------FUNÇÃO APARECER SIMBOLO-------------------
+
+function mostrarImagem() {
+    var select = document.getElementById("traumaType");
+    var imagemContainer = document.getElementById("imagemContainer");
+    var imagemMostrada = document.getElementById("imagemMostrada");
+
+    // Mapeia opções para caminhos de imagem correspondentes
+    var imagens = {
+      "Fratura_Luxacao_Entorse": "../public/images/Fratura_Luxacao_Entorse.png",
+      "Ferimentos_diversos": "../public/images/Ferimentos_diversos.png",
+      "Hemorragia": "../public/images/Hemorragia.png",
+      "Evisceracao": "../public/images/Evisceracao.png",
+      "FAB_FAF": "../public/images/FAB_FAF.png",
+      "Amputacao": "../public/images/Amputacao.png",
+      "Queimadura_1": "../public/images/Queimadura_1.png",
+      "Queimadura_2": "../public/images/Queimadura_2.png",
+      "Queimadura_3": "../public/images/Queimadura_3.png"
+    };
+
+    // Obtém o valor da opção selecionada
+    var selectedOption = select.options[select.selectedIndex].value;
+
+    // Atualiza a src da imagem com base na opção selecionada
+    imagemMostrada.src = imagens[selectedOption];
+
+    // Exibe o contêiner da imagem
+    imagemContainer.style.display = "block";
+  }
