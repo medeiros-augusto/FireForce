@@ -1402,7 +1402,7 @@
                 <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div class="col-lg-3 bloco" style="width: 100%;">
-                            <select class="form-select mb-3 text-center" name="TipoTrauma" aria-label="Seletor padrão">
+                            <select class="form-select mb-3 text-center" name="TipoTrauma" aria-label="Seletor padrão" onchange="mostrarImagemSelecionada()">
                                 <option disabled selected>Selecione um tipo de trauma</option>
                                 <option value="Fratura_Luxacao_Entorse">Fraturas/Luxações/Entorses</option>
                                 <option value="Ferimentos_diversos">Ferimentos diversos</option>
@@ -1421,12 +1421,13 @@
                                     <table class="table">
                                         <tbody>
                                             <tr>
-                                                <td scope="row" class="imgcorpo"><img src="../public/images/Ferimentos_diversos.png"></td>
-                                                <td>Ferimentos diversos</td>
+                                                <td scope="row" class="imgcorpo"><img src="../public/images/Fratura_Luxacao_Entorse.png"></td>
+                                                <td>Fraturas/Luxações/Entorses</td>
+                                                
                                             </tr>
                                             <tr>
-                                                <td scope="row" class="imgcorpo"><img src="../public/images/FAB_FAF.png"></td>
-                                                <td>FAB/FAF</td>
+                                                <td scope="row" class="imgcorpo"><img src="../public/images/Ferimentos_diversos.png"></td>
+                                                <td>Ferimentos diversos</td>
                                             </tr>
                                             <tr>
                                                 <td scope="row" class="imgcorpo"><img src="../public/images/Hemorragia.png"></td>
@@ -1435,6 +1436,10 @@
                                             <tr>
                                                 <td scope="row" class="imgcorpo"><img src="../public/images/Evisceracao.png"></td>
                                                 <td>Evisceração</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row" class="imgcorpo"><img src="../public/images/FAB_FAF.png"></td>
+                                                <td>FAB/FAF</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -1445,8 +1450,8 @@
                                     <table class="table">
                                         <tbody>
                                             <tr>
-                                                <td scope="row" class="imgcorpo"><img src="../public/images/Fratura_Luxacao_Entorse.png"></td>
-                                                <td>Fraturas/Luxações/Entorses</td>
+                                                <td scope="row" class="imgcorpo"><img src="../public/images/Amputacao.png"></td>
+                                                <td>Amputação</td>
                                             </tr>
                                             <tr>
                                                 <td scope="row" class="imgcorpo"><img src="../public/images/Queimadura_1.png"></td>
@@ -1462,14 +1467,12 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <tr>
-                                        <input type="submit" value="Eliminar">
-                                     </tr>
+                                    <input type="button" value="Desfazer" onclick="desfazerMarcacao()">
                                 </div>
                             </div>
-                           <div>
-                                <img src="../public/images/corpo.png" alt="">
-                           </div>
+                            <div id="imagemContainer">
+                                <img id="imagemSelecionada" src="../public/images/corpo.png" alt="" class="img-fluid" onclick="marcarTrauma(event)">
+                            </div>
                         </div>
                     </div>
                 </div>

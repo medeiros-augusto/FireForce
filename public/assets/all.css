@@ -68,3 +68,24 @@ img {
 .imgcorpo {
     width: 40px;
 }
+
+ /* Adicione estilos personalizados aqui */
+ .img-fluid {
+    max-width: 100%; /* Tornar a imagem responsiva */
+    height: auto;    /* Manter a proporção original da imagem */
+}
+
+#imagemContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.marcaTrauma {
+    position: absolute;
+    cursor: pointer; /* Muda o cursor ao passar sobre a marcação para indicar que é clicável */
+}
+
+.marcaTrauma img {
+    max-width: 30px; /* Defina o tamanho máximo desejado para as imagens das opções */
+    height: auto;
+}
