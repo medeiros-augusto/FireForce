@@ -21,7 +21,7 @@ app.set('views', path.join(__dirname, '/views'))
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'noar2',
 });
 
@@ -102,6 +102,14 @@ app.get('/historico', (req, res) => {
     )
 });
 
+app.get('/historicoadm', (req, res) => {
+    if (req.session.nomelogin == 'adm') {
+        res.render('historicoadm');
+    } else (
+        res.send("[ERRO] Necessário realizar login na conta adm!")
+    )
+});
+
 app.get('/usuarios', (req, res) => {
     if (req.session.nomelogin == 'adm') {
         res.render('usuarios');
@@ -131,6 +139,16 @@ app.get('/getUsers', (req, res) => {
 
 app.get('/getOcorrencia', (req, res) => {
     connection.query('SELECT id_ocorrencia, DataDadosPaciente, NomePacienteDadosPaciente FROM ocorrencia WHERE id_usuario = '+req.session.idlogin+'', (error, results) => {
+        if (error) {
+            res.status(500).json({ error: 'Erro ao buscar dados do banco de dados' });
+        } else {
+            res.status(200).json(results);
+        }
+    });
+});
+
+app.get('/getOcorrenciaAdm', (req, res) => {
+    connection.query('SELECT id_ocorrencia, DataDadosPaciente, NomePacienteDadosPaciente FROM ocorrencia', (error, results) => {
         if (error) {
             res.status(500).json({ error: 'Erro ao buscar dados do banco de dados' });
         } else {
