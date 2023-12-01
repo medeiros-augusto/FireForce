@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Nov-2023 às 05:09
+-- Tempo de geração: 01-Dez-2023 às 03:19
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -164,7 +164,8 @@ CREATE TABLE `ocorrencia` (
   `CanulaHospital` varchar(100) NOT NULL,
   `QuantCanulaHospital` varchar(100) NOT NULL,
   `OutroHospital` varchar(100) NOT NULL,
-  `QuantOutroHospital` varchar(100) NOT NULL
+  `QuantOutroHospital` varchar(100) NOT NULL,
+  `id_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -185,7 +186,8 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `senha_usuario`) VALUES
 (1, 'adm', 'adm'),
-(2, 'teste', 'teste');
+(2, 'teste', 'teste'),
+(3, 'jp', 'jp');
 
 --
 -- Índices para tabelas despejadas
@@ -195,7 +197,8 @@ INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `senha_usuario`) VALUES
 -- Índices para tabela `ocorrencia`
 --
 ALTER TABLE `ocorrencia`
-  ADD PRIMARY KEY (`id_ocorrencia`);
+  ADD PRIMARY KEY (`id_ocorrencia`),
+  ADD KEY `fk_ocorrencia_usuario` (`id_usuario`);
 
 --
 -- Índices para tabela `usuario`
@@ -217,7 +220,17 @@ ALTER TABLE `ocorrencia`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `ocorrencia`
+--
+ALTER TABLE `ocorrencia`
+  ADD CONSTRAINT `fk_ocorrencia_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
